@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@types/uuid": "^9.0.1",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "npx tsc index.ts && node index.js"
+  },
+  "name": "pz-transmog-rebuild",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

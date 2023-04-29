@@ -1,0 +1,5 @@
+version=1
+title=pz-transmog-rebuild
+description=This is the description of pz-transmog-rebuild.
+tags=
+visibility=public
