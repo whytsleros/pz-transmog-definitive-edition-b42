@@ -1,7 +1,3005 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fileGuidTable>
 	<files>
-		<path>media/clothing/clothingItems/InvisibleItem.xml</path>
-		<guid>b0930bd1-94dd-4c80-bf09-60176779534a</guid>
-	</files>
+
+  <path>media/clothing/clothingItems/TransmogItem_0.xml</path>
+  <guid>457176f4-f633-4896-b5db-099e8f952b3e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_1.xml</path>
+  <guid>3625dd9f-83df-40fb-958f-902e96746677</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_2.xml</path>
+  <guid>dc0f2157-a2c7-46b0-9360-8b693cd01021</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_3.xml</path>
+  <guid>0d303b56-bd00-4f42-93e6-e6044f664259</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_4.xml</path>
+  <guid>1619d457-4168-4252-b1d1-3f15eb7389fb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_5.xml</path>
+  <guid>dce838e4-a30b-45ef-8dab-7dfcc56159a2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_6.xml</path>
+  <guid>97ca5e87-b556-471d-842d-5fae254098c5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_7.xml</path>
+  <guid>6b2e0262-0487-4483-bbb1-9a9595825690</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_8.xml</path>
+  <guid>3f04bb92-a376-441e-9336-2679377e6e89</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_9.xml</path>
+  <guid>c725cba0-8cc8-4a47-b9b0-86e0acefc208</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_10.xml</path>
+  <guid>8bfba161-9f37-452b-8b96-7fb7f0191ea3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_11.xml</path>
+  <guid>2393b041-0796-4f58-981d-d4b7e80bcfe3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_12.xml</path>
+  <guid>b41c1413-5fdd-48f3-a040-3714c3a94e21</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_13.xml</path>
+  <guid>fdecaced-7543-4d34-aa64-9e15cd98065a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_14.xml</path>
+  <guid>01da7968-1c38-4956-8a47-4c47ddc059a1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_15.xml</path>
+  <guid>7b35df05-06f1-4d7c-9e73-0be0b385dabf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_16.xml</path>
+  <guid>bcbdebff-a20f-4846-826b-94480cf1e768</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_17.xml</path>
+  <guid>2a0b3864-b110-4721-a40c-796523dac480</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_18.xml</path>
+  <guid>2e675502-8bf1-4f19-bda0-211ac8d9aa7e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_19.xml</path>
+  <guid>580440c8-6d84-4c1f-9322-e45de7d88b6c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_20.xml</path>
+  <guid>9408eaf9-c861-4e32-b658-b733f87ffeb1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_21.xml</path>
+  <guid>ceb40758-e7fa-49cd-a426-ea6c5604a5cb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_22.xml</path>
+  <guid>0e808361-3082-43e0-925c-b411fbf37244</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_23.xml</path>
+  <guid>13955ced-8e64-4110-94f0-c2fdae52a14a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_24.xml</path>
+  <guid>b6ea9ddc-1ec3-453b-8d40-2bc4389fd572</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_25.xml</path>
+  <guid>6e65f47e-67da-41aa-b125-2bef484a4475</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_26.xml</path>
+  <guid>686d8baf-2f86-4488-8cf4-7a4c9340ac50</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_27.xml</path>
+  <guid>72c72b96-253b-43d9-bc17-ccf2a68315da</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_28.xml</path>
+  <guid>44665be4-8ae3-4bfc-baf6-0ff237b01d42</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_29.xml</path>
+  <guid>c88f3a57-d511-4d78-9398-866c18518831</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_30.xml</path>
+  <guid>e2afb0b1-b693-4178-a98d-70f7dfdcaf15</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_31.xml</path>
+  <guid>8dd01905-4158-46a6-8f1c-3e905d8956a9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_32.xml</path>
+  <guid>21a255c2-fa6e-42a7-9599-38e66eefbacc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_33.xml</path>
+  <guid>f28aeec5-7e2e-45c7-bfd6-33f019995222</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_34.xml</path>
+  <guid>3efb2ba7-5411-45ba-b16e-3cb3f62184e7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_35.xml</path>
+  <guid>4842a316-b7f9-4a62-81ee-ca06f4667f11</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_36.xml</path>
+  <guid>84801880-c7e7-4453-98a2-b51d383a1923</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_37.xml</path>
+  <guid>f8b32540-98a8-45ce-b862-ff61c06f4e26</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_38.xml</path>
+  <guid>b8285cc0-830b-4fab-af36-b232c6a27fa0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_39.xml</path>
+  <guid>2d01fe20-eaeb-458e-91c2-b1b64ef1c8a4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_40.xml</path>
+  <guid>9b45003e-42db-45cf-afb9-dec35c735f6e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_41.xml</path>
+  <guid>c7b9e886-96db-40fd-962a-2b6750feabf0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_42.xml</path>
+  <guid>46a7ec0a-8c31-48a2-a4ab-afc72ff141b9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_43.xml</path>
+  <guid>4dbfa2af-a235-4a31-ac73-bd94686ff82e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_44.xml</path>
+  <guid>6d81f271-1608-47be-9ad4-ca4d0f68c1b9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_45.xml</path>
+  <guid>b5c47993-6752-421d-b1ac-85a8933cc48a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_46.xml</path>
+  <guid>f04313f4-7a95-4283-a56e-3f79c7490b2b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_47.xml</path>
+  <guid>7959da6a-32bc-42b6-bf91-f2e196d52383</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_48.xml</path>
+  <guid>9427001c-b2fc-4d90-ad99-48d55b8ea20b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_49.xml</path>
+  <guid>c7c227ac-41db-4b62-aa2a-58f051450279</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_50.xml</path>
+  <guid>5b6c47c3-36d8-4d3f-bfd2-d8da315214fb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_51.xml</path>
+  <guid>2d9d8180-84b3-4ce7-adb5-36573ea88f42</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_52.xml</path>
+  <guid>a544bdd3-d4d3-4099-a485-d2b91a443c58</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_53.xml</path>
+  <guid>8f39f082-d81c-4b72-a622-d026150ca28a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_54.xml</path>
+  <guid>efdef742-94d0-493d-bf82-e007c3413ea7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_55.xml</path>
+  <guid>38336a0e-7f98-4364-a6f3-0f9ec9cda683</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_56.xml</path>
+  <guid>be0195f8-0468-4bb3-bb39-39d5ee75d649</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_57.xml</path>
+  <guid>91e687e7-bc11-448f-b7ce-1c79deb1022a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_58.xml</path>
+  <guid>5ce4f442-a1aa-4f90-87cf-79a73118eda9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_59.xml</path>
+  <guid>79ac3fa3-45db-4f9c-8038-7442e015c67b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_60.xml</path>
+  <guid>52d997a0-3256-44cf-a04e-92bc3f6d8800</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_61.xml</path>
+  <guid>e5ee7c9a-4d5a-4518-b730-8c4302f034bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_62.xml</path>
+  <guid>6713265d-df2b-4a23-bc2f-c8d95c56c933</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_63.xml</path>
+  <guid>d5c227df-c379-48a1-b2d6-795da4240b1a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_64.xml</path>
+  <guid>95dfe686-f3d3-4aff-a14d-ad7d952203f7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_65.xml</path>
+  <guid>6ff60ba9-616d-490e-9e3d-2b73633a146b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_66.xml</path>
+  <guid>8b28893b-ab74-4de6-a0fe-0fd71332b0fe</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_67.xml</path>
+  <guid>9f2468f2-bb31-4239-b278-b5671a0eb6d5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_68.xml</path>
+  <guid>7052f4f4-6f23-4bb4-b33c-c0d456847d74</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_69.xml</path>
+  <guid>024ecf51-eb36-458d-80b5-3ded92ffc8dd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_70.xml</path>
+  <guid>e1c6d0d0-7711-4f6c-9dbe-0467a0eb4e02</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_71.xml</path>
+  <guid>bb50d471-57fe-4ec8-8e79-d04212f08cf1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_72.xml</path>
+  <guid>0c600e18-c615-48dc-b03e-91449abfbcdc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_73.xml</path>
+  <guid>295242c3-48af-40b6-bac1-cde1b7f58565</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_74.xml</path>
+  <guid>ff8764d8-6610-456b-9345-2ade8d8ed5ae</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_75.xml</path>
+  <guid>896a3207-046d-410a-8fce-aebb3f328b8b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_76.xml</path>
+  <guid>31e61918-caf6-4ab4-87db-b646b5bad766</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_77.xml</path>
+  <guid>0530a147-b2d1-4725-9980-b2a2d8ef38ec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_78.xml</path>
+  <guid>862bf7f8-b2d3-4eae-bd91-7d6164cc41a3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_79.xml</path>
+  <guid>84b57346-b345-4fc7-a6e3-d9908d0390b4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_80.xml</path>
+  <guid>5c7f6600-6cd0-4fc9-9762-d17be52f8661</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_81.xml</path>
+  <guid>4ab0937b-6ac9-4682-8107-26aa71cf3ffe</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_82.xml</path>
+  <guid>460d4188-8b33-42eb-af60-f3359394ae83</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_83.xml</path>
+  <guid>32e28fc5-69c5-4249-9102-3b444bf6088a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_84.xml</path>
+  <guid>49ffc6f2-4e6d-46da-8c9a-4cd54bd03aea</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_85.xml</path>
+  <guid>3b98f764-ffb1-41cc-a10a-38fd2f9b83f2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_86.xml</path>
+  <guid>973a5f73-e8d0-42ef-a0e8-17650ec222b4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_87.xml</path>
+  <guid>6fcf7476-6044-471b-9665-936fc4ae21bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_88.xml</path>
+  <guid>0f1a4062-ade6-40f9-837c-2d0d834050e3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_89.xml</path>
+  <guid>ad758c8f-ac18-419a-ac91-c671da865da8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_90.xml</path>
+  <guid>2f0a0807-dc96-4abd-869b-98df73d39157</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_91.xml</path>
+  <guid>efc6844f-26f2-49a5-8d66-4576bb2da175</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_92.xml</path>
+  <guid>abff7289-ab27-4bcc-b7fa-0b4427cc7520</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_93.xml</path>
+  <guid>38fcbd0c-8ca7-4e34-8af0-c00cdbbbcf4a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_94.xml</path>
+  <guid>5a16e77f-0d84-49f4-a8dd-c61f8ce58536</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_95.xml</path>
+  <guid>7fec0df5-5347-4b65-9e9d-5f7d267fed99</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_96.xml</path>
+  <guid>01b4c7ac-f3bd-4dc9-a73c-de9163fee3be</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_97.xml</path>
+  <guid>ea4ee574-5b00-499e-9641-90df99c6ef5a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_98.xml</path>
+  <guid>884b1eed-2286-44f8-8365-51f5eb109dc6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_99.xml</path>
+  <guid>e9426a1f-7f65-4418-ba8f-af8c85c879a2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_100.xml</path>
+  <guid>c5d5e073-6d0f-4908-8cd8-e2128e9c2f8e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_101.xml</path>
+  <guid>0e825b4d-13e4-4c17-bdf7-623b90565846</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_102.xml</path>
+  <guid>bc8b973b-9ba6-4634-864e-6f74b1562c3a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_103.xml</path>
+  <guid>f49aaf8a-17d6-4ae6-a993-10f064562d50</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_104.xml</path>
+  <guid>971f3bad-e311-4ffd-9551-b3692d824209</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_105.xml</path>
+  <guid>cab03993-ddb2-404e-85fe-c14a1301e9b1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_106.xml</path>
+  <guid>3ac791d9-e355-4dc8-af24-6e63f4b24f7c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_107.xml</path>
+  <guid>510d3aaa-c8b9-412e-b36a-d29ea68d7647</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_108.xml</path>
+  <guid>8ea731a9-43da-476c-bcaa-8e126c701795</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_109.xml</path>
+  <guid>63bc86c4-c28a-4b4d-bb2e-047c4645cf5c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_110.xml</path>
+  <guid>d4b50449-4583-4d31-8890-2b8f72499c34</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_111.xml</path>
+  <guid>c5024817-cc3b-423e-9ed5-45ef0a4f7cf1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_112.xml</path>
+  <guid>d6e4a116-cbec-4c1d-a2b5-b4889e070c8a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_113.xml</path>
+  <guid>a40b065d-e15a-4ee4-baf8-dd28a089a77a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_114.xml</path>
+  <guid>87a9f156-6b36-451a-928b-b2995dc33b3f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_115.xml</path>
+  <guid>22d3079b-d36b-4937-8ccc-0f981a95bdac</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_116.xml</path>
+  <guid>5cf26b54-c8c8-4cec-8322-6014165e2154</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_117.xml</path>
+  <guid>64527ea5-50f9-448c-8a20-c28083e50128</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_118.xml</path>
+  <guid>5f829fca-9ccb-49f0-b8bd-14de5cb5e847</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_119.xml</path>
+  <guid>7595c1a1-229b-48b7-b445-edfd0531af98</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_120.xml</path>
+  <guid>1a5df50d-32bf-4c75-9767-fc73a2dd1040</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_121.xml</path>
+  <guid>5cdcaf59-9a62-414f-bf28-adb2690456d1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_122.xml</path>
+  <guid>ac22ebb4-39ce-4970-bd0a-875b1b0cf91f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_123.xml</path>
+  <guid>d063c090-c352-42e8-b063-f320e911de25</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_124.xml</path>
+  <guid>460b551c-90a0-41f3-93c3-813318f74934</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_125.xml</path>
+  <guid>efaea144-4e9e-4c7f-8b03-62a6e24ac546</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_126.xml</path>
+  <guid>3c197037-4d69-4815-a2f8-39a9c61aba07</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_127.xml</path>
+  <guid>c887a879-7294-45fb-87fa-2c560abf2f24</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_128.xml</path>
+  <guid>29553860-cabf-4d10-be67-6059fc2e20e2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_129.xml</path>
+  <guid>402a26be-290f-458d-8b05-0134e7ff45df</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_130.xml</path>
+  <guid>62e6853a-fe6d-45f8-a771-0fd516b83d5e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_131.xml</path>
+  <guid>7b4da24f-5f30-4bed-a424-eaa6b2b1125c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_132.xml</path>
+  <guid>11c09f44-b31a-48b7-b168-6e71b74cd2a4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_133.xml</path>
+  <guid>d22b9a7b-3e18-463c-8cb5-67bbecac86e3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_134.xml</path>
+  <guid>5755a950-5496-465b-84f2-fcf45722134e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_135.xml</path>
+  <guid>3942eb75-197e-47da-b439-2e11f83417a1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_136.xml</path>
+  <guid>d87e058b-7089-4b52-8ae3-903279beeb61</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_137.xml</path>
+  <guid>100d813a-e99b-40a5-8e25-5ae0157e2535</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_138.xml</path>
+  <guid>51e40dd8-1ecd-475f-9557-47f9f0e39e22</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_139.xml</path>
+  <guid>482cffd0-45d0-4aae-bcae-82c44ed67954</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_140.xml</path>
+  <guid>62d3dad7-b00c-40f7-9546-45812d90e547</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_141.xml</path>
+  <guid>5418b7e0-5a87-41fe-b02f-76a393e5a088</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_142.xml</path>
+  <guid>89269075-e80b-4cbd-8142-24590518b33e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_143.xml</path>
+  <guid>026d5255-d535-4038-a72d-05a0c124f8b7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_144.xml</path>
+  <guid>6d95f507-34f7-46fc-b4b2-7ff0bc35919d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_145.xml</path>
+  <guid>d5273749-1d06-4b6b-8037-2b3aa3351fdd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_146.xml</path>
+  <guid>dd55ecf9-03b0-4050-9c74-efa8b76fd572</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_147.xml</path>
+  <guid>91959ae0-792a-4c2c-96c4-a0ddb8d0804b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_148.xml</path>
+  <guid>47ed6dae-dbe6-4637-b5b6-779bd7c4ae25</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_149.xml</path>
+  <guid>b3477e18-6706-47b2-aadf-6ab522f6e419</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_150.xml</path>
+  <guid>b9b16b2a-dca7-471f-8866-f01081e636d1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_151.xml</path>
+  <guid>5d7c60ac-80ee-443f-ac50-7c07aa7523bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_152.xml</path>
+  <guid>ce6041a9-ad72-4f1f-bfc6-faeef38e25dc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_153.xml</path>
+  <guid>8527d16e-3631-418f-a51a-7397e37da15f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_154.xml</path>
+  <guid>1ac627a4-720b-42cf-b213-ca12cee99d41</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_155.xml</path>
+  <guid>0d7b99be-7014-4e30-9613-c16851a823e5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_156.xml</path>
+  <guid>2b1a69c0-9fcf-4be0-8303-07c0df5db0ee</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_157.xml</path>
+  <guid>a6e1a154-908f-4882-91fb-a0fcc53d7fef</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_158.xml</path>
+  <guid>a9d7f9c7-3d71-43e5-9049-9b49d5c66ee6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_159.xml</path>
+  <guid>7b2a54c5-e561-453a-a70f-d4a8ebc369dd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_160.xml</path>
+  <guid>7c6f8af6-f5ca-4012-ae65-f887b5a7ed52</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_161.xml</path>
+  <guid>ccfd9664-c8bc-4cf2-9b6f-9a39bf6894b8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_162.xml</path>
+  <guid>c369f9a9-d251-4f6a-b0a9-b50d123befcc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_163.xml</path>
+  <guid>39928981-023a-4572-8a13-3098bafd50a0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_164.xml</path>
+  <guid>6256146a-02de-440c-a531-2960cb1b89df</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_165.xml</path>
+  <guid>acd92f2e-a7ba-4a2c-af95-2d43fd3a2480</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_166.xml</path>
+  <guid>680a0e8a-2e7e-4f44-acdc-a07d5a49d901</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_167.xml</path>
+  <guid>b7cd54e8-6f21-4303-8f13-6279f91935d6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_168.xml</path>
+  <guid>9f81959c-b796-48c5-aabc-275d8720b179</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_169.xml</path>
+  <guid>506794fc-af14-41d7-bb2a-00fa6cef3368</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_170.xml</path>
+  <guid>3aee354b-d470-410a-852c-d2a9c3008b23</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_171.xml</path>
+  <guid>a183f0b3-0335-4de6-8cb0-85a02736480e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_172.xml</path>
+  <guid>0dcdc36b-2f27-4732-954c-e75fb143f865</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_173.xml</path>
+  <guid>23912deb-34db-4200-9c9d-bd03be3b0aa3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_174.xml</path>
+  <guid>28908ea1-1d89-46f9-9884-ea309d7aa0f6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_175.xml</path>
+  <guid>f496d887-cab5-4aec-9457-76f70ec9b88e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_176.xml</path>
+  <guid>ce2cb336-d3b1-4dd7-ab4c-d8a438564dfa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_177.xml</path>
+  <guid>8ffc98d2-cb05-43c5-b471-13f872fa90fc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_178.xml</path>
+  <guid>4dfb93fa-ed67-412a-9633-7ecd7d55c5a6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_179.xml</path>
+  <guid>1ad469ed-d978-4c24-b0b3-06d71a1bdad2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_180.xml</path>
+  <guid>e73cd46a-bb62-4182-9853-e6b291e4555d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_181.xml</path>
+  <guid>05a82517-c27d-4058-80f9-4da68d193611</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_182.xml</path>
+  <guid>00b90c25-3f5a-4cd7-af83-bce765ef7074</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_183.xml</path>
+  <guid>d72563fb-41d3-4fec-83c1-674efc4d2547</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_184.xml</path>
+  <guid>f3c83d5d-0af2-4944-9392-6c3a7677d520</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_185.xml</path>
+  <guid>fca22b10-4358-4b47-8fba-009ed110c8f1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_186.xml</path>
+  <guid>91b0b01d-44f4-4d62-8d96-cd1b49ba7aee</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_187.xml</path>
+  <guid>0a97611c-e361-42c3-9f7a-9512430ae495</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_188.xml</path>
+  <guid>6dc815f8-663f-424c-8baa-7aa88c825b62</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_189.xml</path>
+  <guid>9421afe2-852f-4747-ac75-a8836d482592</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_190.xml</path>
+  <guid>173c9d7d-de63-45ab-98c5-1c6278837d1e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_191.xml</path>
+  <guid>0727369a-7831-4c14-b6c9-1706307a2419</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_192.xml</path>
+  <guid>617cbe70-5dd9-48dc-a405-e0c37bc31a95</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_193.xml</path>
+  <guid>bbf16149-504d-49c3-89e3-f3e370817d45</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_194.xml</path>
+  <guid>4cab7c23-0edc-4419-9dee-0ac62f2de2ec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_195.xml</path>
+  <guid>ad79bf1e-ab6f-44f1-bc86-2d010b928b90</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_196.xml</path>
+  <guid>50b5345e-4755-4bda-b57f-56d61f782ee0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_197.xml</path>
+  <guid>faa6afcc-138e-45f2-9e54-c2bbe7b1abb3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_198.xml</path>
+  <guid>2cdfafe6-9f41-4d7d-a450-5b1978a4de55</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_199.xml</path>
+  <guid>44cf05aa-37b5-40aa-b68e-574673047ada</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_200.xml</path>
+  <guid>49660d2f-06ff-43e2-90ea-756af0e37ce3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_201.xml</path>
+  <guid>e7628b33-e650-4429-a214-6ea080c5e6fb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_202.xml</path>
+  <guid>38c5b55a-1c25-4d92-98a4-c79e29670036</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_203.xml</path>
+  <guid>af10dbb3-69f4-4dfc-8be3-cd79b79319c5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_204.xml</path>
+  <guid>c607a239-724f-421a-9abb-fc34806d37a8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_205.xml</path>
+  <guid>41545b07-7003-4bf4-8f6f-c2cfd5faba8c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_206.xml</path>
+  <guid>661d24f5-b6dd-4796-96d8-b8c6368589cf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_207.xml</path>
+  <guid>3e187891-74bb-4dad-ae02-d48c7d2ef72e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_208.xml</path>
+  <guid>4adc97ad-458c-4aa7-b07a-6a9e2ac1de11</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_209.xml</path>
+  <guid>0b24d462-fc2b-4631-a71d-143c5df22fa0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_210.xml</path>
+  <guid>dd7cdf93-3381-461c-ab72-c845f7c67edf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_211.xml</path>
+  <guid>96dea5da-e1fd-4d35-915d-db1effd74c2b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_212.xml</path>
+  <guid>063115b0-3a89-4063-bf47-d893f36f2be0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_213.xml</path>
+  <guid>c723a39e-886f-445c-a1fe-7c55d3054d07</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_214.xml</path>
+  <guid>3dc5715b-9c2b-4879-92c7-9b0bc323e50e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_215.xml</path>
+  <guid>2fa8ebf0-8ed7-4b8d-b64b-b69922bdfba3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_216.xml</path>
+  <guid>fed8a4ff-78ce-4c45-ac00-281f277bed09</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_217.xml</path>
+  <guid>d961ed52-3e6f-4a7a-8d44-ce26fb15e330</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_218.xml</path>
+  <guid>9c866429-69a1-4b24-80d0-837fea1cbd09</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_219.xml</path>
+  <guid>4545c6ba-38e9-43c3-bb74-ddf5eaed9ef4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_220.xml</path>
+  <guid>9550337f-9f65-4cc0-bf86-1e25d48312d9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_221.xml</path>
+  <guid>c2c7414c-1dab-4d05-a9d2-ce2444b86645</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_222.xml</path>
+  <guid>b4e5ef04-cbbe-4d61-a157-f817da2770a7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_223.xml</path>
+  <guid>71f448dd-5fdb-4745-a1cd-64b1adbc3a07</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_224.xml</path>
+  <guid>db65d16f-eabd-4322-9fe4-1f36078ac8d6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_225.xml</path>
+  <guid>09876c6d-154f-4013-8d9e-6d6e5affada7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_226.xml</path>
+  <guid>97bb9d33-f738-4367-8033-0eb963c4031c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_227.xml</path>
+  <guid>88eecef6-ac6f-41f1-8689-b77c1233dab3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_228.xml</path>
+  <guid>12828630-f60d-4323-aca9-b6d28f9928aa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_229.xml</path>
+  <guid>efd0d2e7-c803-4a0b-809f-3fe97ffa9be1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_230.xml</path>
+  <guid>730207f2-1cdc-4040-bf34-2a5259a54a37</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_231.xml</path>
+  <guid>6d7d8bd2-dc95-43a2-a2d8-cda6d222d661</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_232.xml</path>
+  <guid>4151a100-b4ee-4b98-896c-4a4e3ad00af3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_233.xml</path>
+  <guid>72c8e83d-d621-4ffb-b2ae-400bb41fbd10</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_234.xml</path>
+  <guid>04823c80-8693-40fe-88d5-f7c95868ff72</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_235.xml</path>
+  <guid>fc7492f7-7128-4505-88e0-911d3ce599f1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_236.xml</path>
+  <guid>dc1d4b79-0052-4af5-a853-01b4960b29d4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_237.xml</path>
+  <guid>c9ee435a-9d34-4c2b-b7ed-ed16db1820bb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_238.xml</path>
+  <guid>34d2dd03-23ae-419b-8503-a26b9c8a1900</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_239.xml</path>
+  <guid>30b46d77-ee6c-4050-914d-95c6be57fcc3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_240.xml</path>
+  <guid>89b453c3-5c55-40fe-acc6-7aaf5077e902</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_241.xml</path>
+  <guid>21b199b0-ba88-44e4-9468-87ecb893ccfb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_242.xml</path>
+  <guid>80f40ffe-e97c-4678-be3a-2980e672eb89</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_243.xml</path>
+  <guid>44ca5628-4ee6-494a-8fbb-84883bc0f2a3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_244.xml</path>
+  <guid>7bcb3651-823a-498e-b0d0-c345aedd4d7e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_245.xml</path>
+  <guid>3c634824-354b-4db6-b487-db34c4e84c0b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_246.xml</path>
+  <guid>2d4b562d-99f0-4d59-91ee-f822d5499a5c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_247.xml</path>
+  <guid>8bf56491-07ef-44d5-9afb-285ec3128200</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_248.xml</path>
+  <guid>dd2dea2e-e840-4aca-b699-cbdd9e916859</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_249.xml</path>
+  <guid>a34969c6-9622-47a1-a0d4-cce2f878a6b1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_250.xml</path>
+  <guid>c3ff4009-ed4a-4367-b2b4-05665cfcfe3d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_251.xml</path>
+  <guid>05fff351-2feb-4931-89e2-ec0bf2d061de</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_252.xml</path>
+  <guid>fe5f26b1-c03a-43dd-a0dd-0acc307c3b58</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_253.xml</path>
+  <guid>38b4ff74-21eb-446a-bb55-0f8bdae63022</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_254.xml</path>
+  <guid>f7d64bd9-c0cd-4fc5-9e75-189f31515b1d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_255.xml</path>
+  <guid>3ed49438-88e4-4df9-95d9-222947354f74</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_256.xml</path>
+  <guid>079b5ce9-b930-405a-9d15-f64f74a2e3fc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_257.xml</path>
+  <guid>94ce4cf1-a619-4257-ae58-a67830300596</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_258.xml</path>
+  <guid>2078a8fd-7215-4b2a-9373-080f136c587f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_259.xml</path>
+  <guid>07ac5202-62a0-424b-aee2-afbf19854e29</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_260.xml</path>
+  <guid>7ad93ea3-6081-4a0a-823a-a76440e07774</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_261.xml</path>
+  <guid>da221620-bf2a-4af8-8e50-b0057bdfc026</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_262.xml</path>
+  <guid>0e5fb1a0-7a4f-4a78-a241-4f2534c9d02c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_263.xml</path>
+  <guid>441219af-3fea-4759-a60f-0d879dc8afcb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_264.xml</path>
+  <guid>6a50e59d-beb5-4fee-b68f-fc523182ce97</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_265.xml</path>
+  <guid>a2838c65-519c-443c-bc56-cde6c8f7a414</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_266.xml</path>
+  <guid>ed81d663-7642-4ae2-9080-3da4acbab5d1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_267.xml</path>
+  <guid>9c919cdb-df6d-4256-bad6-ff70af0fe1b2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_268.xml</path>
+  <guid>59552b5f-d045-46a5-a4d7-fbe4d2ac52ff</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_269.xml</path>
+  <guid>defd2545-a12b-44f2-b1bc-ffb674e25f23</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_270.xml</path>
+  <guid>c9a79a48-e6dc-4a27-8cfe-3d86b1bbf9f7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_271.xml</path>
+  <guid>dd10edd7-00e4-439f-a93f-ccbbddcb903a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_272.xml</path>
+  <guid>574d1c90-668a-48c5-8ab7-2fdc6d8b72e9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_273.xml</path>
+  <guid>0eafa25d-1562-4536-b81d-d56e889394de</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_274.xml</path>
+  <guid>5f6f9b3d-64f2-4c2d-b4e3-72bb761f311e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_275.xml</path>
+  <guid>0a5765f5-defd-4f20-a592-45e41ab514b8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_276.xml</path>
+  <guid>df7e776d-761a-49ea-9f5b-00116a5f2b5b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_277.xml</path>
+  <guid>8ca1ca86-c9a2-4b2d-ae6d-0f8c28a9b8f8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_278.xml</path>
+  <guid>afcc0c04-4f1a-4e06-98ae-74393fa9bb1a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_279.xml</path>
+  <guid>915883ad-e39c-49d3-a646-b9b88c9b6c83</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_280.xml</path>
+  <guid>a2f909fb-b87f-443f-99c8-4d0e1a89f04b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_281.xml</path>
+  <guid>3dc50d71-ed7d-4cd6-86e3-7009c1d02b4a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_282.xml</path>
+  <guid>1816215f-f204-4051-8b46-309a62049ce7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_283.xml</path>
+  <guid>efe5bf80-a2ed-4eed-9cfe-39fff9ebd544</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_284.xml</path>
+  <guid>c27964a8-4d23-4aa6-ba11-1ab9c1784554</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_285.xml</path>
+  <guid>be170858-500d-4e0b-b46e-35ca295e0f08</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_286.xml</path>
+  <guid>a9e8f767-1dad-4709-993b-565d6d38f550</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_287.xml</path>
+  <guid>ffcb00fd-07c9-4328-ab1c-c70bc095b3a3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_288.xml</path>
+  <guid>bef1200e-6b43-4420-a909-d59b227fdd43</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_289.xml</path>
+  <guid>99af8f6b-1b74-443e-a05f-361393073b45</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_290.xml</path>
+  <guid>69514cc5-49cd-4209-bbfc-16b45f3f6cd5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_291.xml</path>
+  <guid>8f2d29f2-56f1-4b67-ac50-8caf1a83dd9e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_292.xml</path>
+  <guid>0e27493e-c228-4fb0-9a78-744810610416</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_293.xml</path>
+  <guid>af913725-d813-42c4-bc2d-153c1264b8d6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_294.xml</path>
+  <guid>5c894236-0220-4c85-bf77-940c54e96c6e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_295.xml</path>
+  <guid>7ae0049a-06e5-49c1-9dc6-7f0919d7da9e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_296.xml</path>
+  <guid>76fd72ad-9033-40af-8b3b-02390ef3b262</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_297.xml</path>
+  <guid>91be6141-4ebb-4464-8e05-52302c22fe37</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_298.xml</path>
+  <guid>8e569f1b-3f14-4edc-b530-17bd0753062d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_299.xml</path>
+  <guid>8dc8a6fa-3377-4827-9d96-fc0e65e1bb33</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_300.xml</path>
+  <guid>59c66a15-cc35-4f20-adb0-4ec210c612c1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_301.xml</path>
+  <guid>dfb08038-3c05-4cc1-84eb-81f1358fb1dc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_302.xml</path>
+  <guid>0516399a-8186-4e8b-ad24-14ac35635867</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_303.xml</path>
+  <guid>20296494-700a-47b2-8cf2-94bd346563cc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_304.xml</path>
+  <guid>47f7abc2-3dba-46af-ae8b-d8b5d1bd9416</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_305.xml</path>
+  <guid>1c446178-2c8b-4862-acb7-fe9b87d26075</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_306.xml</path>
+  <guid>a384884f-9c38-49ad-ae0b-8e3c41e4278d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_307.xml</path>
+  <guid>cde8d4d4-67b8-418d-9766-e5a58229d96c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_308.xml</path>
+  <guid>fed0e81e-df42-4000-91bc-6acefdbb384c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_309.xml</path>
+  <guid>efa04681-78ca-43bc-a146-790d4e5e9989</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_310.xml</path>
+  <guid>40379743-24b9-4859-b546-35fbfe75a464</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_311.xml</path>
+  <guid>38f9c16a-d23b-409f-a28a-9d6341fd22e5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_312.xml</path>
+  <guid>c836c8a8-f231-4bce-8524-674c1f68cd2b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_313.xml</path>
+  <guid>b3feda4a-1877-413a-ae85-0bc9bc46c325</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_314.xml</path>
+  <guid>80e34383-1ac8-41b6-bf98-47d24979abfa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_315.xml</path>
+  <guid>36b3e617-83ba-49e3-9a7a-46e274fc1c00</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_316.xml</path>
+  <guid>2d3fbf02-da31-452c-8917-7c145eee8deb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_317.xml</path>
+  <guid>73114ba9-3986-40b3-8460-f68116d4e05f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_318.xml</path>
+  <guid>55d59a0f-9cc2-4d97-b180-eb580172c752</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_319.xml</path>
+  <guid>8e426820-c8fa-41f3-81ae-f8f049367aed</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_320.xml</path>
+  <guid>c926d123-dc6b-4997-9fd6-9f574535c695</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_321.xml</path>
+  <guid>30f217f3-80b7-497f-91a2-f934dcb03b5a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_322.xml</path>
+  <guid>769f1d7f-e862-4018-abd5-56b069ce462b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_323.xml</path>
+  <guid>1308cc9d-6258-40ae-b3cb-40f28603dce1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_324.xml</path>
+  <guid>a1d2de90-b6dd-4e8d-af72-b64d4e4b4476</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_325.xml</path>
+  <guid>27ed7902-f7c8-404e-8c57-a01350ad15d2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_326.xml</path>
+  <guid>c66c0534-ca72-4601-abcc-e139e8ad1222</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_327.xml</path>
+  <guid>9697fe85-c9a0-4638-9515-998783a131d3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_328.xml</path>
+  <guid>e39f4851-7710-476a-878c-0bcd5ed77db7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_329.xml</path>
+  <guid>918be5cb-1f4a-45a7-8e66-231eda648307</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_330.xml</path>
+  <guid>a3505d84-5a50-4095-bbe2-6864a1da630d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_331.xml</path>
+  <guid>a4847c8e-5f18-48c8-ab2d-c0a6b217f4f7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_332.xml</path>
+  <guid>2fc09023-0d1e-4068-b5ca-8b344c8e41e9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_333.xml</path>
+  <guid>c09cdec8-ab2b-4330-9147-bf38b33ff208</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_334.xml</path>
+  <guid>a1c5b550-a317-499b-ad46-e75240966d43</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_335.xml</path>
+  <guid>635f3958-c6e9-46a9-9d34-22509fda728e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_336.xml</path>
+  <guid>af0d457e-884d-4b6b-8077-f1ceadea4988</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_337.xml</path>
+  <guid>4b23a810-ad86-4ab9-ba72-a13045c2fd30</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_338.xml</path>
+  <guid>7312c897-5b9e-46c8-8ca2-c83b610afc81</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_339.xml</path>
+  <guid>1dc4babf-fa92-4bd9-9a63-d6925337ec11</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_340.xml</path>
+  <guid>3fca1e99-0e61-42ac-abc0-7f7b0802c35c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_341.xml</path>
+  <guid>9f3e739b-b49a-4ccd-980b-43fb1a436b1a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_342.xml</path>
+  <guid>80cfcaf4-a8f8-44df-9291-d543d3749d4b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_343.xml</path>
+  <guid>5c856e8b-d93a-41f8-a11a-99242e2aec78</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_344.xml</path>
+  <guid>72bf1273-40d0-4b20-b5d2-123e6342074e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_345.xml</path>
+  <guid>5eb13446-305b-4a0d-9e95-bc1a1057ccfd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_346.xml</path>
+  <guid>8084ddf3-c861-4701-9045-44872b847242</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_347.xml</path>
+  <guid>537d8319-673f-4028-9ce1-ebc374a914ad</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_348.xml</path>
+  <guid>40f66ccd-5c07-4192-b3fe-eee6e80e2a94</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_349.xml</path>
+  <guid>c255e9ba-afd1-44e9-a98d-cc10f513d19e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_350.xml</path>
+  <guid>b5d08853-f54e-401d-86ca-b3fb410c986c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_351.xml</path>
+  <guid>425156de-0dd9-4536-827e-048e56d70edf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_352.xml</path>
+  <guid>14a010ec-fdfd-4639-b69f-cf5e03e4f878</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_353.xml</path>
+  <guid>1e0605e0-5126-4ea4-9ce8-861ca367f66a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_354.xml</path>
+  <guid>1b38bc7b-8b3a-4aea-a939-ca4e30391728</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_355.xml</path>
+  <guid>3db45505-8d26-47f1-9c55-8a982e5c5237</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_356.xml</path>
+  <guid>1979841d-ffe4-44f6-8b05-419de2ca630c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_357.xml</path>
+  <guid>70d152fd-869a-4c0c-841e-298561aae75e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_358.xml</path>
+  <guid>5e2b7ab2-dba4-4c8c-b0a2-24ad1987adde</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_359.xml</path>
+  <guid>885ba4c0-16b4-437a-9c74-3376838d723a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_360.xml</path>
+  <guid>a66fe70e-11ce-4d9f-80b5-ce0ba6a4c1e7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_361.xml</path>
+  <guid>18316276-62b2-4cad-932f-8521b7ea65e1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_362.xml</path>
+  <guid>74f25397-4088-46f5-8ab1-70033a901fc7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_363.xml</path>
+  <guid>ff5c19ef-fb31-4499-89e3-4e886b758256</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_364.xml</path>
+  <guid>d24c201f-8d43-4318-9d3a-682a09d34806</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_365.xml</path>
+  <guid>ca7e35b9-43eb-4b39-b7e5-f74cc019a2c8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_366.xml</path>
+  <guid>8387a4a4-38d3-403b-863f-3a073a06199b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_367.xml</path>
+  <guid>8ece81ae-cb21-4645-adaf-25070f2c9460</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_368.xml</path>
+  <guid>45b26ebe-4860-46fc-82a4-4f399ace5b51</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_369.xml</path>
+  <guid>d7def5f1-d54a-4410-bff0-d57137db667d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_370.xml</path>
+  <guid>348b35d5-c661-4eb6-a467-f915665947fd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_371.xml</path>
+  <guid>346cbebd-f3a6-452d-95a8-49fc37a5e1bb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_372.xml</path>
+  <guid>d9bf09dd-7b59-4580-8cd9-79d00c94dbc5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_373.xml</path>
+  <guid>345f118f-88d0-44b2-bea7-a87e441a7d4b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_374.xml</path>
+  <guid>001d3054-4923-45ea-a7e4-c1d9f1e6daeb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_375.xml</path>
+  <guid>3efda0a9-eea5-423f-9315-046747c0a71e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_376.xml</path>
+  <guid>9787c50e-b03a-4c46-8a91-b1a56a9e41ff</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_377.xml</path>
+  <guid>9520e891-ff29-4ec9-a39c-6c6b71cc636d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_378.xml</path>
+  <guid>1761c5e2-163e-4b06-9686-ab343a75c0c7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_379.xml</path>
+  <guid>215740ff-45ff-487a-ad55-4d98b5c39130</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_380.xml</path>
+  <guid>f9b8ce8d-36d6-47af-b724-2b020cfcafe4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_381.xml</path>
+  <guid>e67b3c63-216a-4173-839b-b0be9aa43d03</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_382.xml</path>
+  <guid>64b694da-340b-4f9e-ba42-9c909d2e01dc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_383.xml</path>
+  <guid>5e2c351b-f364-4eee-9178-1e496502e9f6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_384.xml</path>
+  <guid>0ae1df21-5d3e-48d3-b6ac-f885cffd3b90</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_385.xml</path>
+  <guid>22d2ce42-c8da-47a2-a068-ab7f4723b9ad</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_386.xml</path>
+  <guid>b5a62363-eaa9-4f0d-bbbf-7cb7b0d3bd42</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_387.xml</path>
+  <guid>1c81d61f-0716-40f8-885d-44ff1a3651f5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_388.xml</path>
+  <guid>98ea8cff-ce6a-413f-9178-6d4a7e7057f9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_389.xml</path>
+  <guid>ae14614f-72c0-4cb8-ac49-7a5e039ec616</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_390.xml</path>
+  <guid>27949bc9-b86a-473e-8b64-c652e006460c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_391.xml</path>
+  <guid>681c6274-7b0b-48e3-91b8-01bad60c50ca</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_392.xml</path>
+  <guid>582df967-527b-49a2-b469-596502ac615a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_393.xml</path>
+  <guid>ff566156-2a64-45fe-9d65-884d574da6a8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_394.xml</path>
+  <guid>1aaee730-e391-4292-9b82-cd8d62206e49</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_395.xml</path>
+  <guid>e769d2d6-e239-47bf-8937-fd4ba1e409de</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_396.xml</path>
+  <guid>d9cbde09-4a45-42d2-b7fc-bc4762a4388f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_397.xml</path>
+  <guid>7f974707-fabb-4240-9690-e3173944fccf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_398.xml</path>
+  <guid>91ea647f-ba3f-44d1-b0c2-c3a20c2784f4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_399.xml</path>
+  <guid>a0627199-953c-4111-ade3-8487b2bc6a78</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_400.xml</path>
+  <guid>600f2126-4c29-4f8d-b1e2-f639f4931279</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_401.xml</path>
+  <guid>6a12130a-6969-4e7f-8a31-67d6b6a3c56c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_402.xml</path>
+  <guid>40de4444-366d-4cd4-bf12-58f7a6acf190</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_403.xml</path>
+  <guid>642c149b-284c-4099-b523-1cb388384a8f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_404.xml</path>
+  <guid>c87e7c2e-18cd-48b9-ade4-35c35195ced7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_405.xml</path>
+  <guid>6187c918-ec7d-42c8-93ce-b770ca8b5504</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_406.xml</path>
+  <guid>8f84c0b0-d616-4973-8064-9a5091b1d389</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_407.xml</path>
+  <guid>fe159e02-3ade-4e9e-a70d-8169f0eba55a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_408.xml</path>
+  <guid>1cd642f7-1acd-42b9-8940-d06f8931071c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_409.xml</path>
+  <guid>33ac6c25-1201-4826-821c-e4168998395a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_410.xml</path>
+  <guid>a84a8bbd-cea9-4930-8dc9-ac48028122af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_411.xml</path>
+  <guid>17b124ac-6045-4332-a98b-c5a817dcf123</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_412.xml</path>
+  <guid>2650cf69-1f06-48f8-b21e-5f0bd27370b8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_413.xml</path>
+  <guid>72718d86-56cc-4075-bdd7-bae9891fd481</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_414.xml</path>
+  <guid>f10d56cb-3d68-4fa4-a55d-45ecb1051917</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_415.xml</path>
+  <guid>c0ed0299-b9a0-4598-893a-462e037e8828</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_416.xml</path>
+  <guid>3288c40f-8ef9-4fdb-8fa4-2a78ea6c61af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_417.xml</path>
+  <guid>e1673c24-ea84-4b84-81b0-ab2ed23e6114</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_418.xml</path>
+  <guid>f20d8b1e-442c-4c26-96e6-e4d63a3b200e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_419.xml</path>
+  <guid>85129dc1-8fb6-4cb2-a954-5a14d604e8b8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_420.xml</path>
+  <guid>0a554e83-9037-4083-9906-4e89162fe014</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_421.xml</path>
+  <guid>9ebc6826-c2b5-4538-ab4f-fe3f8d208b4a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_422.xml</path>
+  <guid>04f9a7c4-4fec-42b3-a723-298d2e08ef20</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_423.xml</path>
+  <guid>a71d0972-12bc-4f75-9f4e-13daebc768d6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_424.xml</path>
+  <guid>e503052d-51f3-46ab-8625-e19849e36ffa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_425.xml</path>
+  <guid>d4a0523e-7c48-4fd4-985c-d732db4c5a4a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_426.xml</path>
+  <guid>fc38440b-1c1d-43a5-bc63-27347bc2d3e8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_427.xml</path>
+  <guid>43b3972e-e007-4182-938c-5d49dc713e5b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_428.xml</path>
+  <guid>d3124455-3c76-4a34-b95f-422db3887651</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_429.xml</path>
+  <guid>04db22e6-5402-4165-94a2-330a6150b492</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_430.xml</path>
+  <guid>fa42cb79-fdbe-431c-ac24-a7da757e389d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_431.xml</path>
+  <guid>30f8d739-7520-4b21-b763-83fa7f038820</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_432.xml</path>
+  <guid>5c7a1c2d-bd76-4b21-9e29-ebf806e39fa1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_433.xml</path>
+  <guid>bfbca1b5-7368-4306-932e-798472677de9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_434.xml</path>
+  <guid>bb957034-6b7b-4af9-8ace-d9530cb3dc6f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_435.xml</path>
+  <guid>38bc16ee-d9ef-432e-8597-93831d327fb0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_436.xml</path>
+  <guid>2c89a336-76b6-4a51-9060-9da0e0c8094f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_437.xml</path>
+  <guid>54033daf-a87a-47ef-9e58-8744588ca7d2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_438.xml</path>
+  <guid>45601eee-0cc5-46a6-ab2a-353c6ba4abd7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_439.xml</path>
+  <guid>d25b6d2e-d1ac-4d87-88d4-2229c1a497b2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_440.xml</path>
+  <guid>3afd1285-af92-4159-9d49-af50b8292595</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_441.xml</path>
+  <guid>faf939aa-ad66-4c86-8857-8875d03043a2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_442.xml</path>
+  <guid>816e0a10-a102-4c78-b610-1c607c7d33ba</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_443.xml</path>
+  <guid>a96248b5-4214-40fa-9d9b-5184f968b188</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_444.xml</path>
+  <guid>df48eb4d-e2bb-40e5-b630-4be0c82ac91c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_445.xml</path>
+  <guid>fed47071-ea32-4cab-97cd-9c0c1abc2aaf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_446.xml</path>
+  <guid>2fe9a001-bee7-4adb-9513-9b8f3ddad2ed</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_447.xml</path>
+  <guid>6822248d-5db1-49a1-a7aa-12d7dbf59b78</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_448.xml</path>
+  <guid>44de086a-676b-4251-b56a-8941df43a416</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_449.xml</path>
+  <guid>493f9f1e-484c-4d5b-aa73-b8e55f84d597</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_450.xml</path>
+  <guid>9b8055bd-3bd1-4d2c-a5d8-40f3de96c77d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_451.xml</path>
+  <guid>b4368b8d-9c8a-4d3a-859e-d7e7d27844e7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_452.xml</path>
+  <guid>8fe3aa48-75e1-4e23-b07f-4b91fcb2d8f9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_453.xml</path>
+  <guid>dcd1cbe4-74d8-4a12-8f85-bcf31dfe2db8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_454.xml</path>
+  <guid>b8354a20-ce92-48a3-9432-96d1dfd80c49</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_455.xml</path>
+  <guid>92be1e13-f69d-41b2-8eda-8de79f739a77</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_456.xml</path>
+  <guid>90b378f9-3ade-4edf-9d6d-cfa4417ba0b7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_457.xml</path>
+  <guid>f596f3fd-6c1b-4587-aac4-4f12c20e4083</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_458.xml</path>
+  <guid>e36f01e5-a97f-4494-a00a-b26f4b32fbd5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_459.xml</path>
+  <guid>7affd6ca-e577-427b-9a22-73253c68f024</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_460.xml</path>
+  <guid>78739b7e-7380-4750-adf2-42d8e7976e17</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_461.xml</path>
+  <guid>25846cc7-041a-4b21-8bbf-e8f7f625480f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_462.xml</path>
+  <guid>f1a3d700-af16-4185-906e-f11cd427e5bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_463.xml</path>
+  <guid>ae8c91de-1036-42cc-966c-b44a37533cba</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_464.xml</path>
+  <guid>e02b1054-eec4-44d5-9114-977876c0d03e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_465.xml</path>
+  <guid>f9c641b5-477f-4e91-b327-78991f714408</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_466.xml</path>
+  <guid>73d567b2-dca4-4763-a63b-fe9140298d4b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_467.xml</path>
+  <guid>c105a8f9-887d-40b4-bdcc-ee871a14164c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_468.xml</path>
+  <guid>0526b3d1-7d8d-4330-a738-42c7e024e06f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_469.xml</path>
+  <guid>39235272-6f07-469c-980b-95ac30e205c9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_470.xml</path>
+  <guid>193c86e6-1395-4dae-b2bc-cece6b449e06</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_471.xml</path>
+  <guid>3f86e8a8-bdaf-40f4-b177-c8894a41f0f8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_472.xml</path>
+  <guid>99f53353-ae79-49b7-ae3e-f91b6df6acb6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_473.xml</path>
+  <guid>afc21b05-65b1-4db3-9c43-590c247cee43</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_474.xml</path>
+  <guid>189e43e6-32e2-4a5e-851e-cefa613e24e4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_475.xml</path>
+  <guid>0ab62157-84ca-414a-84e1-41c7a0c26f9f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_476.xml</path>
+  <guid>71692903-cafa-4a1b-b440-bd5c61362ab5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_477.xml</path>
+  <guid>6a168794-1dbc-469c-a0f0-9da17c05989e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_478.xml</path>
+  <guid>add312e0-0b01-4036-ac12-9eef3a78dee3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_479.xml</path>
+  <guid>ab6d5e4a-5c73-4817-8757-4658b83a37e0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_480.xml</path>
+  <guid>58b24428-7d27-430d-ae6e-61ea55e74dba</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_481.xml</path>
+  <guid>ff822145-7b3b-477f-8fed-0c5064f79b88</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_482.xml</path>
+  <guid>01e14346-e225-4edc-a5e3-3142a90dedec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_483.xml</path>
+  <guid>36d2ac9b-7fa2-4d82-bf3f-32b419377bc8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_484.xml</path>
+  <guid>5390a2f3-9372-4d6b-b712-331ddf23c6b3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_485.xml</path>
+  <guid>e3f6df09-bf6c-4d16-9d3c-db9cd286f5dd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_486.xml</path>
+  <guid>5c693a57-14b1-4e20-a5b3-e01a364944c6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_487.xml</path>
+  <guid>8f3179fc-ffa5-4888-91d5-0122ef348905</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_488.xml</path>
+  <guid>9e226cfe-df4b-46ab-aa66-a577a91d3f43</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_489.xml</path>
+  <guid>23c192e4-e908-4b6c-861c-3f5c7c315c6d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_490.xml</path>
+  <guid>e16af348-6e9a-4331-9fe0-12715c908c81</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_491.xml</path>
+  <guid>fede76f2-f3f9-4c6b-b284-3dad4f4e640e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_492.xml</path>
+  <guid>3daac606-4c6a-4ac6-9666-55598c258039</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_493.xml</path>
+  <guid>423744f3-7c9b-4258-aff8-e4c56676d1d7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_494.xml</path>
+  <guid>66a8e520-1aec-4a4d-a1cc-88734fe4f860</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_495.xml</path>
+  <guid>88b4df24-e921-4fc6-bf07-293f44b58c1e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_496.xml</path>
+  <guid>8122b488-0009-47dc-a50c-9a92baf8b881</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_497.xml</path>
+  <guid>24e31b31-b5f9-4bd7-81ac-42a4761d5ac8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_498.xml</path>
+  <guid>766bef39-2a1a-4427-ad41-867133eb22d9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_499.xml</path>
+  <guid>ebfb844e-a3b2-4fe4-a30a-53f60c948c1c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_500.xml</path>
+  <guid>21de867b-a091-4a31-a0c7-bf276ad4f768</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_501.xml</path>
+  <guid>a6e78ee2-1ab1-4787-a577-6fa17109bddd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_502.xml</path>
+  <guid>aa9c3063-db53-4924-81ae-7a9fd3f97bb8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_503.xml</path>
+  <guid>d0dba378-3f62-4e18-9b99-f3cfccc760c3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_504.xml</path>
+  <guid>cd5227be-7732-4aa8-a11e-fc62b0d1284d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_505.xml</path>
+  <guid>b6dc54ff-7d27-4f94-b11c-5ad36fb9eec9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_506.xml</path>
+  <guid>67bf55fa-9bfd-4f11-ab4a-f77765a2d54e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_507.xml</path>
+  <guid>40549b94-9027-4057-849f-c32fe8955cf5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_508.xml</path>
+  <guid>6f002b40-b915-4c7c-b41c-eb2ee8d3e3d5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_509.xml</path>
+  <guid>7fba9d9c-9fae-4f65-b52c-b95a3e521ffb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_510.xml</path>
+  <guid>0a717839-2156-4975-9305-e45ee6e97679</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_511.xml</path>
+  <guid>db46634b-3bb8-43ad-9d49-3183fe98b5e7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_512.xml</path>
+  <guid>f373d297-718d-4621-822f-1897070ec481</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_513.xml</path>
+  <guid>8fe91b1d-8fd0-46b8-a019-74e10dbfb50a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_514.xml</path>
+  <guid>5bce8184-3c62-413c-977e-e0c0f4c1016b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_515.xml</path>
+  <guid>465c5a91-042f-49c8-a560-5bd42d9648fd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_516.xml</path>
+  <guid>94f85b33-9f91-4b3a-8464-e826894d61f6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_517.xml</path>
+  <guid>5a73b0ae-c3bb-48ba-8fec-6721bbea663b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_518.xml</path>
+  <guid>d0f2c9cd-8424-4fd9-aa6a-32aee37674d9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_519.xml</path>
+  <guid>d9015453-034e-4cbf-9fe7-6a9bfd7251f7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_520.xml</path>
+  <guid>bfb7ad71-4246-45cc-a207-521f4307cd98</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_521.xml</path>
+  <guid>e764195b-0066-41a0-b892-03592b3756bf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_522.xml</path>
+  <guid>7ddd6055-979d-4ebb-8977-69c8f81d2f20</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_523.xml</path>
+  <guid>badaeae3-c573-467e-94b8-44b14035be91</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_524.xml</path>
+  <guid>4505f74a-0b48-4920-865f-62ad99222045</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_525.xml</path>
+  <guid>71fa0bdf-5498-491d-ad8b-b647990ae6ea</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_526.xml</path>
+  <guid>12353b78-3119-4e66-9fb0-e401f4ce9718</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_527.xml</path>
+  <guid>721a6d1d-ec04-4a93-83cd-5436f4a6b4e7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_528.xml</path>
+  <guid>496568df-b2f4-42b2-9a81-82e5dc5bf707</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_529.xml</path>
+  <guid>8e38e609-aff4-4509-93f6-1789770e0e05</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_530.xml</path>
+  <guid>9a64e038-d4d3-4093-acf1-e945df2305b8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_531.xml</path>
+  <guid>cd913909-1157-4952-a77e-76fe85847780</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_532.xml</path>
+  <guid>bf7e7ee6-7ef1-4f27-b90c-63555c81a583</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_533.xml</path>
+  <guid>cc93bf68-2987-49e7-a68d-748a70a70462</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_534.xml</path>
+  <guid>0093d6b0-b8ce-4967-82d5-7f32337f3142</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_535.xml</path>
+  <guid>647e3627-9bde-4f50-83d6-30634c4a22d4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_536.xml</path>
+  <guid>5ddc0187-97d0-4137-90e3-f6e71dc81bfc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_537.xml</path>
+  <guid>eef6d8eb-48a6-42ad-a5dc-90133eb20cdd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_538.xml</path>
+  <guid>f59ad6c7-1164-459f-8c0f-a26e87732809</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_539.xml</path>
+  <guid>558d86d6-8f01-499b-a9de-6e30c0c25a6d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_540.xml</path>
+  <guid>5fcc5d46-9144-425a-811c-143af7ff4999</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_541.xml</path>
+  <guid>8e09ea38-ff0d-4a2d-8f14-6961db0c9472</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_542.xml</path>
+  <guid>727ed881-201f-4224-bf72-d0dad620413c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_543.xml</path>
+  <guid>9d13a37b-41b2-4a57-844e-1885594e8386</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_544.xml</path>
+  <guid>8de8b1cd-ce3e-439c-9e25-70208a742707</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_545.xml</path>
+  <guid>b73ae75c-09de-4279-8d2d-124671c701ec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_546.xml</path>
+  <guid>509ce95e-f702-4756-8805-7ed9f16043f8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_547.xml</path>
+  <guid>3fbaa052-1226-4317-8177-dd7f56324d21</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_548.xml</path>
+  <guid>8d1d6888-8bd5-4d79-a26f-d76f33d9f96c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_549.xml</path>
+  <guid>45716449-ef8e-498f-9f96-37d859d643c4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_550.xml</path>
+  <guid>25e32b02-e37f-4fad-a588-cb291f625d7a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_551.xml</path>
+  <guid>ca2e60ea-3333-44fa-8820-27470bfa4826</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_552.xml</path>
+  <guid>ce7410fa-dbc7-4171-b908-2f39102d3655</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_553.xml</path>
+  <guid>6334720a-3043-409d-b781-9b68a689d4b8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_554.xml</path>
+  <guid>66a28c80-c834-4d47-a68b-7367574b77f4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_555.xml</path>
+  <guid>dce66c0f-2537-4612-b179-85b971d7650e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_556.xml</path>
+  <guid>baf266fd-b20f-44d6-8e66-8d7d1211a513</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_557.xml</path>
+  <guid>a6b7cd68-3868-425e-9feb-30bfbfe09f7b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_558.xml</path>
+  <guid>f9eb53ed-493e-4abe-99e0-2d0a59eeac05</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_559.xml</path>
+  <guid>de2c7ada-a2c8-4a98-9fa8-66feef808e1b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_560.xml</path>
+  <guid>3ed64c59-a903-4cdc-bd6b-96e528c87825</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_561.xml</path>
+  <guid>f93d6f2b-73d1-4842-98ce-78f3148a0caf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_562.xml</path>
+  <guid>66b56b74-88f8-4275-9ee3-3d98972826c7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_563.xml</path>
+  <guid>255a0585-f11f-4efe-ab55-0d85ac3949ec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_564.xml</path>
+  <guid>a1cbe505-f757-45fe-966f-3660dc1890f9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_565.xml</path>
+  <guid>9360b72e-73b3-4040-9dd3-6cc5e23c5555</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_566.xml</path>
+  <guid>08ea1f5e-bf73-477d-a14e-e5c581363f56</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_567.xml</path>
+  <guid>2226f1a4-1f96-4871-ac37-90cf3cca6d5c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_568.xml</path>
+  <guid>85140f4f-2943-4105-b932-5073a9217645</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_569.xml</path>
+  <guid>398df754-3f15-4487-8bd8-cc7d1a79aaae</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_570.xml</path>
+  <guid>447b4193-3789-455d-bb33-6cd1860504d7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_571.xml</path>
+  <guid>10a1b745-b99f-4578-afea-9f780b0fa210</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_572.xml</path>
+  <guid>4a75bb5c-b21e-46b9-81ff-98aa46be2c95</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_573.xml</path>
+  <guid>4f98fe6a-f5d5-467d-aef3-e8071f2ef2c9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_574.xml</path>
+  <guid>b28fff3f-a4fc-4351-a615-cf0d38ba16ca</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_575.xml</path>
+  <guid>6e766dc8-ddb5-4f12-82e9-dd9ea431d4bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_576.xml</path>
+  <guid>0d6cc102-3865-4e6a-906e-43d215cbbfe8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_577.xml</path>
+  <guid>63fbe661-c162-45c9-96fd-079e3d975f37</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_578.xml</path>
+  <guid>2bb8fa19-0437-4950-abf7-8859cf84d5f6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_579.xml</path>
+  <guid>635ca7c7-cb0d-4eed-ac49-2afe0fe4dc53</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_580.xml</path>
+  <guid>f664a283-f86e-40de-9e2e-ed487ef54c28</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_581.xml</path>
+  <guid>dfc75b8a-d76d-40c1-808f-c364e8c3d755</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_582.xml</path>
+  <guid>7225deff-3d86-4e15-8dd7-2667d5aefa5c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_583.xml</path>
+  <guid>ae630175-4ac3-4f6f-994d-94d3a3216fe5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_584.xml</path>
+  <guid>be09476b-6c78-4d5d-b937-d81562e49e1f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_585.xml</path>
+  <guid>94a95a42-7991-4cf3-a382-438de46ebca1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_586.xml</path>
+  <guid>956658ca-99b0-490e-aff0-3747d65fe6da</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_587.xml</path>
+  <guid>72b1ac5e-c87f-4c98-858a-907cbbc7e930</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_588.xml</path>
+  <guid>ac80c6c9-aea3-43b1-ae52-04109585635f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_589.xml</path>
+  <guid>763131e5-310e-4082-90a9-2f7f0b14ccc5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_590.xml</path>
+  <guid>1707f8c2-c06c-40ce-bac4-6f12241c283a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_591.xml</path>
+  <guid>2a251250-2601-4cfb-a2c2-61215f7179bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_592.xml</path>
+  <guid>7faee3fc-3ac2-4f5e-ae42-e141d55b6fa3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_593.xml</path>
+  <guid>517b78f5-8b0f-4c5b-8392-0cfdd9bb7a91</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_594.xml</path>
+  <guid>2771d675-235f-43b0-814e-71c33b38825b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_595.xml</path>
+  <guid>9a0f81b1-f67d-468a-bc62-8d9950690f32</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_596.xml</path>
+  <guid>00cf0cf0-21b6-42e8-9c8d-917fd52b26f7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_597.xml</path>
+  <guid>da7338cc-6c4c-42bd-88bc-b2a5839e042c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_598.xml</path>
+  <guid>ab6b1520-f260-4ffb-aa61-e2313afb6028</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_599.xml</path>
+  <guid>be39cd2f-8551-4fd8-8cab-fbf85b38988e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_600.xml</path>
+  <guid>f5f1ad1f-c4d1-4924-956b-f1f69ddffe70</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_601.xml</path>
+  <guid>9d04505c-f267-48b5-ae96-c096fd586faa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_602.xml</path>
+  <guid>dc2621a8-3bb3-42b0-9dbf-e47774606c50</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_603.xml</path>
+  <guid>b5cd90a0-9731-4c8e-8550-9277dc1502b5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_604.xml</path>
+  <guid>aa89b2ad-ab3f-4f4e-863e-d8f24cc066f6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_605.xml</path>
+  <guid>f62d04b1-53ea-41ca-8513-08a2d1129717</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_606.xml</path>
+  <guid>7e63bc07-a2ee-45b7-94b0-c6b2339cd7ad</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_607.xml</path>
+  <guid>0b741f3a-cbe0-497d-bffd-817f7940a4c3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_608.xml</path>
+  <guid>0eabaa01-e3ef-44a6-84ca-b1c903e43a1f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_609.xml</path>
+  <guid>5bbee760-0153-44bb-984d-33aa62aba2af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_610.xml</path>
+  <guid>5200b35d-1df3-45a7-80f1-08047d4d4c30</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_611.xml</path>
+  <guid>17214bfd-4b37-41d8-a2cd-15b85c78a464</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_612.xml</path>
+  <guid>1a1c26a5-911d-49cd-b409-ecbfe159e213</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_613.xml</path>
+  <guid>d120f656-1360-44fb-b260-532da6544b28</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_614.xml</path>
+  <guid>db7a976a-460d-47f5-9202-d0fce5f01a32</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_615.xml</path>
+  <guid>8ee074d8-2543-4421-8005-e0a7459764bb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_616.xml</path>
+  <guid>ae610f3a-fcdc-4931-8136-a71c0ceaedc0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_617.xml</path>
+  <guid>a41e3404-f5d6-4a95-a9e4-1a55a1773762</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_618.xml</path>
+  <guid>2f10d4d7-8c46-41d4-b7ba-2475ec5446d8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_619.xml</path>
+  <guid>5f130865-ce7a-4bda-9a14-91a7d37ca189</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_620.xml</path>
+  <guid>88dd20fe-46da-4f80-b0ea-f50d41a9300f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_621.xml</path>
+  <guid>7c9a4014-e457-49c6-b15b-c9c8a6e3f70e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_622.xml</path>
+  <guid>6f1fbb7d-1dc6-4087-9e9d-3c64f8844b11</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_623.xml</path>
+  <guid>e5e292c0-4384-45c4-9b50-fccb09d7bc76</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_624.xml</path>
+  <guid>cb9b1445-f728-4b85-8512-8c3945aea83e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_625.xml</path>
+  <guid>f3236d95-028a-4ca9-af5a-ef2513323fe1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_626.xml</path>
+  <guid>55f7a1d8-77e4-465b-8b8b-c89c8502af32</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_627.xml</path>
+  <guid>1fe7481e-9752-4bb1-86af-5dd3d6f0e7ec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_628.xml</path>
+  <guid>13b5a5be-edf7-4a2f-be51-207a65728847</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_629.xml</path>
+  <guid>2a2714fc-7564-4b15-bff4-92ac1af5ea01</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_630.xml</path>
+  <guid>6a7e4ca7-d68d-44cd-b458-c01ac2cd40b3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_631.xml</path>
+  <guid>4a4e0e4e-be05-40a2-aa67-1d92fe873db5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_632.xml</path>
+  <guid>06759cee-567a-42c2-b9f8-0b37ce6a92ed</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_633.xml</path>
+  <guid>80c4e807-6b6d-4a04-b819-b63df10f5cfc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_634.xml</path>
+  <guid>29ce776c-473b-4f88-9757-3efb1035e30b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_635.xml</path>
+  <guid>a36cc14b-1379-413c-a7f1-9c9a6b203813</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_636.xml</path>
+  <guid>6765c913-218c-4729-9f80-9928e5f11596</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_637.xml</path>
+  <guid>f5997320-b090-4c8d-9980-eb0cddb912a1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_638.xml</path>
+  <guid>57ea89f4-7094-4625-a34f-cbcc8f953922</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_639.xml</path>
+  <guid>e0f11a2c-5cf8-4951-ab87-8738ee33c406</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_640.xml</path>
+  <guid>6f1c2bde-2a91-4ecf-a09f-87b2e9253674</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_641.xml</path>
+  <guid>0bc8c835-a21c-4bf9-b3b1-aa4593831ab2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_642.xml</path>
+  <guid>d5b34a32-8ccb-403b-911e-fe2289871508</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_643.xml</path>
+  <guid>5efec628-3aff-42c1-9061-6b4abcb9753c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_644.xml</path>
+  <guid>b1075210-3344-459c-93f3-7fdba6876e7c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_645.xml</path>
+  <guid>136f618d-8014-44bd-90d1-ac4998b4f6a4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_646.xml</path>
+  <guid>5524780a-c629-4346-9887-b674d13bb778</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_647.xml</path>
+  <guid>a82e06d2-3aad-4150-b5b9-c2c289612026</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_648.xml</path>
+  <guid>5f724154-6b5b-4dc5-873a-14599054c755</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_649.xml</path>
+  <guid>62c510ce-7446-424a-8d37-1f36b15d2c5b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_650.xml</path>
+  <guid>1b93ff5e-ee5e-4cad-8be1-a1ebbb8aa78c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_651.xml</path>
+  <guid>9e46f54d-cb8f-4121-8a01-8ddf0cbbb2ed</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_652.xml</path>
+  <guid>c4eda142-5f28-4b3a-89eb-7ce928ace98f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_653.xml</path>
+  <guid>7b3b3d6a-a4ae-4185-9c83-9f645d002830</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_654.xml</path>
+  <guid>83b8cf16-7fcc-416a-9036-cfc5e76440e1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_655.xml</path>
+  <guid>402712ee-aac3-4cc3-814f-703057b37b82</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_656.xml</path>
+  <guid>dcbc4309-ad9d-410e-91b8-d730a7b8fdf4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_657.xml</path>
+  <guid>07fdee17-c270-4273-8151-92c5b99579af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_658.xml</path>
+  <guid>77dada3a-c1c6-4883-8dd8-c2941b43530d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_659.xml</path>
+  <guid>be33344c-74d7-40c0-9956-188e9a6eba35</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_660.xml</path>
+  <guid>a1314b9c-8e23-4267-a9c9-5287bf981f47</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_661.xml</path>
+  <guid>3deb557d-1232-428c-aca4-befc5566b508</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_662.xml</path>
+  <guid>9185356e-c756-42e8-8f24-c7aa9a3f9dc3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_663.xml</path>
+  <guid>1099bf70-5c7e-4d7d-bdfc-3693b07a3c78</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_664.xml</path>
+  <guid>71d3ae0c-a02c-4e35-a25c-f7e7aafd657c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_665.xml</path>
+  <guid>0ad755dc-ab6d-48df-b69d-d670051ab100</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_666.xml</path>
+  <guid>619e93e9-1822-4f41-8dca-e536eccfa04a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_667.xml</path>
+  <guid>91214be2-98bc-42c1-bd29-754dda35c333</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_668.xml</path>
+  <guid>6d1bd7df-9c87-49b7-9d4f-9ba3a5f5de4f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_669.xml</path>
+  <guid>7ee8f1d1-028b-43c4-8832-7b7405e78eb2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_670.xml</path>
+  <guid>6704e416-d4b4-4dcb-9f92-3b867dcd8b77</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_671.xml</path>
+  <guid>e8d3c5e6-22b5-4475-9f19-dbc1c0a52c63</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_672.xml</path>
+  <guid>b392c647-b36d-4395-9dac-f62d7152e17b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_673.xml</path>
+  <guid>55cac6b2-a8b9-4eca-8c09-7fb19f64b752</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_674.xml</path>
+  <guid>8dae199b-697e-49cd-8b39-2f04ece18e27</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_675.xml</path>
+  <guid>f136fd59-9add-46ab-acfa-3b93ae1e900b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_676.xml</path>
+  <guid>58c51774-ea66-4601-a109-797e806a2140</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_677.xml</path>
+  <guid>aa6e523c-e70d-4e47-9164-b8685bce829e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_678.xml</path>
+  <guid>df12bb52-65bf-4bc6-aa6a-bc295034e81c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_679.xml</path>
+  <guid>7239cd81-17cd-44e1-bd1a-61b17d943032</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_680.xml</path>
+  <guid>c4327780-baaf-4f8a-8713-36ea7d3b6390</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_681.xml</path>
+  <guid>af206b3b-1d3a-468f-8296-7c4150edcfad</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_682.xml</path>
+  <guid>5ca0d2a7-26ef-46e6-92ed-4367584bad6e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_683.xml</path>
+  <guid>5acc8640-e062-4598-9439-2af3f43a8e9c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_684.xml</path>
+  <guid>ceac3221-d3e6-4d96-a4a1-758ed3dfac88</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_685.xml</path>
+  <guid>5eac66eb-5e55-41f3-9a67-5a7d4c214659</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_686.xml</path>
+  <guid>b195e53b-91bf-4278-a378-af850fd16330</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_687.xml</path>
+  <guid>e0c0be5c-9912-4ad8-be1c-bf9c4715838c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_688.xml</path>
+  <guid>bab569e5-f089-4589-961e-594b94e2090b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_689.xml</path>
+  <guid>5fb82742-d549-4111-b75e-b4305ab28037</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_690.xml</path>
+  <guid>9b433257-22a5-4f85-8884-e9140c553e70</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_691.xml</path>
+  <guid>e1c0a368-d50b-45ce-bf1f-a754c0580187</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_692.xml</path>
+  <guid>cd17950f-b87f-4002-b6d2-b83490c59d5d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_693.xml</path>
+  <guid>7b60d709-aab3-4592-81b0-9f0535add565</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_694.xml</path>
+  <guid>19b3738e-88d2-4966-bd5b-b227ad6af45f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_695.xml</path>
+  <guid>4bf552f2-8779-4a12-8772-c4ba74cb6d76</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_696.xml</path>
+  <guid>3090aa10-934c-4163-a066-95fee6e6403e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_697.xml</path>
+  <guid>fffc2817-8a2f-4cd0-a1bf-ac0b9e4e6884</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_698.xml</path>
+  <guid>f2e02ac5-3173-4991-85bc-36c1a4df2ff5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_699.xml</path>
+  <guid>64a19909-f37a-4d8f-86aa-8c3ad7e3a817</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_700.xml</path>
+  <guid>49093db2-c3f6-43f0-b4c0-be7c2d682ab1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_701.xml</path>
+  <guid>14e4ac44-927c-4f17-b2e8-2aacc26e2f27</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_702.xml</path>
+  <guid>fc8084db-65d9-48a8-8183-b90c6fc65c80</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_703.xml</path>
+  <guid>22a362d0-febe-41c2-a626-3b29b0596bf0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_704.xml</path>
+  <guid>eec364fb-d4cf-4cce-be37-08fe3a57fa1c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_705.xml</path>
+  <guid>9a1651e9-db0b-4cbc-a0f9-67975e315bf6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_706.xml</path>
+  <guid>9df87fee-68f6-45c7-88cf-2b3a41b50ab7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_707.xml</path>
+  <guid>65300fd5-7980-44b4-8f2b-1a857c5d2104</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_708.xml</path>
+  <guid>c999a572-b4db-4442-8524-932256131e9f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_709.xml</path>
+  <guid>a34b62fb-a880-461b-84d4-1b4dc9524c4e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_710.xml</path>
+  <guid>b7bf8220-a8bc-4099-8c2d-12540f1177a9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_711.xml</path>
+  <guid>93ced530-ef9b-426d-8dd8-8e04f9c68726</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_712.xml</path>
+  <guid>57f9b7ab-8618-4e06-b0bd-ec6e8bcb6424</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_713.xml</path>
+  <guid>dabc8ba6-a7bc-4843-bd2a-c19c17a975d2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_714.xml</path>
+  <guid>064f4b06-4e80-4787-b513-7dd9abbe2b96</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_715.xml</path>
+  <guid>0d5bfd6b-eea3-4194-b945-2589ceb6a035</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_716.xml</path>
+  <guid>813cabab-ec27-476b-9182-2b8300b4e8c6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_717.xml</path>
+  <guid>0c3b6b47-f640-4991-8a83-2d95bda30d55</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_718.xml</path>
+  <guid>6968e426-69f0-4a53-a20f-ca34ba9338fb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_719.xml</path>
+  <guid>0e63696e-71ec-42e3-8404-97407fbd2c32</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_720.xml</path>
+  <guid>f7b86d23-387a-49af-9535-7b8a3326a441</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_721.xml</path>
+  <guid>7f14990b-4874-4319-ab1f-e144777ba14f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_722.xml</path>
+  <guid>9ef287d8-64fb-4837-ae1f-50732fbc424b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_723.xml</path>
+  <guid>42eb0467-fad0-487d-ad98-7069194d920f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_724.xml</path>
+  <guid>758f3dc0-1534-4776-9e60-95a99ddc8ecc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_725.xml</path>
+  <guid>b476f621-372a-4228-90e6-651163378a51</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_726.xml</path>
+  <guid>07e2a6de-b66f-4547-a904-454b197ef9c2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_727.xml</path>
+  <guid>67a912cb-6185-45c9-8a0a-70a188e2b21e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_728.xml</path>
+  <guid>983818e6-a785-403b-9eb4-664de2c930f1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_729.xml</path>
+  <guid>9debd138-ca07-4927-99c8-f734c276fdb2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_730.xml</path>
+  <guid>e0cf9af9-5083-4e38-b73b-847146a3fa61</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_731.xml</path>
+  <guid>ac9589bf-f57d-4524-bfc1-71c0dabd0915</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_732.xml</path>
+  <guid>a223a505-1ec9-4db9-836c-4495efbe1907</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_733.xml</path>
+  <guid>8519386c-6986-4dc9-b760-2e630f6c26b9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_734.xml</path>
+  <guid>563c6218-e384-49c0-845c-c1b56ffb8d71</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_735.xml</path>
+  <guid>ba60cdc1-1605-40c2-ab73-66155d3b4c92</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_736.xml</path>
+  <guid>7b756a0f-6ca8-47bd-8c1f-c1d785869f21</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_737.xml</path>
+  <guid>8de60655-e7f1-4f28-8b62-0ccb6bb93b14</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_738.xml</path>
+  <guid>90dd05a3-9500-4ab3-96c7-84e67d4dfbf8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_739.xml</path>
+  <guid>f3969d07-b8d8-4987-b1e4-1bea93ee446b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_740.xml</path>
+  <guid>40a000b8-4090-4ba1-b4ef-4bc68b663d38</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_741.xml</path>
+  <guid>fec60b6f-43a7-418b-9102-7bcd44d6716b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_742.xml</path>
+  <guid>00b90331-0bb2-48dd-9400-d271a82a61b6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_743.xml</path>
+  <guid>6ce75be8-b7db-4152-ba15-93414b9eb605</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_744.xml</path>
+  <guid>dc630ec0-cc84-4e48-8b2d-2d5193095be8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_745.xml</path>
+  <guid>f907281b-5679-4095-bb6b-a89e6b084f24</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_746.xml</path>
+  <guid>619acf68-2286-4440-a7cf-63396b1c8323</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_747.xml</path>
+  <guid>442ee820-1c8a-46fb-80ba-4fc1b7ae3f4c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_748.xml</path>
+  <guid>d262cf9b-25b1-4fd0-b3c8-d1e9351ce56c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_749.xml</path>
+  <guid>865eb5de-5476-4f52-8ba9-d5e07b6bd9bc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_750.xml</path>
+  <guid>b6415877-cf40-4f8f-bedf-554fac85f4d0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_751.xml</path>
+  <guid>6d5abd1a-6f55-45f1-a874-9423a52ccc24</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_752.xml</path>
+  <guid>6af2f9cd-bb83-4d60-8531-7a93bc0bc49d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_753.xml</path>
+  <guid>57d16565-9c14-4d08-af98-035cd2f29005</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_754.xml</path>
+  <guid>8e195e74-79fa-440a-a2d1-6c0c3940c3de</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_755.xml</path>
+  <guid>c3b7de9e-e32d-4a41-b905-9884eb73e9f1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_756.xml</path>
+  <guid>78883877-49bd-405f-9b5f-6417fc04d212</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_757.xml</path>
+  <guid>1ab84516-5eb2-4e73-b122-cf923f7a5458</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_758.xml</path>
+  <guid>5568eec3-6531-4975-910a-fceb92a8e50d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_759.xml</path>
+  <guid>5b04280c-e28a-4ae4-b8ff-80f9036af57c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_760.xml</path>
+  <guid>ca5c77fb-c1fb-4c34-81cc-711809f45d3b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_761.xml</path>
+  <guid>785124f0-6db8-4efb-9bfa-36bf7605b851</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_762.xml</path>
+  <guid>7e63cb1c-27b6-48fa-9fbf-845ca529e43a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_763.xml</path>
+  <guid>30797a1e-67ea-452d-bdcc-b29e49e061cc</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_764.xml</path>
+  <guid>c9f27cb6-4d03-4851-b4a4-6061dbf848cf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_765.xml</path>
+  <guid>69de3e58-9673-440f-8a6b-0bffda0023d2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_766.xml</path>
+  <guid>a9e78894-c093-4809-8a30-855ba40e1e2b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_767.xml</path>
+  <guid>cc7d63ab-7c26-40aa-8172-a374aea6603b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_768.xml</path>
+  <guid>8ddc2539-da73-45a1-af7e-f04288645e25</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_769.xml</path>
+  <guid>e798de43-4f8c-48cb-b755-72a8ef723ff9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_770.xml</path>
+  <guid>276f79a3-09cc-4ffe-855d-cd4f91930093</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_771.xml</path>
+  <guid>c2a3896e-8e27-4098-bcc4-0fe6b35edd5e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_772.xml</path>
+  <guid>aa43068a-af3e-4cce-ae33-c0623e41a52b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_773.xml</path>
+  <guid>969b2d0a-33d6-41b0-ab66-f76bd6287225</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_774.xml</path>
+  <guid>eff0a6e0-2cca-4b2a-b1b8-47703588dbed</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_775.xml</path>
+  <guid>54f09249-6edd-4646-8568-0e8ce3d5ea19</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_776.xml</path>
+  <guid>0cbb6d1a-4c47-465f-b2a8-fabbb3dfb85d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_777.xml</path>
+  <guid>60eca3a6-3cd9-4ca4-b50d-7517edc384af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_778.xml</path>
+  <guid>54182173-0e2d-42a4-95b1-3c0b3c46f3da</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_779.xml</path>
+  <guid>432a42e1-868d-4a69-b990-577f44b04543</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_780.xml</path>
+  <guid>f358b694-5343-42d5-8824-9345836ac87e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_781.xml</path>
+  <guid>ce5575e8-7bee-4280-b459-bbf33b96b222</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_782.xml</path>
+  <guid>006945f1-bf6a-47f9-adf8-01b29dfcdd5b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_783.xml</path>
+  <guid>e8a33996-9ee3-4484-94b4-a3dbed94420f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_784.xml</path>
+  <guid>17a441c5-edf2-4350-bb6a-d0706d33131a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_785.xml</path>
+  <guid>ef2ba515-f91f-4c91-8650-d67e0f67ffa6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_786.xml</path>
+  <guid>3cc8b8c0-cece-4381-b360-68079fe919df</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_787.xml</path>
+  <guid>597a9899-a482-4d4d-8ca7-d544931fccde</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_788.xml</path>
+  <guid>78b06ef4-edc8-4864-9585-d3445af2b759</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_789.xml</path>
+  <guid>5428fa26-b878-4543-9b10-445400efd138</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_790.xml</path>
+  <guid>3e89e1ea-ca54-43af-8116-bc0af5a2e7e5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_791.xml</path>
+  <guid>c932159e-5f59-479d-9733-bcad624239fe</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_792.xml</path>
+  <guid>4801ba67-74db-4e60-8fa3-5c44b2f8800f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_793.xml</path>
+  <guid>c8f9e01b-d266-4500-9b50-2fc20537235c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_794.xml</path>
+  <guid>fd9ea407-fd82-4f6a-833e-9b0a1088de0f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_795.xml</path>
+  <guid>4a794720-3e3c-4779-aaf0-034c4098e59d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_796.xml</path>
+  <guid>0c5b54c7-7314-4a4d-9aa8-1bd73cd622e1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_797.xml</path>
+  <guid>99886aaa-9fde-46a4-ab0e-6d0153983814</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_798.xml</path>
+  <guid>f1e8fc1d-9d79-4067-983c-245c0161f8d3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_799.xml</path>
+  <guid>b6925b57-11f4-495e-9964-e677a96d0d3d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_800.xml</path>
+  <guid>1628a6ca-46a4-49b3-be88-03193e049ee5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_801.xml</path>
+  <guid>97a7b3de-be96-476a-a1ed-f62f4fd60638</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_802.xml</path>
+  <guid>7d4d3c5a-91c3-45c3-a38e-d041ecef5509</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_803.xml</path>
+  <guid>6d89c365-185b-4dab-b9ec-c7d8b5fcfe09</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_804.xml</path>
+  <guid>672e9361-e3ca-4461-9596-276e587981cd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_805.xml</path>
+  <guid>1f6d70a5-bdc8-43e6-a83c-7aeac5deb386</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_806.xml</path>
+  <guid>5d8230ed-716d-41d1-b474-8c4a5a9e83af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_807.xml</path>
+  <guid>53fed6ab-3f9b-4e1c-a668-fd9fff0f90ce</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_808.xml</path>
+  <guid>a19fd6f1-9f88-4dc7-98dd-9b4c96510931</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_809.xml</path>
+  <guid>64bf9de3-2834-4098-9294-2b7228cb6f1e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_810.xml</path>
+  <guid>5b6a2f26-d272-4c86-8c33-59a75a9bed0b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_811.xml</path>
+  <guid>21b21205-ffae-4604-8087-ff0fd67a1440</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_812.xml</path>
+  <guid>f7a3744e-fa6a-4b9f-a125-7196b9f4942a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_813.xml</path>
+  <guid>a5a2345e-f388-49a7-bea8-a839a0e03331</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_814.xml</path>
+  <guid>23334e3e-ea95-4eec-a66a-0f4650fad759</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_815.xml</path>
+  <guid>b143e80b-0ffa-43c8-a7e9-7fbd3f6819c5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_816.xml</path>
+  <guid>8f866d2a-5506-4c9c-818e-8204409b4b67</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_817.xml</path>
+  <guid>4c3f8be9-c574-47f1-b108-28a4059ad091</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_818.xml</path>
+  <guid>ba68d005-6e18-439b-b6fe-d5356879351c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_819.xml</path>
+  <guid>745c9839-17dd-4198-a91f-d237fe20dd63</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_820.xml</path>
+  <guid>a7e145c4-c67a-46dc-a471-76e96184bde4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_821.xml</path>
+  <guid>81b6a9a8-d601-456e-9bb5-e9df2d5cd42f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_822.xml</path>
+  <guid>cb341f95-379d-4d1d-8822-8a867d7b36e7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_823.xml</path>
+  <guid>1175e00b-c42b-42da-95a3-170bfbb8a63a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_824.xml</path>
+  <guid>58be321b-ca24-4775-a92a-088c4ec5cd88</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_825.xml</path>
+  <guid>c6509e39-fc46-48fe-90f8-ac70b3a60ebb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_826.xml</path>
+  <guid>63ca0f10-df62-42c1-b591-cbd735d3078d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_827.xml</path>
+  <guid>415b4587-830f-43d8-a547-a98de054e954</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_828.xml</path>
+  <guid>78f15a9d-01ed-48c7-87e4-435fcf6f9ee3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_829.xml</path>
+  <guid>3379544e-1ae7-44d9-a093-83e4cabf8b50</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_830.xml</path>
+  <guid>45eb6c23-32f9-4ff3-9556-94e410b899c7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_831.xml</path>
+  <guid>457466ee-0c19-4d6a-ba79-df0847d4e70b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_832.xml</path>
+  <guid>5d97edda-32dc-4239-af2d-a53fd6b08c1b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_833.xml</path>
+  <guid>c53fa0f0-5b03-46c6-a724-47677b364c35</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_834.xml</path>
+  <guid>50c1b03f-3029-46c0-b209-9c60f398f90f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_835.xml</path>
+  <guid>d60db210-5994-472b-9773-a4ddf880c81e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_836.xml</path>
+  <guid>52ed1269-367b-460d-9cbd-78500bb2e979</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_837.xml</path>
+  <guid>156243e3-9ec3-4867-b072-772c073e1c8c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_838.xml</path>
+  <guid>6316679b-336c-4810-85c7-015e7b9dda23</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_839.xml</path>
+  <guid>e3bd9ddc-646a-416e-8c81-5c3592709b85</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_840.xml</path>
+  <guid>dd8d25b9-c204-4dce-9276-0d0dcc3eb2e0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_841.xml</path>
+  <guid>48086368-c442-4009-8a93-cc343f051016</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_842.xml</path>
+  <guid>a443b985-d3b3-427f-9e4b-1435d21988ca</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_843.xml</path>
+  <guid>b48c9440-c313-4dba-b0ea-1c585efed122</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_844.xml</path>
+  <guid>b6d04fae-97ec-4608-94df-20c20b890bcb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_845.xml</path>
+  <guid>b219b922-3e11-4582-ae10-2687a2c39db7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_846.xml</path>
+  <guid>c51839f0-cbd5-4419-bb62-b0a789ebe192</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_847.xml</path>
+  <guid>b3ffcc65-96c1-4fd7-98a2-ddc7b5e7a8d2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_848.xml</path>
+  <guid>3cf6453a-4c3b-43ca-952a-41c572bb4d49</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_849.xml</path>
+  <guid>a8dc0b77-f711-4bc0-ab6d-69f5f1dded46</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_850.xml</path>
+  <guid>1f42143d-a600-4f4a-87fe-efb8ea996cd5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_851.xml</path>
+  <guid>58ee2d4d-86af-4413-9558-ffcdae38dd81</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_852.xml</path>
+  <guid>744db65e-e0cf-4020-a748-2521e596a7da</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_853.xml</path>
+  <guid>83f996e0-8c7d-458f-88a2-14072600582c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_854.xml</path>
+  <guid>682900af-025b-49fd-84e9-ffafade83ad9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_855.xml</path>
+  <guid>2900a715-cba6-4022-a5fd-2759646bb3dd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_856.xml</path>
+  <guid>8ac0a041-99e8-4740-a66f-aa5d5f4811b2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_857.xml</path>
+  <guid>2bd18df8-2618-4e10-b092-453960db0da3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_858.xml</path>
+  <guid>c72d0f0e-b824-430d-afa8-21b29a6403aa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_859.xml</path>
+  <guid>5cfdadcf-cf10-4ca4-a24e-1e20847e685f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_860.xml</path>
+  <guid>c98811b1-3e85-446f-8dd5-933efdc9f073</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_861.xml</path>
+  <guid>ba83f4ae-1ba7-4f8d-be3b-fac5ce1acdd6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_862.xml</path>
+  <guid>123ef89f-5bbe-457b-b80c-3a8a463991d5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_863.xml</path>
+  <guid>daa07323-43e2-486b-b95c-8fef6f60f46f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_864.xml</path>
+  <guid>57d871ad-3f96-433b-acce-e964cd238e6f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_865.xml</path>
+  <guid>7d826518-6b2f-4ed8-ae85-066875e34493</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_866.xml</path>
+  <guid>bef9973f-462a-4d1f-98ea-5d71521c21ba</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_867.xml</path>
+  <guid>0cc606ba-48cc-4ac2-af57-0c9ed0104556</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_868.xml</path>
+  <guid>d6cceb09-6403-44d1-ad92-22db1b72c648</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_869.xml</path>
+  <guid>3b05d978-1624-4a2e-8559-cdb1a8c7c8f4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_870.xml</path>
+  <guid>5d22796b-4074-4794-a0fc-39a6c0fe7d14</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_871.xml</path>
+  <guid>e0e7725a-395a-4913-a3c9-0d1bef876c2e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_872.xml</path>
+  <guid>bef18a16-255c-4567-bf73-f4fc62f2dd9c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_873.xml</path>
+  <guid>303ed217-fbe7-46ea-b335-1e52c56b0917</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_874.xml</path>
+  <guid>756d1633-0574-4d37-8c53-684312bd6ba5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_875.xml</path>
+  <guid>a3ffb0ec-60df-43f4-b8a0-2c06dce6a5da</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_876.xml</path>
+  <guid>160e6acf-e8e0-4d5b-84d3-3e6a1a59be92</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_877.xml</path>
+  <guid>dbcb6246-d469-4511-9043-1badad93847b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_878.xml</path>
+  <guid>63436872-e468-43e2-941c-541c5ad70c9c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_879.xml</path>
+  <guid>0655e5d6-44c3-420f-9656-5528349c2c0a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_880.xml</path>
+  <guid>1dad6469-1a80-40e6-8545-d9d98b49f48e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_881.xml</path>
+  <guid>2706512b-17d3-4747-ac4c-a6a91930f5af</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_882.xml</path>
+  <guid>c3a97659-13be-4ab3-8862-bbaa3d43d220</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_883.xml</path>
+  <guid>d9855ddc-0628-4d10-958d-e4a85d663be4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_884.xml</path>
+  <guid>8b82eb34-b627-4376-93b0-23e68773a5c8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_885.xml</path>
+  <guid>37aefc0d-c88a-490b-acbf-c8384f4e0b9c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_886.xml</path>
+  <guid>4d8cbcc8-990a-496d-a529-761f2c3fa8bd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_887.xml</path>
+  <guid>f8b62892-69fc-4306-b0b6-6cf23a8acfb9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_888.xml</path>
+  <guid>b750d0af-a8af-4b17-b327-3ef6a1e2ea22</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_889.xml</path>
+  <guid>c4ab1c3a-e07a-4e09-9fce-f9fd6f563c30</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_890.xml</path>
+  <guid>e2abf0e8-7e60-4548-bfda-93fc18df594c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_891.xml</path>
+  <guid>1a897385-98e1-4914-8439-066a51c1c68d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_892.xml</path>
+  <guid>19c19e4e-0e80-46a1-b303-2f745ce67a9a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_893.xml</path>
+  <guid>c7b12d29-1cd1-41b2-b6ba-74eb7cd78f00</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_894.xml</path>
+  <guid>b4dc37e5-bea9-489d-a080-b95f40fabb2d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_895.xml</path>
+  <guid>09d5a361-a20c-4b83-be45-9413de9f2964</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_896.xml</path>
+  <guid>5f27f189-9679-4d66-bf3b-7d98d53b5cac</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_897.xml</path>
+  <guid>9355ba4e-5831-4703-8589-771fb6382f8b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_898.xml</path>
+  <guid>1ccf3d2b-bb2e-4105-8904-5588b1c09878</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_899.xml</path>
+  <guid>3bd00e61-3285-4e13-a040-50ec80856cd6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_900.xml</path>
+  <guid>5d888309-ddd1-4ab9-8acd-c3408e2dad7e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_901.xml</path>
+  <guid>50b4f576-57e7-443f-83c5-5987f4dac85f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_902.xml</path>
+  <guid>9de01338-2d42-4f1d-a144-b9195ee0ef96</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_903.xml</path>
+  <guid>a92e83bc-0b7d-45ce-8aaf-8f2e39e6bc71</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_904.xml</path>
+  <guid>26e0676c-eba2-46cc-9ee7-98121d210692</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_905.xml</path>
+  <guid>11b8bb65-403b-4ed4-9a72-2bf67214463a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_906.xml</path>
+  <guid>3be8758e-af5c-4388-abc7-fffc61e2a5ba</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_907.xml</path>
+  <guid>193cc7bb-ba5b-47d1-a773-dbfff3ad13b5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_908.xml</path>
+  <guid>d5db88a4-2fd2-4663-a089-407e887ceebf</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_909.xml</path>
+  <guid>54d9bde0-fd28-4c56-b113-88638a3a057d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_910.xml</path>
+  <guid>5b5038c3-66fc-4448-9e0e-8c86e9ac72eb</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_911.xml</path>
+  <guid>8649b0d4-f99c-4a83-b4be-45adc9966dea</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_912.xml</path>
+  <guid>d5ea3aa0-306f-4926-8cbe-ba3e17a3f873</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_913.xml</path>
+  <guid>c682d633-6314-418d-a381-907f64cb6821</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_914.xml</path>
+  <guid>7216db6c-d59e-4982-b21b-e623afc7a4c0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_915.xml</path>
+  <guid>3ce30a75-bcc6-47f0-ab9f-d0a0d0d91a70</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_916.xml</path>
+  <guid>7fc8d27c-7448-4de2-aab6-f9d357d2a1bd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_917.xml</path>
+  <guid>68d26154-5134-419c-8fce-57bdeea994ec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_918.xml</path>
+  <guid>249e20d7-9575-4560-9e20-593104d2de27</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_919.xml</path>
+  <guid>9646e0ed-5e86-42dc-9642-20fb0d6306b5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_920.xml</path>
+  <guid>0cce2d76-f65d-4c98-b056-0dcef6cd013d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_921.xml</path>
+  <guid>8991232e-612c-4fc7-8af2-0498f6a67a2f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_922.xml</path>
+  <guid>1c1eedff-7c30-4b01-a45e-61aa9bc66665</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_923.xml</path>
+  <guid>ad28f9f3-12b8-426b-956f-a942fbb0029a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_924.xml</path>
+  <guid>9d87db4b-fecf-4bf7-8e26-b5348c83c458</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_925.xml</path>
+  <guid>598f52b2-8d01-414c-b4d7-f77ae302de94</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_926.xml</path>
+  <guid>55478147-e03c-41a3-8085-47f8c26da2ab</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_927.xml</path>
+  <guid>1e84d6df-abba-4b05-8ea5-d1ed8ffe20a8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_928.xml</path>
+  <guid>3eed4f38-5c33-430c-8756-566032ca3633</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_929.xml</path>
+  <guid>4386385a-5090-47dd-a6e9-bd7631f95f9d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_930.xml</path>
+  <guid>f1b7c7ae-3df6-4265-8d4c-874d2f21b7b5</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_931.xml</path>
+  <guid>1e3a0f08-5d21-4f5a-b20e-0e7be29ad4f9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_932.xml</path>
+  <guid>ce568419-0928-459b-98ce-f35954c4dd74</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_933.xml</path>
+  <guid>69d6c989-e40d-4a59-880d-a2c6f4648cd0</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_934.xml</path>
+  <guid>ffb713c7-61cd-4c83-bc25-83aa919693a6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_935.xml</path>
+  <guid>8457814d-e070-44dd-a48f-aa246f33ee75</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_936.xml</path>
+  <guid>9e43539e-949c-42fd-83fb-7fc52761d95f</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_937.xml</path>
+  <guid>6444f47e-b417-4f13-8dc7-c36fe1f51a56</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_938.xml</path>
+  <guid>247868ed-48e0-4ef6-800c-2e0b32b71be7</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_939.xml</path>
+  <guid>f1ffc676-3800-47d3-a812-c23e817fddda</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_940.xml</path>
+  <guid>34d3082f-3a66-49ff-b994-60e75884e9aa</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_941.xml</path>
+  <guid>23868731-f1f6-448e-ba98-7bdca6275b5b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_942.xml</path>
+  <guid>b09e1d3e-fcba-4d26-a301-aac783a98954</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_943.xml</path>
+  <guid>dab33886-d7d7-4391-9ad7-5b794bf6dc0c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_944.xml</path>
+  <guid>0acc1304-d121-49e1-a0d7-6db66d5b2246</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_945.xml</path>
+  <guid>0f2a3525-d70b-47f0-8da8-f0ffa786e235</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_946.xml</path>
+  <guid>855c65a3-b810-4745-aa5c-4517602dce37</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_947.xml</path>
+  <guid>239b80ba-7817-4073-a61f-0ac7d33a56b6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_948.xml</path>
+  <guid>13949b5d-21ef-485e-b919-d1748ab2ef4e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_949.xml</path>
+  <guid>530842ea-1d72-46f1-8ab4-ac8604d247ea</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_950.xml</path>
+  <guid>17978afd-bd5f-4a80-a033-6a21bd439be3</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_951.xml</path>
+  <guid>c0cc5e26-c270-4940-8adb-387b539e62b1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_952.xml</path>
+  <guid>5dc94a45-2a83-4093-acee-0925dad7aa43</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_953.xml</path>
+  <guid>5b1da183-8c64-4cd0-a7d4-ceec4340a388</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_954.xml</path>
+  <guid>b49a9238-dbf6-475c-93f5-cce84135b718</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_955.xml</path>
+  <guid>1fd5ea08-0f88-4aab-a658-aafc50db2236</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_956.xml</path>
+  <guid>f830b742-d746-43ec-b3a2-604043ab45cd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_957.xml</path>
+  <guid>63c9fc00-2721-4c21-8505-42cf51eef950</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_958.xml</path>
+  <guid>0a659377-fc7d-49ce-a766-edb36c5c5601</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_959.xml</path>
+  <guid>5d9df00e-8139-46f4-b5f9-475b80a5920c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_960.xml</path>
+  <guid>300ce992-f93b-49b0-9c16-3a001bbafdb1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_961.xml</path>
+  <guid>0cb2fc1c-0fd2-432b-80b4-e06ee33dc550</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_962.xml</path>
+  <guid>8c954f5f-18be-4613-a31e-ad9205b03c9c</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_963.xml</path>
+  <guid>778eb3b1-e029-4bc9-9273-9a377bb0e122</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_964.xml</path>
+  <guid>35c501cb-0f7f-4a56-90f4-4e32bd3b147a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_965.xml</path>
+  <guid>6beda55f-9a94-44c3-9e29-ae7a9ce72877</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_966.xml</path>
+  <guid>606a08a8-a45a-4cb4-8b8e-1792552d5650</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_967.xml</path>
+  <guid>bf6cea4e-845b-4818-af74-1e2667522b0d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_968.xml</path>
+  <guid>b4e09e84-d091-4a47-bc93-65eb52905cb1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_969.xml</path>
+  <guid>54bd6c4f-00b3-4d3e-8839-a388a5614717</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_970.xml</path>
+  <guid>557bec57-ff09-4d92-992e-2f90b68135c6</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_971.xml</path>
+  <guid>307ef12a-cdc9-49b7-9917-b2ac5808f90b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_972.xml</path>
+  <guid>312b647b-bea3-4270-a4e8-0feace195081</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_973.xml</path>
+  <guid>af6a6374-6a68-4b39-951a-6e07f1d4055d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_974.xml</path>
+  <guid>b68be3e7-0f79-42ca-adfd-9d7313322364</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_975.xml</path>
+  <guid>2e9274ea-cf9a-4c30-a9e1-091d751c4fec</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_976.xml</path>
+  <guid>1cfa47b5-0372-4e22-9c55-afed5de8ae6a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_977.xml</path>
+  <guid>acfd1851-b9b6-425a-a472-a778f785d4b9</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_978.xml</path>
+  <guid>076c0dd1-4a80-4c23-8b35-e20e2b536b8a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_979.xml</path>
+  <guid>257b6e84-9e66-49ef-8151-ed67e817d30b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_980.xml</path>
+  <guid>08cc50cf-30ed-417b-a18b-749624a7ce33</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_981.xml</path>
+  <guid>2e7715d4-54e0-48f0-bd89-0549741b6e08</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_982.xml</path>
+  <guid>d07797f8-e2b9-42da-ba4f-deaaee7941d4</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_983.xml</path>
+  <guid>51b33298-c5f1-4881-9156-716153b305e8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_984.xml</path>
+  <guid>a8515fb4-4ee2-4932-80ae-c35976663f88</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_985.xml</path>
+  <guid>3da893a8-0ec3-45ff-8639-e219171b80e8</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_986.xml</path>
+  <guid>9824a480-05b8-4ef5-94f3-96d3b3deac9b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_987.xml</path>
+  <guid>f3af0670-c0c1-4c76-8ae8-b845663a549e</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_988.xml</path>
+  <guid>7af39df9-5b95-40f8-b877-462dee4946c1</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_989.xml</path>
+  <guid>7d196efe-9a18-433b-a5aa-050f8bbb5f3b</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_990.xml</path>
+  <guid>b0899da7-7cdd-498b-aa20-7d719bb2af60</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_991.xml</path>
+  <guid>ccee856e-a6b3-4e83-8cc1-ae2c8e306d27</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_992.xml</path>
+  <guid>0f58ada3-5b6f-4501-9984-2b3190ae89cd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_993.xml</path>
+  <guid>463c41b2-c9c5-41b9-a675-a109aa348937</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_994.xml</path>
+  <guid>d098355b-c846-4a98-abad-0dd1ce871ed2</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_995.xml</path>
+  <guid>2c3fd4e9-52ee-4dce-842c-d7d1d137b4cd</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_996.xml</path>
+  <guid>6746ef5a-e568-4ff7-9d41-1cc33300f09d</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_997.xml</path>
+  <guid>64ce7c0e-7b17-4695-9d6d-0549cb8914ee</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_998.xml</path>
+  <guid>c28a9f6b-664d-4f50-9f5f-cfbcb8bf914a</guid>
+
+  <path>media/clothing/clothingItems/TransmogItem_999.xml</path>
+  <guid>58d59c7a-2553-4f56-8047-74ba5ae72812</guid>
+  </files>
 </fileGuidTable>

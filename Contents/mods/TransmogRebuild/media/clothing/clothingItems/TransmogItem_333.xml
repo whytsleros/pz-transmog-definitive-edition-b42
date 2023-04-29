@@ -1,0 +1,12 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+  <m_MaleModel></m_MaleModel>
+  <m_FemaleModel></m_FemaleModel>
+  <m_GUID>c09cdec8-ab2b-4330-9147-bf38b33ff208</m_GUID>
+  <m_Static>false</m_Static>
+  <m_AllowRandomHue>false</m_AllowRandomHue>
+  <m_AllowRandomTint>false</m_AllowRandomTint>
+  <m_AttachBone></m_AttachBone>
+  <m_BaseTextures>emptytexture</m_BaseTextures>
+</clothingItem>

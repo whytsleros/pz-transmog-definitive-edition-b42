@@ -18,16 +18,37 @@ const generateClothingItemXml = (guid) =>
 </clothingItem>
 `
 
-var itemIds = new Array(1000).fill(1).map(u => uuidv4());
+const itemIds = new Array(1000).fill(1).map(u => uuidv4());
+const fileGuidTableFiles: string[] = [];
 
 for (let i = 0; i < itemIds.length; i++) {
   
   const guid = itemIds[i];
-  
-  const clothingItemXml = generateClothingItemXml(guid)
-  
-  writeFileSync(path.join(__dirname, './Contents/mods/TransmogRebuild/media/clothing/clothingItems/InvisibleItem.xml'), clothingItemXml, 'utf8');
+  const clothingItemXml = generateClothingItemXml(guid);
+  const clothingItemXmlPath = path.join(__dirname, `./Contents/mods/TransmogRebuild/media/clothing/clothingItems/TransmogItem_${i}.xml`);
 
-  console.log('Generated Item #', i)
+  writeFileSync(clothingItemXmlPath, clothingItemXml, 'utf8');
+
+  fileGuidTableFiles.push(`
+  <path>media/clothing/clothingItems/TransmogItem_${i}.xml</path>
+  <guid>${guid}</guid>`)
+
+  console.log('Generated Item #', i);
 }
 
+const fileGuidTableHead = `
+<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+	<files>
+`;
+
+const fileGuidTableFoot = `
+  </files>
+</fileGuidTable>
+`;
+
+const fileGuidTable = (fileGuidTableHead + fileGuidTableFiles.join('\n') + fileGuidTableFoot).trim()
+
+const fileGuidTableXmlPath = path.join(__dirname, `Contents/mods/TransmogRebuild/media/fileGuidTable.xml`);
+
+writeFileSync(fileGuidTableXmlPath, fileGuidTable, 'utf8');
