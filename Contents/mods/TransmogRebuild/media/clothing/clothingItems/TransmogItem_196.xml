@@ -1,12 +1,11 @@
-
 <?xml version="1.0" encoding="utf-8"?>
-<clothingItem>
-  <m_MaleModel></m_MaleModel>
-  <m_FemaleModel></m_FemaleModel>
-  <m_GUID>50b5345e-4755-4bda-b57f-56d61f782ee0</m_GUID>
-  <m_Static>false</m_Static>
-  <m_AllowRandomHue>false</m_AllowRandomHue>
-  <m_AllowRandomTint>false</m_AllowRandomTint>
-  <m_AttachBone></m_AttachBone>
-  <m_BaseTextures>emptytexture</m_BaseTextures>
-</clothingItem>
+      <clothingItem>
+        <m_MaleModel></m_MaleModel>
+        <m_FemaleModel></m_FemaleModel>
+        <m_GUID>611b2b7e-2cc9-4514-b59e-4a85160a0d2b</m_GUID>
+        <m_Static>false</m_Static>
+        <m_AllowRandomHue>false</m_AllowRandomHue>
+        <m_AllowRandomTint>false</m_AllowRandomTint>
+        <m_AttachBone></m_AttachBone>
+        <m_BaseTextures>emptytexture</m_BaseTextures>
+      </clothingItem>
