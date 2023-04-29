@@ -8,7 +8,7 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "start": "npx tsc index.ts && node index.js"
+    "start": "npx ts-node index.ts"
   },
   "name": "pz-transmog-rebuild",
   "version": "1.0.0",
