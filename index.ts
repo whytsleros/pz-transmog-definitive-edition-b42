@@ -24,9 +24,10 @@ const tmogItems = new Array(1000).fill(1).map((u, i) => {
     scriptItem: `
     item TransmogItem_${i}
     {
-      DisplayCategory = Accessory,
+      DisplayCategory = Transmog,
       Weight	=	0,
       Type	=	Clothing,
+      Cosmetic = TRUE,
       DisplayName	=	TransmogItem_${i},
       Icon	=	Belt,
       BodyLocation = Belt,
