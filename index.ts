@@ -30,7 +30,7 @@ const tmogItems = new Array(1000).fill(1).map((u, i) => {
       Cosmetic = TRUE,
       DisplayName	=	TransmogItem_${i},
       Icon	=	Belt,
-      BodyLocation = Belt,
+      BodyLocation = TransmogLocation,
       ClothingItem = TransmogItem_${i},
       WorldStaticModel = TShirt_Ground,
     }`.trim()

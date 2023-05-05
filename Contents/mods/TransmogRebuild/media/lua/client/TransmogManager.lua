@@ -1,3 +1,8 @@
+local group = BodyLocations.getGroup("Human")
+
+group:getOrCreateLocation("TransmogLocation")
+group:setMultiItem("TransmogLocation", true)
+
 local function canBeTransmogged(scriptItem)
   if scriptItem.getScriptItem then
     scriptItem = scriptItem:getScriptItem()
@@ -37,16 +42,17 @@ local function requestTransmog(clothing)
   local donorScriptItem = clothing:getScriptItem()
   local donorClothingItemAsset = donorScriptItem:getClothingItemAsset()
 
-  local receiverScriptItemName = 'TransmogRebuild.TransmogItem_'..id
+  local receiverScriptItemName = 'TransmogRebuild.TransmogItem_' .. id
   local receiverScriptItem = ScriptManager.instance:getItem(receiverScriptItemName)
 
   receiverScriptItem:setClothingItemAsset(donorClothingItemAsset)
+  -- receiverScriptItem:setBodyLocation(donorClothingItemAsset)
 
   local player = getPlayer();
 
   local spawnedItem = player:getInventory():AddItem(receiverScriptItemName);
 
-  spawnedItem:setName('Tmog - '..clothing:getName())
+  spawnedItem:setName('Tmog - ' .. clothing:getName())
 
   local tmogData = ModData.getOrCreate("Transmog");
   tmogData[donorScriptItem:getFullName()] = receiverScriptItemName
@@ -77,3 +83,19 @@ end
 
 
 Events.OnFillInventoryObjectContextMenu.Add(TransmogContextMenu);
+
+local old_ISUnequipAction_perform = ISUnequipAction.perform
+function ISUnequipAction:perform()
+  old_ISUnequipAction_perform(self)
+  -- code
+  if self.item:getCategory() ~= "Clothing" then
+    return
+  end
+
+  if self.item:getBodyLocation() ~= "TransmogLocation" then
+    return
+  end
+
+  local wornItems = self.character:getWornItems()
+  wornItems:remove(self.item)
+end
