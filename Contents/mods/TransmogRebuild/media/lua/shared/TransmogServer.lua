@@ -16,7 +16,7 @@ Commands.TransmogServer.RequestTransmogForItem = function(source, args)
 end
 
 Commands.TransmogServer.GenerateTransmogModData = function()
-    TmogPrint('GenerateTransmogModData')
+    TmogPrint('Server TransmogModData')
     local scriptManager = getScriptManager();
     local allItems = scriptManager:getAllItems()
     local transmogModData = TransmogRebuild.getTransmogModData()
@@ -32,7 +32,7 @@ Commands.TransmogServer.GenerateTransmogModData = function()
             serverTransmoggedItemCount = serverTransmoggedItemCount + 1
             if not itemToTransmogMap[fullName] then
                 table.insert(transmogToItemMap, fullName)
-                itemToTransmogMap[fullName] = 'TransmogRebuild.TransmogItem_'..#transmogToItemMap
+                itemToTransmogMap[fullName] = 'TransmogRebuild.TransmogItem_' .. #transmogToItemMap
             end
         end
     end
@@ -47,6 +47,11 @@ Commands.TransmogServer.GenerateTransmogModData = function()
     TmogPrint('Transmogged items count: ' .. tostring(serverTransmoggedItemCount))
 
     return transmogModData
+end
+
+if isServer() then
+    TmogPrint('Server Events set up')
+    Events.OnServerStarted.Add(Commands.TransmogServer.GenerateTransmogModData)
 end
 
 return Commands.TransmogServer

@@ -1,5 +1,12 @@
+local isSinglePlayer = (not isClient() and not isServer())
+
+if not isSinglePlayer then
+  return
+end
+
+local TransmogServer = require('TransmogServer')
+
 local function transmogSinglePlayerInit()
-  local TransmogServer = require('TransmogServer')
   local TransmogModData = TransmogServer.GenerateTransmogModData()
   -- Directly get the mod data, and swap all the ClothingItemAssets
   for donorItemName, receiverItemName in pairs(TransmogModData.itemToTransmogMap) do
@@ -10,4 +17,6 @@ local function transmogSinglePlayerInit()
   end
 end
 
-return transmogSinglePlayerInit
+TmogPrint('SinglePlayer Events set up')
+
+Events.OnGameStart.Add(transmogSinglePlayerInit);

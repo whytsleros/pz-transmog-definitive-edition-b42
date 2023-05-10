@@ -12,7 +12,7 @@ local TransmogContextMenu = function(player, context, items)
   end
 
   if tostring(#items) == "1" and clothing then
-    local transmog = context:addOption("Transmog", clothing, TransmogRebuild.giveTransmogItemToPlayer);
+    local transmog = context:addOption("Get Transmog", clothing, TransmogRebuild.giveTransmogItemToPlayer);
   end
 
   return context

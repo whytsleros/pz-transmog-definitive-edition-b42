@@ -52,4 +52,23 @@ TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
   local spawnedItem = player:getInventory():AddItem(tmogItemName);
 
   spawnedItem:setName('Tmog - ' .. clothing:getName())
+
+  local clothingVisual = clothing:getVisual()
+
+  TransmogRebuild.setClothingColor(spawnedItem, clothingVisual:getTint())
+  TransmogRebuild.setClothingTexture(spawnedItem, clothingVisual:getTextureChoice())
+
+  spawnedItem:synchWithVisual()
+end
+
+TransmogRebuild.setClothingColor = function (item, color)
+  local itemModData = item:getModData()
+  itemModData["transmogColor"] = color
+  item:getVisual():setTint(color)
+end
+
+TransmogRebuild.setClothingTexture = function (item, textureIndex)
+  local itemModData = item:getModData()
+  itemModData["transmogTexture"] = textureIndex
+  item:getVisual():setTextureChoice(textureIndex)
 end
