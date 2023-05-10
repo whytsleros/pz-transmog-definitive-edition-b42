@@ -34,6 +34,14 @@ TransmogRebuild.isItemTransmoggable = function(scriptItem)
   return false
 end
 
+TransmogRebuild.isTransmogItem = function(scriptItem)
+  if scriptItem.getScriptItem then
+    scriptItem = scriptItem:getScriptItem()
+  end
+
+  return scriptItem:getModuleName() == "TransmogRebuild"
+end
+
 TransmogRebuild.getTransmogModData = function()
   local TransmogModData = ModData.get("TransmogModData");
   return TransmogModData or {
@@ -61,14 +69,28 @@ TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
   spawnedItem:synchWithVisual()
 end
 
-TransmogRebuild.setClothingColor = function (item, color)
+TransmogRebuild.setClothingColor = function(item, color)
   local itemModData = item:getModData()
   itemModData["transmogColor"] = color
   item:getVisual():setTint(color)
+
+  TmogPrint('setClothingColor'..tostring(color))
 end
 
-TransmogRebuild.setClothingTexture = function (item, textureIndex)
+TransmogRebuild.getClothingColor = function(item)
+  local itemModData = item:getModData()
+  return itemModData["transmogColor"] or item:getVisual():getTint()
+end
+
+TransmogRebuild.setClothingTexture = function(item, textureIndex)
   local itemModData = item:getModData()
   itemModData["transmogTexture"] = textureIndex
   item:getVisual():setTextureChoice(textureIndex)
+
+  TmogPrint('setClothingTexture'..tostring(textureIndex))
+end
+
+TransmogRebuild.getClothingTexture = function (item)
+  local itemModData = item:getModData()
+  return itemModData["transmogTexture"] or item:getVisual():getTextureChoice()
 end
