@@ -1,0 +1,24 @@
+module TransmogRebuild {
+	imports { Base }
+
+    item Hide_Everything
+    {
+        DisplayCategory = TransmogHide,
+        Type = Clothing,
+        Cosmetic = TRUE,
+        DisplayName = Tmog - Hide All Clothing,
+        ClothingItem = Belt,
+        BodyLocation = Hide_Everything,
+        Icon = HideClothing,
+        Weight = 0,
+    }
+
+    recipe Get Hide All Clothing
+  	{
+        keep Base.RippedSheets,
+
+        Result:TransmogRebuild.Hide_Everything,
+        Time:30.0,
+        Category:Transmog,
+    }
+}

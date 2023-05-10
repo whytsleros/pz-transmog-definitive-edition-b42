@@ -2,7 +2,7 @@ const path = require('path');
 import { v4 as uuidv4 } from 'uuid';
 import { writeFileSync } from 'fs';
 
-const tmogItems = new Array(1000).fill(1).map((u, i) => {
+const tmogItems = new Array(5000).fill(1).map((u, i) => {
   const guid = uuidv4()
   return {
     guid,
@@ -25,11 +25,11 @@ const tmogItems = new Array(1000).fill(1).map((u, i) => {
     item TransmogItem_${i}
     {
       DisplayCategory = Transmog,
-      Weight	=	0,
-      Type	=	Clothing,
+      Weight = 0,
+      Type = Clothing,
       Cosmetic = TRUE,
-      DisplayName	=	TransmogItem_${i},
-      Icon	=	Belt,
+      DisplayName = TransmogItem_${i},
+      Icon = TransmogItem,
       BodyLocation = TransmogLocation,
       ClothingItem = TransmogItem_${i},
       WorldStaticModel = TShirt_Ground,
@@ -59,7 +59,7 @@ writeFileSync(path.join(__dirname, `Contents/mods/TransmogRebuild/media/fileGuid
 
 const scriptItem = `
 module TransmogRebuild {
-	imports { Base }
+ imports { Base }
 
   ${tmogItems.map(({scriptItem}) => scriptItem).join('\n\n\t')}
 
