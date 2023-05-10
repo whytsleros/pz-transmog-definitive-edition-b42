@@ -13,8 +13,11 @@ local function transmogSinglePlayerInit()
     local receiverScriptItem = ScriptManager.instance:getItem(receiverItemName)
     receiverScriptItem:setClothingItemAsset(donorClothingItemAsset)
   end
-end
 
-TmogPrint('SinglePlayer Events set up')
+  TmogPrint('transmogSinglePlayerInit: DONE')
+
+  -- Must be triggered after Transmog Has been Initialized
+  triggerEvent("OnClothingUpdated", getPlayer())
+end
 
 Events.OnGameStart.Add(transmogSinglePlayerInit);

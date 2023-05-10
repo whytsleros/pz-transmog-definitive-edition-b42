@@ -8,7 +8,6 @@ local function applyTransmogToPlayerItems(player)
   for i = 0, inv:getItems():size() - 1 do
     local item = inv:getItems():get(i);
     if TransmogRebuild.isTransmogItem(item) then
-      TmogPrintTable(TransmogRebuild.getItemTransmogModData(item))
       TransmogRebuild.setClothingColor(item, TransmogRebuild.getClothingColor(item))
       TransmogRebuild.setClothingTexture(item, TransmogRebuild.getClothingTexture(item))
     end
@@ -18,9 +17,3 @@ local function applyTransmogToPlayerItems(player)
 end
 
 Events.OnClothingUpdated.Add(applyTransmogToPlayerItems);
-
-local function OnCreatePlayer(playerIndex, player)
-  applyTransmogToPlayerItems(player)
-end
-
-Events.OnCreatePlayer.Add(OnCreatePlayer)

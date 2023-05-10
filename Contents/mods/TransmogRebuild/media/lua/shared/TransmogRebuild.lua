@@ -83,12 +83,13 @@ TransmogRebuild.setClothingColor = function(item, color)
   if color == nil then
     return
   end
+
   local itemModData = TransmogRebuild.getItemTransmogModData(item)
   itemModData.color = {
-    r = color.r,
-    g = color.g,
-    b = color.b,
-    a = color.a,
+    r = color:getRedFloat(),
+    g = color:getGreenFloat(),
+    b = color:getBlueFloat(),
+    a = color:getAlphaFloat(),
   }
   item:getVisual():setTint(color)
 
