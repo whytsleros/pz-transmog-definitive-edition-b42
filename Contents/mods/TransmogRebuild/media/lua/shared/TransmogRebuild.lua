@@ -61,30 +61,52 @@ TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
 
   spawnedItem:setName('Tmog - ' .. clothing:getName())
 
-  local clothingVisual = clothing:getVisual()
+  TransmogRebuild.setClothingColor(spawnedItem, TransmogRebuild.getClothingColor(clothing))
+  TransmogRebuild.setClothingTexture(spawnedItem, TransmogRebuild.getClothingTexture(clothing))
 
-  TransmogRebuild.setClothingColor(spawnedItem, clothingVisual:getTint())
-  TransmogRebuild.setClothingTexture(spawnedItem, clothingVisual:getTextureChoice())
+  TmogPrintTable(spawnedItem:getModData())
+end
 
-  spawnedItem:synchWithVisual()
+-- Item Specific Code
+
+TransmogRebuild.getItemTransmogModData = function (item)
+  local itemModData = item:getModData()
+  itemModData['Transmog'] = itemModData['Transmog'] or {
+    color = nil,
+    texture = nil,
+  }
+
+  return itemModData['Transmog']
 end
 
 TransmogRebuild.setClothingColor = function(item, color)
-  local itemModData = item:getModData()
-  itemModData["transmogColor"] = color
+  if color == nil then
+    return
+  end
+  local itemModData = TransmogRebuild.getItemTransmogModData(item)
+  itemModData.color = {
+    r = color.r,
+    g = color.g,
+    b = color.b,
+    a = color.a,
+  }
   item:getVisual():setTint(color)
 
-  TmogPrint('setClothingColor'..tostring(color))
+  TmogPrint('setClothingColor: '..tostring(color))
 end
 
 TransmogRebuild.getClothingColor = function(item)
-  local itemModData = item:getModData()
-  return itemModData["transmogColor"] or item:getVisual():getTint()
+  local itemModData = TransmogRebuild.getItemTransmogModData(item)
+  local parsedColor = itemModData.color and ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
+  return parsedColor or item:getVisual():getTint()
 end
 
 TransmogRebuild.setClothingTexture = function(item, textureIndex)
-  local itemModData = item:getModData()
-  itemModData["transmogTexture"] = textureIndex
+  if textureIndex < 0 or textureIndex == nil then
+    return
+  end
+  local itemModData = TransmogRebuild.getItemTransmogModData(item)
+  itemModData.texture = textureIndex
   item:getVisual():setTextureChoice(textureIndex)
 
   TmogPrint('setClothingTexture'..tostring(textureIndex))
@@ -92,5 +114,5 @@ end
 
 TransmogRebuild.getClothingTexture = function (item)
   local itemModData = item:getModData()
-  return itemModData["transmogTexture"] or item:getVisual():getTextureChoice()
+  return itemModData.texture or item:getVisual():getTextureChoice()
 end

@@ -2,6 +2,7 @@ local Commands = {};
 Commands.TransmogServer = {};
 
 Commands.TransmogServer.RequestTransmogForItem = function(source, args)
+    -- This might not be needed actually
     local username = source:getUsername();
     local itemFullName = args.fullName;
 
