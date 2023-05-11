@@ -64,12 +64,14 @@ TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
   TransmogRebuild.setClothingColor(spawnedItem, TransmogRebuild.getClothingColor(clothing))
   TransmogRebuild.setClothingTexture(spawnedItem, TransmogRebuild.getClothingTexture(clothing))
 
+  player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
+
   TmogPrintTable(spawnedItem:getModData())
 end
 
 -- Item Specific Code
 
-TransmogRebuild.getItemTransmogModData = function (item)
+TransmogRebuild.getItemTransmogModData = function(item)
   local itemModData = item:getModData()
   itemModData['Transmog'] = itemModData['Transmog'] or {
     color = nil,
@@ -93,12 +95,15 @@ TransmogRebuild.setClothingColor = function(item, color)
   }
   item:getVisual():setTint(color)
 
-  TmogPrint('setClothingColor: '..tostring(color))
+  TmogPrint('setClothingColor: ' .. tostring(color))
+
+  getPlayer():resetModelNextFrame();
 end
 
 TransmogRebuild.getClothingColor = function(item)
   local itemModData = TransmogRebuild.getItemTransmogModData(item)
-  local parsedColor = itemModData.color and ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
+  local parsedColor = itemModData.color and
+  ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
   return parsedColor or item:getVisual():getTint()
 end
 
@@ -110,10 +115,12 @@ TransmogRebuild.setClothingTexture = function(item, textureIndex)
   itemModData.texture = textureIndex
   item:getVisual():setTextureChoice(textureIndex)
 
-  TmogPrint('setClothingTexture'..tostring(textureIndex))
+  TmogPrint('setClothingTexture' .. tostring(textureIndex))
+
+  getPlayer():resetModelNextFrame();
 end
 
-TransmogRebuild.getClothingTexture = function (item)
+TransmogRebuild.getClothingTexture = function(item)
   local itemModData = item:getModData()
   return itemModData.texture or item:getVisual():getTextureChoice()
 end

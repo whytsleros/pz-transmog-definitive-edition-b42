@@ -3,17 +3,33 @@ if isServer() then
 end
 
 local function applyTransmogToPlayerItems(player)
-  TmogPrint('applyTransmogToPlayerItems!')
-  local inv = player:getInventory();
-  for i = 0, inv:getItems():size() - 1 do
-    local item = inv:getItems():get(i);
-    if TransmogRebuild.isTransmogItem(item) then
-      TransmogRebuild.setClothingColor(item, TransmogRebuild.getClothingColor(item))
-      TransmogRebuild.setClothingTexture(item, TransmogRebuild.getClothingTexture(item))
+  local playerInv = player:getInventory()
+  local wornItems = player: getWornItems()
+
+  local tmogItemsToRemove = {}
+  for i = 0, wornItems:size() - 1 do
+    local wornItem = wornItems:getItemByIndex(i);
+    if wornItem and TransmogRebuild.isTransmogItem(wornItem) then
+      table.insert(tmogItemsToRemove, wornItem)
     end
   end
+  
+  for _, wornItem in ipairs(tmogItemsToRemove) do
+    wornItems:remove(wornItem)
+    playerInv:Remove(wornItem);
+  end
 
+  local wornItems = wornItems
+  for i = 0, wornItems:size() - 1 do
+    local item = wornItems:getItemByIndex(i);
+    if item and TransmogRebuild.isItemTransmoggable(item) then
+      TransmogRebuild.giveTransmogItemToPlayer(item)
+    end
+  end
+  
   player:resetModelNextFrame();
+
+  TmogPrint('applyTransmogToPlayerItems!')
 end
 
 Events.OnClothingUpdated.Add(applyTransmogToPlayerItems);

@@ -63,27 +63,27 @@ local addEditTransmogItemOption = function(player, context, items)
     end
   end
 
-  -- DBG
-  local hairStyles = getHairStylesInstance():getAllMaleStyles();
-  if playerObj:isFemale() then
-    hairStyles = getHairStylesInstance():getAllFemaleStyles();
-  end
+  -- -- DBG
+  -- local hairStyles = getHairStylesInstance():getAllMaleStyles();
+  -- if playerObj:isFemale() then
+  --   hairStyles = getHairStylesInstance():getAllFemaleStyles();
+  -- end
 
-  for i = 1, hairStyles:size() do
-    local hairStyle = hairStyles:get(i - 1)
-    TmogPrint(tostring(hairStyle))
-    local option = context:addOption(
-      getText("ContextMenu_CutHairFor", getText("IGUI_Hair_" .. hairStyle:getName())),
-      playerObj,
-      function()
-        playerObj:getHumanVisual():setHairModel(hairStyle:getName());
-        playerObj:resetModel();
-	      playerObj:resetHairGrowingTime();
-      end,
-      hairStyle:getName(),
-      300
-    );
-  end
+  -- for i = 1, hairStyles:size() do
+  --   local hairStyle = hairStyles:get(i - 1)
+  --   TmogPrint(tostring(hairStyle))
+  --   local option = context:addOption(
+  --     getText("ContextMenu_CutHairFor", getText("IGUI_Hair_" .. hairStyle:getName())),
+  --     playerObj,
+  --     function()
+  --       playerObj:getHumanVisual():setHairModel(hairStyle:getName());
+  --       playerObj:resetModel();
+	--       playerObj:resetHairGrowingTime();
+  --     end,
+  --     hairStyle:getName(),
+  --     300
+  --   );
+  -- end
 
   return context
 end
