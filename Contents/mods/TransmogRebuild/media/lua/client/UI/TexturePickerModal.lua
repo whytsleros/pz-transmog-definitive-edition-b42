@@ -18,6 +18,7 @@ function TexturePickerModal:initialise()
     self.colorBtn:setVisible(false);
 end
 
+-- Do before initialise
 function TexturePickerModal:setTextureChoices(textureChoices)
     self.textureChoices = textureChoices
 end

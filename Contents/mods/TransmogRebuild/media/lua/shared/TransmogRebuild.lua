@@ -107,6 +107,9 @@ TransmogRebuild.getClothingColor = function(item)
   return parsedColor or item:getVisual():getTint()
 end
 
+-- TODO: Differntiate betwen these two 
+-- setBaseTexture
+-- setTextureChoice
 TransmogRebuild.setClothingTexture = function(item, textureIndex)
   if textureIndex < 0 or textureIndex == nil then
     return
@@ -114,6 +117,7 @@ TransmogRebuild.setClothingTexture = function(item, textureIndex)
   local itemModData = TransmogRebuild.getItemTransmogModData(item)
   itemModData.texture = textureIndex
   item:getVisual():setTextureChoice(textureIndex)
+  item:synchWithVisual();
 
   TmogPrint('setClothingTexture' .. tostring(textureIndex))
 

@@ -52,9 +52,9 @@ local addEditTransmogItemOption = function(player, context, items)
     if textureChoices and (textureChoices:size() > 1) then
       local textureOption = context:addOption("Change Texture", testItem, function()
         local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. testItem:getDisplayName(), 'None');
+        modal:setTextureChoices(textureChoices);
         modal:initialise();
         modal:addToUIManager();
-        modal:setTextureChoices(clothingItem:getTextureChoices());
         modal:setOnSelectionCallback(function(textureIdx)
           TransmogRebuild.setClothingTexture(clothing, textureIdx)
         end)
