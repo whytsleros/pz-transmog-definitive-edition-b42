@@ -27,6 +27,8 @@ local function applyTransmogToPlayerItems(player)
     end
   end
   
+  TransmogRebuild.giveHideClothingItemToPlayer()
+
   player:resetModelNextFrame();
 
   TmogPrint('applyTransmogToPlayerItems!')

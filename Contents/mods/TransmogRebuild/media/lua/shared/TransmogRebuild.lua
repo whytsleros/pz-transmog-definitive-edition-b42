@@ -51,6 +51,12 @@ TransmogRebuild.getTransmogModData = function()
   }
 end
 
+TransmogRebuild.giveHideClothingItemToPlayer = function()
+  local player = getPlayer();
+  local spawnedItem = player:getInventory():AddItem('TransmogRebuild.Hide_Everything');
+  player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
+end
+
 TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
   local player = getPlayer();
 
