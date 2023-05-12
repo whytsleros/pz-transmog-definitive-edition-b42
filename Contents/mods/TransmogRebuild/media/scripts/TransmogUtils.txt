@@ -12,13 +12,4 @@ module TransmogRebuild {
         Icon = HideClothing,
         Weight = 0,
     }
-
-    recipe Get Hide All Clothing
-  	{
-        keep Base.RippedSheets,
-
-        Result:TransmogRebuild.Hide_Everything,
-        Time:30.0,
-        Category:Transmog,
-    }
 }

@@ -19,16 +19,17 @@ TransmogRebuild.isItemTransmoggable = function(scriptItem)
   local isBackpack = false -- typeString == "Container" and item:getBodyLocation()
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
-  local isNotCosmetic = not scriptItem:isCosmetic()
   local isNotHidden = not scriptItem:isHidden()
   local isNotTransmog = scriptItem:getModuleName() ~= "TransmogRebuild"
+  -- local isNotCosmetic = not scriptItem:isCosmetic()
   if (isClothing or isBackpack)
       and TransmogRebuild.hasTransmoggableBodylocation(scriptItem)
+      -- and isNotCosmetic
       and isNotTransmog
       and isWorldRender
       and isClothingItemAsset
       and isNotHidden
-      and isNotCosmetic then
+      and isNotHidden then
     return true
   end
   return false
@@ -58,6 +59,10 @@ TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
   local tmogItemName = transmogModData.itemToTransmogMap[clothing:getScriptItem():getFullName()]
 
   local spawnedItem = player:getInventory():AddItem(tmogItemName);
+
+  if not spawnedItem then
+    return
+  end
 
   spawnedItem:setName('Tmog - ' .. clothing:getName())
 

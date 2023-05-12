@@ -24,15 +24,14 @@ const tmogItems = new Array(5000).fill(1).map((u, i) => {
     scriptItem: `
     item TransmogItem_${i}
     {
+      Type = Clothing,
       DisplayCategory = Transmog,
       Weight = 0,
-      Type = Clothing,
       Cosmetic = TRUE,
       DisplayName = TransmogItem_${i},
       Icon = TransmogItem,
       BodyLocation = TransmogLocation,
       ClothingItem = TransmogItem_${i},
-      WorldStaticModel = TShirt_Ground,
     }`.trim()
   } as const;
 });
@@ -43,14 +42,17 @@ for (let i = 0; i < tmogItems.length; i++) {
   writeFileSync(path.join(__dirname, `./Contents/mods/TransmogRebuild`, tmogItem.clothingItemPath), tmogItem.clothingItemXml, 'utf8');
 }
 
+const files = tmogItems.map(({ guid }, i) => (`
+  <files>
+    <path>media/clothing/clothingItems/TransmogItem_${i}.xml</path>
+    <guid>${guid}</guid>
+  </files>`
+)).join('\n')
+
 const fileGuidTable = `
 <?xml version="1.0" encoding="utf-8"?>
 <fileGuidTable>
-  <files>
-  ${tmogItems.map(({ guid }, i) => (`
-  <path>media/clothing/clothingItems/TransmogItem_${i}.xml</path>
-  <guid>${guid}</guid>`)).join('\n')}
-  </files>
+${files}
 </fileGuidTable>
 `.trim();
 

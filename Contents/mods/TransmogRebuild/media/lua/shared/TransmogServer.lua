@@ -35,6 +35,7 @@ Commands.TransmogServer.GenerateTransmogModData = function()
                 table.insert(transmogToItemMap, fullName)
                 itemToTransmogMap[fullName] = 'TransmogRebuild.TransmogItem_' .. #transmogToItemMap
             end
+            TmogPrint(fullName..' -> '..tostring(itemToTransmogMap[fullName]))
         end
     end
 
