@@ -7,8 +7,10 @@ function ISToolTipInv:render()
     return old_render(self)
   end
 
+  local itemModData = TransmogRebuild.getItemTransmogModData(self.item)
+  local name = itemModData.transmogTo and getItemNameFromFullType(itemModData.transmogTo) or "Hidden"
   local tmogTooltipText = {
-    "Transmog to: Item Name Here or None",
+    "Transmog to: " .. name,
   }
 
   local font = UIFont[getCore():getOptionTooltipFont()];

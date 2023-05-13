@@ -57,27 +57,32 @@ TransmogRebuild.giveHideClothingItemToPlayer = function()
   player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
 end
 
-TransmogRebuild.giveTransmogItemToPlayer = function(clothing)
+TransmogRebuild.giveTransmogItemToPlayer = function(ogItem)
   local player = getPlayer();
 
   local transmogModData = TransmogRebuild.getTransmogModData()
 
-  local tmogItemName = transmogModData.itemToTransmogMap[clothing:getScriptItem():getFullName()]
+  local transmogToName = TransmogRebuild.getItemTransmogModData(ogItem).transmogTo
 
-  local spawnedItem = player:getInventory():AddItem(tmogItemName);
+  local tmogItemName = transmogModData.itemToTransmogMap[transmogToName]
 
-  if not spawnedItem then
+  if not tmogItemName then
     return
   end
 
-  spawnedItem:setName('Tmog - ' .. clothing:getName())
+  local tmogItem = player:getInventory():AddItem(tmogItemName);
 
-  TransmogRebuild.setClothingColor(spawnedItem, TransmogRebuild.getClothingColor(clothing))
-  TransmogRebuild.setClothingTexture(spawnedItem, TransmogRebuild.getClothingTexture(clothing))
+  -- For debug purpose
+  tmogItem:setName('Tmog: ' .. ogItem:getName())
 
-  player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
+  TransmogRebuild.setClothingColorModdata(ogItem, TransmogRebuild.getClothingColor(ogItem))
+  TransmogRebuild.setClothingColor(tmogItem, TransmogRebuild.getClothingColor(ogItem))
 
-  TmogPrintTable(spawnedItem:getModData())
+  TransmogRebuild.setClothingTexture(tmogItem, TransmogRebuild.getClothingTexture(ogItem))
+
+  player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
+
+  TmogPrintTable(ogItem:getModData())
 end
 
 -- Item Specific Code
@@ -87,12 +92,13 @@ TransmogRebuild.getItemTransmogModData = function(item)
   itemModData['Transmog'] = itemModData['Transmog'] or {
     color = nil,
     texture = nil,
+    transmogTo = item:getScriptItem():getFullName()
   }
 
   return itemModData['Transmog']
 end
 
-TransmogRebuild.setClothingColor = function(item, color)
+TransmogRebuild.setClothingColorModdata = function (item, color)
   if color == nil then
     return
   end
@@ -104,6 +110,13 @@ TransmogRebuild.setClothingColor = function(item, color)
     b = color:getBlueFloat(),
     a = color:getAlphaFloat(),
   }
+end
+
+TransmogRebuild.setClothingColor = function(item, color)
+  if color == nil then
+    return
+  end
+
   item:getVisual():setTint(color)
 
   TmogPrint('setClothingColor: ' .. tostring(color))
@@ -138,4 +151,13 @@ end
 TransmogRebuild.getClothingTexture = function(item)
   local itemModData = item:getModData()
   return itemModData.texture or item:getVisual():getTextureChoice()
+end
+
+
+TransmogRebuild.setClothingHidden = function(item)
+  local moddata = TransmogRebuild.getItemTransmogModData(item)
+
+  moddata.transmogTo = nil
+
+  getPlayer():resetModelNextFrame();
 end

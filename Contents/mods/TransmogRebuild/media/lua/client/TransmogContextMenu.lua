@@ -1,4 +1,7 @@
-local addGetTransmogOption = function(player, context, items)
+local iconTexture = getTexture("media/ui/TransmogIcon.png")
+
+local addEditTransmogItemOption = function(player, context, items)
+  local playerObj = getSpecificPlayer(player)
   local testItem = nil
   local clothing = nil
   for _, v in ipairs(items) do
@@ -12,55 +15,43 @@ local addGetTransmogOption = function(player, context, items)
   end
 
   if tostring(#items) == "1" and clothing then
-    local getTrasmogOption = context:addOption("Get Transmog", clothing, TransmogRebuild.giveTransmogItemToPlayer);
-    getTrasmogOption.iconTexture = getTexture("media/ui/TransmogIcon.png")
-  end
-
-  return context
-end
-
-local addEditTransmogItemOption = function(player, context, items)
-  local playerObj = getSpecificPlayer(player)
-  local testItem = nil
-  local clothing = nil
-  for _, v in ipairs(items) do
-    testItem = v;
-    if not instanceof(v, "InventoryItem") then
-      testItem = v.items[1];
-    end
-    if TransmogRebuild.isTransmogItem(testItem) then
-      clothing = testItem;
-    end
-  end
-
-  if tostring(#items) == "1" and clothing then
     local clothingItem = clothing:getClothingItem()
 
+    local option = context:addOption("Transmog Menu");
+    option.iconTexture = iconTexture
+    local menuContext = context:getNew(context);
+    context:addSubMenu(option, menuContext);
+
     if clothingItem:getAllowRandomTint() then
-      local colorOption = context:addOption("Change Color", clothing, function()
+      menuContext:addOption("Change Color", clothing, function()
         local modal = ColorPickerModal:new(0, 0, 280, 180, "Change color of " .. clothing:getDisplayName(), 'None');
         modal:initialise();
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(color)
-          TransmogRebuild.setClothingColor(clothing, color)
+          TransmogRebuild.setClothingColorModdata(clothing, color)
+          triggerEvent("OnClothingUpdated", playerObj)
         end)
       end);
-      colorOption.iconTexture = getTexture("media/ui/TransmogIcon.png")
     end
 
     local textureChoices = clothingItem:hasModel() and clothingItem:getTextureChoices() or clothingItem:getBaseTextures()
     if textureChoices and (textureChoices:size() > 1) then
-      local textureOption = context:addOption("Change Texture", testItem, function()
-        local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. testItem:getDisplayName(), 'None');
+      menuContext:addOption("Change Texture", clothing, function()
+        local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. clothing:getDisplayName(), 'None');
         modal:setTextureChoices(textureChoices);
         modal:initialise();
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(textureIdx)
           TransmogRebuild.setClothingTexture(clothing, textureIdx)
+          triggerEvent("OnClothingUpdated", playerObj)
         end)
       end);
-      textureOption.iconTexture = getTexture("media/ui/TransmogIcon.png")
     end
+
+    menuContext:addOption("Hide Item", clothing, function ()
+      TransmogRebuild.setClothingHidden(clothing)
+      triggerEvent("OnClothingUpdated", playerObj)
+    end);
   end
 
   -- -- DBG
@@ -78,7 +69,7 @@ local addEditTransmogItemOption = function(player, context, items)
   --     function()
   --       playerObj:getHumanVisual():setHairModel(hairStyle:getName());
   --       playerObj:resetModel();
-	--       playerObj:resetHairGrowingTime();
+  --       playerObj:resetHairGrowingTime();
   --     end,
   --     hairStyle:getName(),
   --     300
@@ -90,4 +81,3 @@ end
 
 
 Events.OnFillInventoryObjectContextMenu.Add(addEditTransmogItemOption);
-Events.OnFillInventoryObjectContextMenu.Add(addGetTransmogOption);
