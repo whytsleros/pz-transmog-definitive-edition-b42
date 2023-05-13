@@ -1,22 +1,6 @@
-local Commands = {};
-Commands.TransmogServer = {};
+local TransmogServer = {};
 
-Commands.TransmogServer.RequestTransmogForItem = function(source, args)
-    -- This might not be needed actually
-    local username = source:getUsername();
-    local itemFullName = args.fullName;
-
-    TmogPrint("player [" .. username .. "] requested transmog for item: " .. itemFullName)
-
-    local transmogData = ModData.getOrCreate("TransmogData");
-
-    if transmogData[itemFullName] then
-        --  return the existing transmog
-        return
-    end
-end
-
-Commands.TransmogServer.GenerateTransmogModData = function()
+TransmogServer.GenerateTransmogModData = function()
     TmogPrint('Server TransmogModData')
     local scriptManager = getScriptManager();
     local allItems = scriptManager:getAllItems()
@@ -56,4 +40,4 @@ if isServer() then
     Events.OnServerStarted.Add(Commands.TransmogServer.GenerateTransmogModData)
 end
 
-return Commands.TransmogServer
+return TransmogServer

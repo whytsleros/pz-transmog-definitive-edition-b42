@@ -1,9 +1,8 @@
-local TransmogServer = require('TransmogServer')
+local TransmogServer = require('Transmog/TransmogServer')
 
 local function isSinglePlayer()
   return (not isClient() and not isServer())
 end
-
 
 local function transmogSinglePlayerInit()
   local TransmogModData = TransmogServer.GenerateTransmogModData()
@@ -19,7 +18,6 @@ local function transmogSinglePlayerInit()
       -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar 
       originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
     end
-
   end
 
   TmogPrint('transmogSinglePlayerInit: DONE')
@@ -31,5 +29,12 @@ end
 Events.OnGameStart.Add(function ()
   if isSinglePlayer() then
     transmogSinglePlayerInit()
+    return
+  end
+
+  if isClient() then -- the second condition is for SP
+    TmogPrint('Client Events set up')
+    TransmogClient.requestTransmogModData()
+    Events.OnReceiveGlobalModData.Add(TransmogClient.onReceiveGlobalModData);
   end
 end);
