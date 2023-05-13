@@ -1,7 +1,3 @@
-if isServer() then
-  return
-end
-
 local function applyTransmogToPlayerItems(player)
   local playerInv = player:getInventory()
   local wornItems = player: getWornItems()
