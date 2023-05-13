@@ -1,5 +1,24 @@
 TransmogRebuild = TransmogRebuild or {}
 
+TransmogRebuild.patchAllItemsFromModData = function (modData)
+  for originalItemName, tmogItemName in pairs(modData.itemToTransmogMap) do
+    local originalScriptItem = ScriptManager.instance:getItem(originalItemName)
+    local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
+
+    local tmogScriptItem = ScriptManager.instance:getItem(tmogItemName)
+    local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
+    tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
+
+    if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
+      -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar 
+      originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
+    end
+  end
+  
+  -- Must be triggered after items are patched
+  triggerEvent("OnClothingUpdated", getPlayer())
+end
+
 TransmogRebuild.hasTransmoggableBodylocation = function(item)
   local bodyLocation = item:getBodyLocation()
 
