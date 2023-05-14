@@ -3,7 +3,7 @@ require "ISUI/ISToolTipInv"
 local old_render = ISToolTipInv.render
 
 function ISToolTipInv:render()
-  if not self.item or not TransmogRebuild.isItemTransmoggable(self.item) then
+  if not self.item or not TransmogRebuild.isTransmoggable(self.item) then
     return old_render(self)
   end
 

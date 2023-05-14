@@ -28,7 +28,7 @@ TransmogRebuild.hasTransmoggableBodylocation = function(item)
       and not string.find(bodyLocation, "Hide_")
 end
 
-TransmogRebuild.isItemTransmoggable = function(scriptItem)
+TransmogRebuild.isTransmoggable = function(scriptItem)
   if scriptItem.getScriptItem then
     scriptItem = scriptItem:getScriptItem()
   end
@@ -172,6 +172,13 @@ TransmogRebuild.getClothingTexture = function(item)
   return itemModData.texture or item:getVisual():getTextureChoice()
 end
 
+TransmogRebuild.setItemToDefault = function(item)
+  local moddata = TransmogRebuild.getItemTransmogModData(item)
+
+  moddata.transmogTo = item:getScriptItem():getFullName()
+
+  getPlayer():resetModelNextFrame();
+end
 
 TransmogRebuild.setClothingHidden = function(item)
   local moddata = TransmogRebuild.getItemTransmogModData(item)

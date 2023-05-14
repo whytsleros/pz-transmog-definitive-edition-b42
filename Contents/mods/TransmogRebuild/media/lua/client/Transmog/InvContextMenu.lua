@@ -9,7 +9,7 @@ local addEditTransmogItemOption = function(player, context, items)
     if not instanceof(v, "InventoryItem") then
       testItem = v.items[1];
     end
-    if TransmogRebuild.isItemTransmoggable(testItem) then
+    if TransmogRebuild.isTransmoggable(testItem) then
       clothing = testItem;
     end
   end
@@ -21,6 +21,21 @@ local addEditTransmogItemOption = function(player, context, items)
     option.iconTexture = iconTexture
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
+
+    menuContext:addOption("Transmogrify", clothing, function ()
+      TransmogListViewer.OnOpenPanel()
+      triggerEvent("OnClothingUpdated", playerObj)
+    end);
+
+    menuContext:addOption("Reset Item", clothing, function ()
+      TransmogRebuild.setClothingHidden(clothing)
+      triggerEvent("OnClothingUpdated", playerObj)
+    end);
+
+    menuContext:addOption("Hide Item", clothing, function ()
+      TransmogRebuild.setClothingHidden(clothing)
+      triggerEvent("OnClothingUpdated", playerObj)
+    end);
 
     if clothingItem:getAllowRandomTint() then
       menuContext:addOption("Change Color", clothing, function()
@@ -47,11 +62,6 @@ local addEditTransmogItemOption = function(player, context, items)
         end)
       end);
     end
-
-    menuContext:addOption("Hide Item", clothing, function ()
-      TransmogRebuild.setClothingHidden(clothing)
-      triggerEvent("OnClothingUpdated", playerObj)
-    end);
   end
 
   -- -- DBG

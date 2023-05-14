@@ -12,7 +12,7 @@ TransmogServer.GenerateTransmogModData = function()
     local size = allItems:size() - 1;
     for i = 0, size do
         local item = allItems:get(i);
-        if TransmogRebuild.isItemTransmoggable(item) then
+        if TransmogRebuild.isTransmoggable(item) then
             local fullName = item:getFullName()
             serverTransmoggedItemCount = serverTransmoggedItemCount + 1
             if not itemToTransmogMap[fullName] then

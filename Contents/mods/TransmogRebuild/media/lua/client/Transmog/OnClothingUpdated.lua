@@ -18,7 +18,7 @@ local function applyTransmogToPlayerItems(player)
   local wornItems = wornItems
   for i = 0, wornItems:size() - 1 do
     local item = wornItems:getItemByIndex(i);
-    if item and TransmogRebuild.isItemTransmoggable(item) then
+    if item and TransmogRebuild.isTransmoggable(item) then
       TransmogRebuild.giveTransmogItemToPlayer(item)
     end
   end
