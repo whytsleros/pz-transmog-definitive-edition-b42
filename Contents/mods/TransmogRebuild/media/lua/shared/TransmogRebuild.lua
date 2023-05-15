@@ -2,7 +2,7 @@ TransmogRebuild = TransmogRebuild or {}
 
 TransmogRebuild.ImmersiveModeMap = {}
 
-TransmogRebuild.patchAllItemsFromModData = function (modData)
+TransmogRebuild.patchAllItemsFromModData = function(modData)
   for originalItemName, tmogItemName in pairs(modData.itemToTransmogMap) do
     local originalScriptItem = ScriptManager.instance:getItem(originalItemName)
     local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
@@ -12,16 +12,16 @@ TransmogRebuild.patchAllItemsFromModData = function (modData)
     tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
 
     if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
-      -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar 
+      -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
       originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
     end
   end
-  
+
   -- Must be triggered after items are patched
   triggerEvent("OnClothingUpdated", getPlayer())
 end
 
-TransmogRebuild.triggerUpdate = function ()
+TransmogRebuild.triggerUpdate = function()
   triggerEvent("OnClothingUpdated", getPlayer())
 end
 
@@ -123,7 +123,7 @@ TransmogRebuild.getItemTransmogModData = function(item)
   return itemModData['Transmog']
 end
 
-TransmogRebuild.setClothingColorModdata = function (item, color)
+TransmogRebuild.setClothingColorModdata = function(item, color)
   if color == nil then
     return
   end
@@ -152,11 +152,11 @@ end
 TransmogRebuild.getClothingColor = function(item)
   local itemModData = TransmogRebuild.getItemTransmogModData(item)
   local parsedColor = itemModData.color and
-  ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
+      ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
   return parsedColor or item:getVisual():getTint()
 end
 
--- TODO: Differntiate betwen these two 
+-- TODO: Differntiate betwen these two
 -- setBaseTexture
 -- setTextureChoice
 TransmogRebuild.setClothingTexture = function(item, textureIndex)
@@ -207,3 +207,14 @@ TransmogRebuild.setClothingHidden = function(item)
 end
 
 -- Immersive mode code
+
+TransmogRebuild.getImmersiveModeData = function()
+  return ModData.getOrCreate('TransmogImmersiveModeData')
+end
+
+TransmogRebuild.immersiveModeItemCheck = function(item)
+  if SandboxVars.TransmogRebuild.ImmersiveModeToggle ~= true then
+    return true
+  end
+  return TransmogRebuild.getImmersiveModeData()[item:getFullName()] == true
+end
