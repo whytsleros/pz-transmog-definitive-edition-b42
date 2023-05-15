@@ -23,12 +23,12 @@ local addEditTransmogItemOption = function(player, context, items)
     context:addSubMenu(option, menuContext);
 
     menuContext:addOption("Transmogrify", clothing, function ()
-      TransmogListViewer.OnOpenPanel()
+      TransmogListViewer.OnOpenPanel(clothing)
       triggerEvent("OnClothingUpdated", playerObj)
     end);
 
-    menuContext:addOption("Reset Item", clothing, function ()
-      TransmogRebuild.setClothingHidden(clothing)
+    menuContext:addOption("Reset to Default", clothing, function ()
+      TransmogRebuild.setItemToDefault(clothing)
       triggerEvent("OnClothingUpdated", playerObj)
     end);
 

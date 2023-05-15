@@ -19,6 +19,10 @@ TransmogRebuild.patchAllItemsFromModData = function (modData)
   triggerEvent("OnClothingUpdated", getPlayer())
 end
 
+TransmogRebuild.triggerUpdate = function ()
+  triggerEvent("OnClothingUpdated", getPlayer())
+end
+
 TransmogRebuild.hasTransmoggableBodylocation = function(item)
   local bodyLocation = item:getBodyLocation()
 
@@ -170,6 +174,18 @@ end
 TransmogRebuild.getClothingTexture = function(item)
   local itemModData = item:getModData()
   return itemModData.texture or item:getVisual():getTextureChoice()
+end
+
+TransmogRebuild.setItemTransmog = function(itemToTmog, scriptItem)
+  local moddata = TransmogRebuild.getItemTransmogModData(itemToTmog)
+
+  if scriptItem.getScriptItem then
+    scriptItem = scriptItem:getScriptItem()
+  end
+
+  moddata.transmogTo = scriptItem:getFullName()
+
+  getPlayer():resetModelNextFrame();
 end
 
 TransmogRebuild.setItemToDefault = function(item)
