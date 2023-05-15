@@ -1,5 +1,7 @@
 TransmogRebuild = TransmogRebuild or {}
 
+TransmogRebuild.ImmersiveModeMap = {}
+
 TransmogRebuild.patchAllItemsFromModData = function (modData)
   for originalItemName, tmogItemName in pairs(modData.itemToTransmogMap) do
     local originalScriptItem = ScriptManager.instance:getItem(originalItemName)
@@ -203,3 +205,5 @@ TransmogRebuild.setClothingHidden = function(item)
 
   getPlayer():resetModelNextFrame();
 end
+
+-- Immersive mode code

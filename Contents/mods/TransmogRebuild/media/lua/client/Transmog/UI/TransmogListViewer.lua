@@ -42,7 +42,8 @@ function TransmogListViewer:initList()
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
       --The above code activates as soon as the item list viewer is activated.
-      if TransmogRebuild.isTransmoggable(item) then
+      local immersiveModeCheck = SandboxVars.TransmogRebuild.ImmersiveModeToggle == true and (TransmogRebuild.ImmersiveModeMap[item:getFullName()]) or true
+      if TransmogRebuild.isTransmoggable(item) and immersiveModeCheck then
         filteredItems:add(item)
       end
     end

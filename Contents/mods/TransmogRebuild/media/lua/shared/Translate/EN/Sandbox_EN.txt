@@ -1,0 +1,5 @@
+Sandbox_EN = {
+	Sandbox_TransmogRebuild = "TransmogRebuild",
+	Sandbox_TransmogRebuild_ImmersiveModeToggle = "Toggle Immersive Mode",
+	Sandbox_TransmogRebuild_ImmersiveModeToggle_tooltip = "Immersive Mode when you enable the Immersive Mode you can transmog into *only* items you have found, and if you die, don't worry you will retain your transmogs",
+}
