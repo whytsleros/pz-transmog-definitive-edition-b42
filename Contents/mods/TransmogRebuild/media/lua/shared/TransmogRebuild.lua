@@ -204,8 +204,6 @@ TransmogRebuild.setClothingTexture = function(item, textureIndex)
   item:synchWithVisual();
 
   TmogPrint('setClothingTexture' .. tostring(textureIndex))
-
-  getPlayer():resetModelNextFrame();
 end
 
 TransmogRebuild.getClothingTexture = function(item)
@@ -221,24 +219,18 @@ TransmogRebuild.setItemTransmog = function(itemToTmog, scriptItem)
   end
 
   moddata.transmogTo = scriptItem:getFullName()
-
-  getPlayer():resetModelNextFrame();
 end
 
 TransmogRebuild.setItemToDefault = function(item)
   local moddata = TransmogRebuild.getItemTransmogModData(item)
 
   moddata.transmogTo = item:getScriptItem():getFullName()
-
-  getPlayer():resetModelNextFrame();
 end
 
 TransmogRebuild.setClothingHidden = function(item)
   local moddata = TransmogRebuild.getItemTransmogModData(item)
 
   moddata.transmogTo = nil
-
-  getPlayer():resetModelNextFrame();
 end
 
 -- Immersive mode code

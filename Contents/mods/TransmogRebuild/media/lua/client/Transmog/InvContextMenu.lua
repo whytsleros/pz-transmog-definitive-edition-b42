@@ -22,17 +22,17 @@ local addEditTransmogItemOption = function(player, context, items)
 
     menuContext:addOption("Transmogrify", clothing, function()
       TransmogListViewer.OnOpenPanel(clothing)
-      triggerEvent("OnClothingUpdated", playerObj)
+      TransmogRebuild.triggerUpdate()
     end);
 
     menuContext:addOption("Reset to Default", clothing, function()
       TransmogRebuild.setItemToDefault(clothing)
-      triggerEvent("OnClothingUpdated", playerObj)
+      TransmogRebuild.triggerUpdate()
     end);
 
     menuContext:addOption("Hide Item", clothing, function()
       TransmogRebuild.setClothingHidden(clothing)
-      triggerEvent("OnClothingUpdated", playerObj)
+      TransmogRebuild.triggerUpdate()
     end);
 
     local tmogScriptItem = ScriptManager.instance:getItem(TransmogRebuild.getItemTransmogModData(clothing).transmogTo)
@@ -49,7 +49,7 @@ local addEditTransmogItemOption = function(player, context, items)
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(color)
           TransmogRebuild.setClothingColorModdata(clothing, color)
-          triggerEvent("OnClothingUpdated", playerObj)
+          TransmogRebuild.triggerUpdate()
         end)
       end);
     end
@@ -64,7 +64,7 @@ local addEditTransmogItemOption = function(player, context, items)
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(textureIdx)
           TransmogRebuild.setClothingTexture(clothing, textureIdx)
-          triggerEvent("OnClothingUpdated", playerObj)
+          TransmogRebuild.triggerUpdate()
         end)
       end);
     end
