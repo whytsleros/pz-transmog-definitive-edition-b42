@@ -1,7 +1,7 @@
 function TmogPrint(stuff)
---   if not isDebugEnabled() then
---     return
---   end
+  if not isDebugEnabled() then
+    return
+  end
   print('TransmogRebuild:'..stuff)
 end
 
