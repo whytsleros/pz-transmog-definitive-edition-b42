@@ -15,28 +15,32 @@ local addEditTransmogItemOption = function(player, context, items)
   end
 
   if tostring(#items) == "1" and clothing then
-    local tmogScriptItem = ScriptManager.instance:getItem(TransmogRebuild.getItemTransmogModData(clothing).transmogTo)
-    local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
-
     local option = context:addOption("Transmog Menu");
     option.iconTexture = iconTexture
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
 
-    menuContext:addOption("Transmogrify", clothing, function ()
+    menuContext:addOption("Transmogrify", clothing, function()
       TransmogListViewer.OnOpenPanel(clothing)
       triggerEvent("OnClothingUpdated", playerObj)
     end);
 
-    menuContext:addOption("Reset to Default", clothing, function ()
+    menuContext:addOption("Reset to Default", clothing, function()
       TransmogRebuild.setItemToDefault(clothing)
       triggerEvent("OnClothingUpdated", playerObj)
     end);
 
-    menuContext:addOption("Hide Item", clothing, function ()
+    menuContext:addOption("Hide Item", clothing, function()
       TransmogRebuild.setClothingHidden(clothing)
       triggerEvent("OnClothingUpdated", playerObj)
     end);
+
+    local tmogScriptItem = ScriptManager.instance:getItem(TransmogRebuild.getItemTransmogModData(clothing).transmogTo)
+    if not tmogScriptItem then
+      return context
+    end
+
+    local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
 
     if tmogClothingItemAsset:getAllowRandomTint() then
       menuContext:addOption("Change Color", clothing, function()
@@ -50,7 +54,8 @@ local addEditTransmogItemOption = function(player, context, items)
       end);
     end
 
-    local textureChoices = tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices() or tmogClothingItemAsset:getBaseTextures()
+    local textureChoices = tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices() or
+    tmogClothingItemAsset:getBaseTextures()
     if textureChoices and (textureChoices:size() > 1) then
       menuContext:addOption("Change Texture", clothing, function()
         local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. clothing:getDisplayName(), 'None');
