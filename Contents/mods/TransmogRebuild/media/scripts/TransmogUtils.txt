@@ -6,7 +6,7 @@ module TransmogRebuild {
         DisplayCategory = TransmogHide,
         Type = Clothing,
         Cosmetic = TRUE,
-        DisplayName = Tmog - Hide All Clothing,
+        /* DisplayName = Tmog - Hide All Clothing, */
         ClothingItem = Belt,
         BodyLocation = Hide_Everything,
         Icon = HideClothing,
