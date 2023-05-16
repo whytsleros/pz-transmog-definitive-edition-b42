@@ -1,9 +1,5 @@
 TransmogClient = TransmogClient or {}
 
-TransmogClient.requestItemTransmog = function(InventoryItem)
-
-end
-
 TransmogClient.requestTransmogModData = function()
   TmogPrint('requestTransmogModData')
 
@@ -12,13 +8,15 @@ end
 
 
 TransmogClient.onReceiveGlobalModData = function(module, packet)
+  TmogPrint('onReceiveGlobalModData: ' .. module .. tostring(packet))
   if module ~= "TransmogModData" or not packet then
     return
   end
 
-  TmogPrint('onReceiveGlobalModData: ' .. module)
 
   ModData.add("TransmogModData", packet)
 
-  -- TransmogV3.applyTransmogFromModData()
+  TransmogRebuild.patchAllItemsFromModData(packet)
 end
+
+return TransmogClient

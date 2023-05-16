@@ -3,7 +3,6 @@ local old_ISInventoryPane_refreshContainer = ISInventoryPane.refreshContainer
 function ISInventoryPane:refreshContainer()
   local result = old_ISInventoryPane_refreshContainer(self)
 
-  TmogPrint('SandboxVars.TransmogRebuild.ImmersiveModeToggle'..tostring(SandboxVars.TransmogRebuild.ImmersiveModeToggle))
   if SandboxVars.TransmogRebuild.ImmersiveModeToggle ~= true then
     return result
   end

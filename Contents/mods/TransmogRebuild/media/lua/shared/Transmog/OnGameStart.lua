@@ -1,20 +1,20 @@
-local TransmogServer = require('Transmog/TransmogServer')
+local TransmogClient = require('Transmog/TransmogClient')
 
 local function isSinglePlayer()
   return (not isClient() and not isServer())
 end
 
-Events.OnGameStart.Add(function ()
+Events.OnGameStart.Add(function()
+  TransmogClient.requestTransmogModData()
   if isSinglePlayer() then
-    local modData = TransmogServer.GenerateTransmogModData()
+    local modData = TransmogRebuild.GenerateTransmogGlobalModData()
     TransmogRebuild.patchAllItemsFromModData(modData)
     TmogPrint('isSinglePlayer -> OnGameStart -> patchAllItemsFromModData')
     return
   end
-
-  if isClient() then -- the second condition is for SP
-    TransmogClient.requestTransmogModData()
-    Events.OnReceiveGlobalModData.Add(TransmogClient.onReceiveGlobalModData);
-    TmogPrint('isClient -> requestTransmogModData')
-  end
 end);
+
+if isClient() then -- the second condition is for SP
+  Events.OnReceiveGlobalModData.Add(TransmogClient.onReceiveGlobalModData);
+  TmogPrint('OnReceiveGlobalModData.Add')
+end
