@@ -56,8 +56,9 @@ TransmogRebuild.patchAllItemsFromModData = function(modData)
   triggerEvent("OnClothingUpdated", getPlayer())
 end
 
-TransmogRebuild.triggerUpdate = function()
-  triggerEvent("OnClothingUpdated", getPlayer())
+TransmogRebuild.triggerUpdate = function(player)
+  local player = player or getPlayer()
+  triggerEvent("OnClothingUpdated", player)
 end
 
 TransmogRebuild.hasTransmoggableBodylocation = function(item)
@@ -139,6 +140,8 @@ TransmogRebuild.giveTransmogItemToPlayer = function(ogItem)
   TransmogRebuild.setClothingColor(tmogItem, TransmogRebuild.getClothingColor(ogItem))
 
   TransmogRebuild.setClothingTexture(tmogItem, TransmogRebuild.getClothingTexture(ogItem))
+
+  -- tmogItem:synchWithVisual()
 
   player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
 
