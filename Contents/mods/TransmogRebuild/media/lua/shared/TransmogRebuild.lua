@@ -77,7 +77,7 @@ TransmogRebuild.isTransmoggable = function(scriptItem)
 
   local typeString = scriptItem:getTypeString()
   local isClothing = typeString == 'Clothing'
-  local isBackpack = false -- typeString == "Container" and item:getBodyLocation()
+  local isBackpack = typeString == "Container" and scriptItem:getBodyLocation()
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
   local isNotHidden = not scriptItem:isHidden()
