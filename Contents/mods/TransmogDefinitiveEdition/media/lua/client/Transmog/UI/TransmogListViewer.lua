@@ -42,7 +42,7 @@ function TransmogListViewer:initList()
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
       --The above code activates as soon as the item list viewer is activated.
-      if TransmogRebuild.isTransmoggable(item) and TransmogRebuild.immersiveModeItemCheck(item) then
+      if TransmogDE.isTransmoggable(item) and TransmogDE.immersiveModeItemCheck(item) then
         filteredItems:add(item)
       end
     end
@@ -87,6 +87,6 @@ function ISItemsListTable:sendItemToTransmog(scriptItem)
   print('sendItemToTransmog'..tostring(scriptItem))
   local text = 'Transmogged to' .. getItemNameFromFullType(scriptItem:getFullName())
   HaloTextHelper.addText(getPlayer(), text, HaloTextHelper.getColorGreen())
-  TransmogRebuild.setItemTransmog(self.viewer.itemToTmog, scriptItem)
-  TransmogRebuild.triggerUpdate()
+  TransmogDE.setItemTransmog(self.viewer.itemToTmog, scriptItem)
+  TransmogDE.triggerUpdate()
 end

@@ -7,8 +7,8 @@ end
 Events.OnGameStart.Add(function()
   TransmogClient.requestTransmogModData()
   if isSinglePlayer() then
-    local modData = TransmogRebuild.GenerateTransmogGlobalModData()
-    TransmogRebuild.patchAllItemsFromModData(modData)
+    local modData = TransmogDE.GenerateTransmogGlobalModData()
+    TransmogDE.patchAllItemsFromModData(modData)
     TmogPrint('isSinglePlayer -> OnGameStart -> patchAllItemsFromModData')
     return
   end

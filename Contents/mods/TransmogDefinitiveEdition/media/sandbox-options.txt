@@ -1,0 +1,7 @@
+VERSION = 1,
+
+option TransmogDE.ImmersiveModeToggle
+{
+	type = boolean, default = false,
+	page = TransmogDE, translation = TransmogDE_ImmersiveModeToggle,
+}

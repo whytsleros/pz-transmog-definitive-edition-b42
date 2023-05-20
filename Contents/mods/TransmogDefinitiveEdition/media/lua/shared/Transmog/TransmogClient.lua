@@ -16,7 +16,7 @@ TransmogClient.onReceiveGlobalModData = function(module, packet)
 
   ModData.add("TransmogModData", packet)
 
-  TransmogRebuild.patchAllItemsFromModData(packet)
+  TransmogDE.patchAllItemsFromModData(packet)
 end
 
 return TransmogClient

@@ -5,7 +5,7 @@ local function applyTransmogToPlayerItems(player)
   local tmogItemsToRemove = {}
   for i = 0, wornItems:size() - 1 do
     local wornItem = wornItems:getItemByIndex(i);
-    if wornItem and TransmogRebuild.isTransmogItem(wornItem) then
+    if wornItem and TransmogDE.isTransmogItem(wornItem) then
       table.insert(tmogItemsToRemove, wornItem)
     end
   end
@@ -18,12 +18,12 @@ local function applyTransmogToPlayerItems(player)
   local wornItems = wornItems
   for i = 0, wornItems:size() - 1 do
     local item = wornItems:getItemByIndex(i);
-    if item and TransmogRebuild.isTransmoggable(item) then
-      TransmogRebuild.giveTransmogItemToPlayer(item)
+    if item and TransmogDE.isTransmoggable(item) then
+      TransmogDE.giveTransmogItemToPlayer(item)
     end
   end
   
-  TransmogRebuild.giveHideClothingItemToPlayer()
+  TransmogDE.giveHideClothingItemToPlayer()
 
   player:resetModel();
   sendClothing(player);

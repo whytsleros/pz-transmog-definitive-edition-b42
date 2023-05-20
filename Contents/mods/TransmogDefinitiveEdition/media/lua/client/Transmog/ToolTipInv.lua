@@ -3,11 +3,11 @@ require "ISUI/ISToolTipInv"
 local old_render = ISToolTipInv.render
 
 function ISToolTipInv:render()
-  if not self.item or not TransmogRebuild.isTransmoggable(self.item) then
+  if not self.item or not TransmogDE.isTransmoggable(self.item) then
     return old_render(self)
   end
 
-  local itemModData = TransmogRebuild.getItemTransmogModData(self.item)
+  local itemModData = TransmogDE.getItemTransmogModData(self.item)
   local name = itemModData.transmogTo and getItemNameFromFullType(itemModData.transmogTo) or "Hidden"
   local tmogTooltipText = {
     "Transmog to: " .. name,

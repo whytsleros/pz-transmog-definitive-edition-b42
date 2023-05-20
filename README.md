@@ -1,3 +1,3 @@
-# pz-transmog-rebuild
+# pz-transmog-definitive-edition
 
 Check workshop.txt

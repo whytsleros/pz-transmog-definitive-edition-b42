@@ -2,7 +2,7 @@ function TmogPrint(stuff)
   if not isDebugEnabled() then
     return
   end
-  print('TransmogRebuild:'..stuff)
+  print('TransmogDE:'..stuff)
 end
 
 function TmogPrintTable(node)

@@ -1,7 +1,0 @@
-VERSION = 1,
-
-option TransmogRebuild.ImmersiveModeToggle
-{
-	type = boolean, default = false,
-	page = TransmogRebuild, translation = TransmogRebuild_ImmersiveModeToggle,
-}

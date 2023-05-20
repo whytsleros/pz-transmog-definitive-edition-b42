@@ -39,7 +39,7 @@ const tmogItems = new Array(5000).fill(1).map((u, i) => {
 for (let i = 0; i < tmogItems.length; i++) {
   const tmogItem = tmogItems[i];
 
-  writeFileSync(path.join(__dirname, `./Contents/mods/TransmogRebuild`, tmogItem.clothingItemPath), tmogItem.clothingItemXml, 'utf8');
+  writeFileSync(path.join(__dirname, `./Contents/mods/TransmogDE`, tmogItem.clothingItemPath), tmogItem.clothingItemXml, 'utf8');
 }
 
 const files = tmogItems.map(({ guid }, i) => (`
@@ -57,14 +57,14 @@ ${files}
 `.trim();
 
 
-writeFileSync(path.join(__dirname, `Contents/mods/TransmogRebuild/media/fileGuidTable.xml`), fileGuidTable, 'utf8');
+writeFileSync(path.join(__dirname, `Contents/mods/TransmogDE/media/fileGuidTable.xml`), fileGuidTable, 'utf8');
 
 const scriptItem = `
-module TransmogRebuild {
+module TransmogDE {
  imports { Base }
 
   ${tmogItems.map(({scriptItem}) => scriptItem).join('\n\n\t')}
 
 }`.trim()
 
-writeFileSync(path.join(__dirname, `Contents/mods/TransmogRebuild/media/scripts/TransmogItems.txt`), scriptItem, 'utf8');
+writeFileSync(path.join(__dirname, `Contents/mods/TransmogDE/media/scripts/TransmogItems.txt`), scriptItem, 'utf8');

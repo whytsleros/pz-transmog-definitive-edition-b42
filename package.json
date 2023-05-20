@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npx ts-node index.ts"
   },
-  "name": "pz-transmog-rebuild",
+  "name": "pz-transmog-definitive-edition",
   "version": "1.0.0",
   "main": "index.js",
   "author": "",

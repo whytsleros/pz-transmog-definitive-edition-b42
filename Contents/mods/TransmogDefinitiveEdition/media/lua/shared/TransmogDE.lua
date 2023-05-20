@@ -1,12 +1,12 @@
-TransmogRebuild = TransmogRebuild or {}
+TransmogDE = TransmogDE or {}
 
-TransmogRebuild.ImmersiveModeMap = {}
+TransmogDE.ImmersiveModeMap = {}
 
-TransmogRebuild.GenerateTransmogGlobalModData = function()
+TransmogDE.GenerateTransmogGlobalModData = function()
   TmogPrint('Server TransmogModData')
   local scriptManager = getScriptManager();
   local allItems = scriptManager:getAllItems()
-  local transmogModData = TransmogRebuild.getTransmogModData()
+  local transmogModData = TransmogDE.getTransmogModData()
   local itemToTransmogMap = transmogModData.itemToTransmogMap or {}
   local transmogToItemMap = transmogModData.transmogToItemMap or {}
 
@@ -14,12 +14,12 @@ TransmogRebuild.GenerateTransmogGlobalModData = function()
   local size = allItems:size() - 1;
   for i = 0, size do
       local item = allItems:get(i);
-      if TransmogRebuild.isTransmoggable(item) then
+      if TransmogDE.isTransmoggable(item) then
           local fullName = item:getFullName()
           serverTransmoggedItemCount = serverTransmoggedItemCount + 1
           if not itemToTransmogMap[fullName] then
               table.insert(transmogToItemMap, fullName)
-              itemToTransmogMap[fullName] = 'TransmogRebuild.TransmogItem_' .. #transmogToItemMap
+              itemToTransmogMap[fullName] = 'TransmogDE.TransmogItem_' .. #transmogToItemMap
           end
           TmogPrint(fullName..' -> '..tostring(itemToTransmogMap[fullName]))
       end
@@ -37,7 +37,7 @@ TransmogRebuild.GenerateTransmogGlobalModData = function()
   return transmogModData
 end
 
-TransmogRebuild.patchAllItemsFromModData = function(modData)
+TransmogDE.patchAllItemsFromModData = function(modData)
   for originalItemName, tmogItemName in pairs(modData.itemToTransmogMap) do
     local originalScriptItem = ScriptManager.instance:getItem(originalItemName)
     local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
@@ -56,12 +56,12 @@ TransmogRebuild.patchAllItemsFromModData = function(modData)
   triggerEvent("OnClothingUpdated", getPlayer())
 end
 
-TransmogRebuild.triggerUpdate = function(player)
+TransmogDE.triggerUpdate = function(player)
   local player = player or getPlayer()
   triggerEvent("OnClothingUpdated", player)
 end
 
-TransmogRebuild.hasTransmoggableBodylocation = function(item)
+TransmogDE.hasTransmoggableBodylocation = function(item)
   local bodyLocation = item:getBodyLocation()
 
   return bodyLocation ~= "ZedDmg"
@@ -70,7 +70,7 @@ TransmogRebuild.hasTransmoggableBodylocation = function(item)
       and not string.find(bodyLocation, "Hide_")
 end
 
-TransmogRebuild.isTransmoggable = function(scriptItem)
+TransmogDE.isTransmoggable = function(scriptItem)
   if scriptItem.getScriptItem then
     scriptItem = scriptItem:getScriptItem()
   end
@@ -81,10 +81,10 @@ TransmogRebuild.isTransmoggable = function(scriptItem)
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
   local isNotHidden = not scriptItem:isHidden()
-  local isNotTransmog = scriptItem:getModuleName() ~= "TransmogRebuild"
+  local isNotTransmog = scriptItem:getModuleName() ~= "TransmogDE"
   -- local isNotCosmetic = not scriptItem:isCosmetic()
   if (isClothing or isBackpack)
-      and TransmogRebuild.hasTransmoggableBodylocation(scriptItem)
+      and TransmogDE.hasTransmoggableBodylocation(scriptItem)
       -- and isNotCosmetic
       and isNotTransmog
       and isWorldRender
@@ -96,15 +96,15 @@ TransmogRebuild.isTransmoggable = function(scriptItem)
   return false
 end
 
-TransmogRebuild.isTransmogItem = function(scriptItem)
+TransmogDE.isTransmogItem = function(scriptItem)
   if scriptItem.getScriptItem then
     scriptItem = scriptItem:getScriptItem()
   end
 
-  return scriptItem:getModuleName() == "TransmogRebuild"
+  return scriptItem:getModuleName() == "TransmogDE"
 end
 
-TransmogRebuild.getTransmogModData = function()
+TransmogDE.getTransmogModData = function()
   local TransmogModData = ModData.get("TransmogModData");
   return TransmogModData or {
     itemToTransmogMap = {},
@@ -112,18 +112,18 @@ TransmogRebuild.getTransmogModData = function()
   }
 end
 
-TransmogRebuild.giveHideClothingItemToPlayer = function()
+TransmogDE.giveHideClothingItemToPlayer = function()
   local player = getPlayer();
-  local spawnedItem = player:getInventory():AddItem('TransmogRebuild.Hide_Everything');
+  local spawnedItem = player:getInventory():AddItem('TransmogDE.Hide_Everything');
   player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
 end
 
-TransmogRebuild.giveTransmogItemToPlayer = function(ogItem)
+TransmogDE.giveTransmogItemToPlayer = function(ogItem)
   local player = getPlayer();
 
-  local transmogModData = TransmogRebuild.getTransmogModData()
+  local transmogModData = TransmogDE.getTransmogModData()
 
-  local transmogToName = TransmogRebuild.getItemTransmogModData(ogItem).transmogTo
+  local transmogToName = TransmogDE.getItemTransmogModData(ogItem).transmogTo
 
   local tmogItemName = transmogModData.itemToTransmogMap[transmogToName]
 
@@ -136,10 +136,10 @@ TransmogRebuild.giveTransmogItemToPlayer = function(ogItem)
   -- For debug purpose
   tmogItem:setName('Tmog: ' .. ogItem:getName())
 
-  TransmogRebuild.setClothingColorModdata(ogItem, TransmogRebuild.getClothingColor(ogItem))
-  TransmogRebuild.setClothingColor(tmogItem, TransmogRebuild.getClothingColor(ogItem))
+  TransmogDE.setClothingColorModdata(ogItem, TransmogDE.getClothingColor(ogItem))
+  TransmogDE.setClothingColor(tmogItem, TransmogDE.getClothingColor(ogItem))
 
-  TransmogRebuild.setClothingTexture(tmogItem, TransmogRebuild.getClothingTexture(ogItem))
+  TransmogDE.setClothingTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
 
   -- tmogItem:synchWithVisual()
 
@@ -150,7 +150,7 @@ end
 
 -- Item Specific Code
 
-TransmogRebuild.getItemTransmogModData = function(item)
+TransmogDE.getItemTransmogModData = function(item)
   local itemModData = item:getModData()
   itemModData['Transmog'] = itemModData['Transmog'] or {
     color = nil,
@@ -161,12 +161,12 @@ TransmogRebuild.getItemTransmogModData = function(item)
   return itemModData['Transmog']
 end
 
-TransmogRebuild.setClothingColorModdata = function(item, color)
+TransmogDE.setClothingColorModdata = function(item, color)
   if color == nil then
     return
   end
 
-  local itemModData = TransmogRebuild.getItemTransmogModData(item)
+  local itemModData = TransmogDE.getItemTransmogModData(item)
   itemModData.color = {
     r = color:getRedFloat(),
     g = color:getGreenFloat(),
@@ -175,7 +175,7 @@ TransmogRebuild.setClothingColorModdata = function(item, color)
   }
 end
 
-TransmogRebuild.setClothingColor = function(item, color)
+TransmogDE.setClothingColor = function(item, color)
   if color == nil then
     return
   end
@@ -187,8 +187,8 @@ TransmogRebuild.setClothingColor = function(item, color)
   getPlayer():resetModelNextFrame();
 end
 
-TransmogRebuild.getClothingColor = function(item)
-  local itemModData = TransmogRebuild.getItemTransmogModData(item)
+TransmogDE.getClothingColor = function(item)
+  local itemModData = TransmogDE.getItemTransmogModData(item)
   local parsedColor = itemModData.color and
       ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
   return parsedColor or item:getVisual():getTint()
@@ -197,11 +197,11 @@ end
 -- TODO: Differntiate betwen these two
 -- setBaseTexture
 -- setTextureChoice
-TransmogRebuild.setClothingTexture = function(item, textureIndex)
+TransmogDE.setClothingTexture = function(item, textureIndex)
   if textureIndex < 0 or textureIndex == nil then
     return
   end
-  local itemModData = TransmogRebuild.getItemTransmogModData(item)
+  local itemModData = TransmogDE.getItemTransmogModData(item)
   itemModData.texture = textureIndex
   item:getVisual():setTextureChoice(textureIndex)
   item:synchWithVisual();
@@ -209,13 +209,13 @@ TransmogRebuild.setClothingTexture = function(item, textureIndex)
   TmogPrint('setClothingTexture' .. tostring(textureIndex))
 end
 
-TransmogRebuild.getClothingTexture = function(item)
+TransmogDE.getClothingTexture = function(item)
   local itemModData = item:getModData()
   return itemModData.texture or item:getVisual():getTextureChoice()
 end
 
-TransmogRebuild.setItemTransmog = function(itemToTmog, scriptItem)
-  local moddata = TransmogRebuild.getItemTransmogModData(itemToTmog)
+TransmogDE.setItemTransmog = function(itemToTmog, scriptItem)
+  local moddata = TransmogDE.getItemTransmogModData(itemToTmog)
 
   if scriptItem.getScriptItem then
     scriptItem = scriptItem:getScriptItem()
@@ -224,27 +224,27 @@ TransmogRebuild.setItemTransmog = function(itemToTmog, scriptItem)
   moddata.transmogTo = scriptItem:getFullName()
 end
 
-TransmogRebuild.setItemToDefault = function(item)
-  local moddata = TransmogRebuild.getItemTransmogModData(item)
+TransmogDE.setItemToDefault = function(item)
+  local moddata = TransmogDE.getItemTransmogModData(item)
 
   moddata.transmogTo = item:getScriptItem():getFullName()
 end
 
-TransmogRebuild.setClothingHidden = function(item)
-  local moddata = TransmogRebuild.getItemTransmogModData(item)
+TransmogDE.setClothingHidden = function(item)
+  local moddata = TransmogDE.getItemTransmogModData(item)
 
   moddata.transmogTo = nil
 end
 
 -- Immersive mode code
 
-TransmogRebuild.getImmersiveModeData = function()
+TransmogDE.getImmersiveModeData = function()
   return ModData.getOrCreate('TransmogImmersiveModeData')
 end
 
-TransmogRebuild.immersiveModeItemCheck = function(item)
-  if SandboxVars.TransmogRebuild.ImmersiveModeToggle ~= true then
+TransmogDE.immersiveModeItemCheck = function(item)
+  if SandboxVars.TransmogDE.ImmersiveModeToggle ~= true then
     return true
   end
-  return TransmogRebuild.getImmersiveModeData()[item:getFullName()] == true
+  return TransmogDE.getImmersiveModeData()[item:getFullName()] == true
 end

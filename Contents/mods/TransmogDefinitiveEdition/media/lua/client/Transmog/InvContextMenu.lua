@@ -9,7 +9,7 @@ local addEditTransmogItemOption = function(player, context, items)
     if not instanceof(v, "InventoryItem") then
       testItem = v.items[1];
     end
-    if TransmogRebuild.isTransmoggable(testItem) then
+    if TransmogDE.isTransmoggable(testItem) then
       clothing = testItem;
     end
   end
@@ -22,20 +22,20 @@ local addEditTransmogItemOption = function(player, context, items)
 
     menuContext:addOption("Transmogrify", clothing, function()
       TransmogListViewer.OnOpenPanel(clothing)
-      TransmogRebuild.triggerUpdate()
+      TransmogDE.triggerUpdate()
     end);
 
     menuContext:addOption("Reset to Default", clothing, function()
-      TransmogRebuild.setItemToDefault(clothing)
-      TransmogRebuild.triggerUpdate()
+      TransmogDE.setItemToDefault(clothing)
+      TransmogDE.triggerUpdate()
     end);
 
     menuContext:addOption("Hide Item", clothing, function()
-      TransmogRebuild.setClothingHidden(clothing)
-      TransmogRebuild.triggerUpdate()
+      TransmogDE.setClothingHidden(clothing)
+      TransmogDE.triggerUpdate()
     end);
 
-    local transmogTo = TransmogRebuild.getItemTransmogModData(clothing).transmogTo
+    local transmogTo = TransmogDE.getItemTransmogModData(clothing).transmogTo
     if not transmogTo then
       return
     end
@@ -53,8 +53,8 @@ local addEditTransmogItemOption = function(player, context, items)
         modal:initialise();
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(color)
-          TransmogRebuild.setClothingColorModdata(clothing, color)
-          TransmogRebuild.triggerUpdate()
+          TransmogDE.setClothingColorModdata(clothing, color)
+          TransmogDE.triggerUpdate()
         end)
       end);
     end
@@ -68,8 +68,8 @@ local addEditTransmogItemOption = function(player, context, items)
         modal:initialise();
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(textureIdx)
-          TransmogRebuild.setClothingTexture(clothing, textureIdx)
-          TransmogRebuild.triggerUpdate()
+          TransmogDE.setClothingTexture(clothing, textureIdx)
+          TransmogDE.triggerUpdate()
         end)
       end);
     end

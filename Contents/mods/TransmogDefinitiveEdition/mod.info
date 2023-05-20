@@ -1,5 +1,5 @@
-name=TransmogRebuild
-id=TransmogRebuild
+name=Transmog Definitive Edition
+id=TransmogDE
 description=[h1] A mod that allows you to hot-swap your appearance with any armour or clothing of your choice. Visible to other players in MP [/h1]
 description=
 description=[h1] The definitive Edition of the transmog mod [/h1]
@@ -26,7 +26,7 @@ description=[b]-[/b] Some item combinations will look weird or with clipping. Th
 description=
 description=
 description=[h1]Found a bug?[/h1]
-description=Please report it here: https://github.com/mxswat/pz-transmog-rebuild/issues
+description=Please report it here: https://github.com/mxswat/pz-transmog-definitive-edition/issues
 description=I can't read all the comments because life is really, really busy right now.
 poster=poster.png
 icon=icon.png

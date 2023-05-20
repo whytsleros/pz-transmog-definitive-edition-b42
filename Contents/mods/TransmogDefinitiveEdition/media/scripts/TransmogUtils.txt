@@ -1,4 +1,4 @@
-module TransmogRebuild {
+module TransmogDE {
 	imports { Base }
 
     item Hide_Everything
