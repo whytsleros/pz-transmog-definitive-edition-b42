@@ -1,5 +1,5 @@
 version=1
-title=pz-transmog-rebuild
-description=This is the description of pz-transmog-rebuild.
+title=Transmog: Definitive Edition 
+description=A mod that allows you to hot-swap your appearance with any armour or clothing of your choice. Visible to other players in MP
 tags=
 visibility=public
