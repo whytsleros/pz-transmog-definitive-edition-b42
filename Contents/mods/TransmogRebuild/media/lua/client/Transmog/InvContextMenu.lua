@@ -35,7 +35,12 @@ local addEditTransmogItemOption = function(player, context, items)
       TransmogRebuild.triggerUpdate()
     end);
 
-    local tmogScriptItem = ScriptManager.instance:getItem(TransmogRebuild.getItemTransmogModData(clothing).transmogTo)
+    local transmogTo = TransmogRebuild.getItemTransmogModData(clothing).transmogTo
+    if not transmogTo then
+      return
+    end
+
+    local tmogScriptItem = ScriptManager.instance:getItem(transmogTo)
     if not tmogScriptItem then
       return context
     end
