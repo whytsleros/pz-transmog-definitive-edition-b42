@@ -1,5 +1,6 @@
 version=1
-title=Transmog: Definitive Edition 
+id=2979375840
+title=Transmog: Definitive Edition
 description=[h1] A mod that allows you to hot-swap your appearance with any armour or clothing of your choice. Visible to other players in MP [/h1]
 description=
 description=[h1] The definitive Edition of the transmog mod [/h1]
@@ -28,5 +29,6 @@ description=
 description=[h1]Found a bug?[/h1]
 description=Please report it here: https://github.com/mxswat/pz-transmog-definitive-edition/issues
 description=I can't read all the comments because life is really, really busy right now.
-tags=
+description=I do not have time to help with mod incompatibility. This mod was tested only on vanilla zomboid, and some other clothing mods
+tags=Build 41;Clothing/Armor;Interface;Items;Military;Misc;Models;Multiplayer;Pop Culture;Silly/Fun;Textures
 visibility=public
