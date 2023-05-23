@@ -61,7 +61,7 @@ TransmogDE.triggerUpdate = function(player)
   triggerEvent("OnClothingUpdated", player)
 end
 
-TransmogDE.hasTransmoggableBodylocation = function(item)
+TransmogDE.hasValidTransmoggableBodylocation = function(item)
   local bodyLocation = item:getBodyLocation()
 
   return bodyLocation ~= "ZedDmg"
@@ -77,14 +77,14 @@ TransmogDE.isTransmoggable = function(scriptItem)
 
   local typeString = scriptItem:getTypeString()
   local isClothing = typeString == 'Clothing'
-  local isBackpack =  false -- Apparently, it does not work :( typeString == "Container" and scriptItem:getBodyLocation()
+  local isBackpack = typeString == "Container" and (scriptItem:InstanceItem(nil):canBeEquipped() or scriptItem:getBodyLocation())
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
   local isNotHidden = not scriptItem:isHidden()
   local isNotTransmog = scriptItem:getModuleName() ~= "TransmogDE"
   -- local isNotCosmetic = not scriptItem:isCosmetic()
   if (isClothing or isBackpack)
-      and TransmogDE.hasTransmoggableBodylocation(scriptItem)
+      and TransmogDE.hasValidTransmoggableBodylocation(scriptItem)
       -- and isNotCosmetic
       and isNotTransmog
       and isWorldRender

@@ -30,10 +30,13 @@ local addEditTransmogItemOption = function(player, context, items)
       TransmogDE.triggerUpdate()
     end);
 
-    menuContext:addOption("Hide Item", clothing, function()
-      TransmogDE.setClothingHidden(clothing)
-      TransmogDE.triggerUpdate()
-    end);
+    if not (instanceof(clothing, "InventoryContainer") and clothing:canBeEquipped() ~= nil and clothing:canBeEquipped() ~= "") then
+      menuContext:addOption("Hide Item", clothing, function()
+        TransmogDE.setClothingHidden(clothing)
+        TransmogDE.triggerUpdate()
+      end);
+    end
+
 
     local transmogTo = TransmogDE.getItemTransmogModData(clothing).transmogTo
     if not transmogTo then
