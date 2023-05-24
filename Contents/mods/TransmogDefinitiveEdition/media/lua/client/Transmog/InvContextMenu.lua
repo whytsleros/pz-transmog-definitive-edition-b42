@@ -24,7 +24,7 @@ local addEditTransmogItemOption = function(player, context, items)
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
 
-    if not isBackpack() then
+    if not isBackpack(clothing) then
       menuContext:addOption("Transmogrify", clothing, function()
         TransmogListViewer.OnOpenPanel(clothing)
         TransmogDE.triggerUpdate()
@@ -36,7 +36,7 @@ local addEditTransmogItemOption = function(player, context, items)
       TransmogDE.triggerUpdate()
     end);
 
-    if not isBackpack() then
+    if not isBackpack(clothing) then
       menuContext:addOption("Hide Item", clothing, function()
         TransmogDE.setClothingHidden(clothing)
         TransmogDE.triggerUpdate()

@@ -53,12 +53,13 @@ TransmogDE.patchAllItemsFromModData = function(modData)
   end
 
   -- Must be triggered after items are patched
-  triggerEvent("OnClothingUpdated", getPlayer())
+  TransmogDE.triggerUpdate()
 end
 
 TransmogDE.triggerUpdate = function(player)
   local player = player or getPlayer()
-  triggerEvent("OnClothingUpdated", player)
+  TmogPrint('triggerUpdate')
+  triggerEvent("ApplyTransmogToPlayerItems", player)
 end
 
 TransmogDE.hasValidTransmoggableBodylocation = function(item)
@@ -145,7 +146,7 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
 
   player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
 
-  TmogPrintTable(ogItem:getModData())
+  -- TmogPrintTable(ogItem:getModData())
 end
 
 -- Item Specific Code
@@ -182,7 +183,7 @@ TransmogDE.setClothingColor = function(item, color)
 
   item:getVisual():setTint(color)
 
-  TmogPrint('setClothingColor: ' .. tostring(color))
+  -- TmogPrint('setClothingColor: ' .. tostring(color))
 
   getPlayer():resetModelNextFrame();
 end
@@ -206,7 +207,7 @@ TransmogDE.setClothingTexture = function(item, textureIndex)
   item:getVisual():setTextureChoice(textureIndex)
   item:synchWithVisual();
 
-  TmogPrint('setClothingTexture' .. tostring(textureIndex))
+  -- TmogPrint('setClothingTexture' .. tostring(textureIndex))
 end
 
 TransmogDE.getClothingTexture = function(item)
