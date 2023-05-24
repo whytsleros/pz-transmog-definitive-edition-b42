@@ -1,7 +1,7 @@
 local iconTexture = getTexture("media/ui/TransmogIcon.png")
 
 local isBackpack = function (clothing)
-  return (instanceof(clothing, "InventoryContainer") and clothing:canBeEquipped() ~= nil and clothing:canBeEquipped() ~= "")
+  return instanceof(clothing, "InventoryContainer")
 end
 
 local addEditTransmogItemOption = function(player, context, items)
