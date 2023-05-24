@@ -1,5 +1,9 @@
 local iconTexture = getTexture("media/ui/TransmogIcon.png")
 
+local isBackpack = function (clothing)
+  return (instanceof(clothing, "InventoryContainer") and clothing:canBeEquipped() ~= nil and clothing:canBeEquipped() ~= "")
+end
+
 local addEditTransmogItemOption = function(player, context, items)
   local playerObj = getSpecificPlayer(player)
   local testItem = nil
@@ -20,17 +24,19 @@ local addEditTransmogItemOption = function(player, context, items)
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
 
-    menuContext:addOption("Transmogrify", clothing, function()
-      TransmogListViewer.OnOpenPanel(clothing)
-      TransmogDE.triggerUpdate()
-    end);
+    if not isBackpack() then
+      menuContext:addOption("Transmogrify", clothing, function()
+        TransmogListViewer.OnOpenPanel(clothing)
+        TransmogDE.triggerUpdate()
+      end);
+    end
 
     menuContext:addOption("Reset to Default", clothing, function()
       TransmogDE.setItemToDefault(clothing)
       TransmogDE.triggerUpdate()
     end);
 
-    if not (instanceof(clothing, "InventoryContainer") and clothing:canBeEquipped() ~= nil and clothing:canBeEquipped() ~= "") then
+    if not isBackpack() then
       menuContext:addOption("Hide Item", clothing, function()
         TransmogDE.setClothingHidden(clothing)
         TransmogDE.triggerUpdate()
