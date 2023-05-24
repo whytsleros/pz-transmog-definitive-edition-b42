@@ -1,6 +1,6 @@
 version=1
 id=2979375840
-title=Transmog: Definitive Edition
+title=Transmog: Definitive Edition - Fashionoid 2
 description=[h1] A mod that allows you to hot-swap your appearance with any armour or clothing of your choice. Visible to other players in MP [/h1]
 description=
 description=[h1] The definitive Edition of the transmog mod [/h1]
