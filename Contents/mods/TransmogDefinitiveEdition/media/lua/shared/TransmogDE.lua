@@ -13,20 +13,20 @@ TransmogDE.GenerateTransmogGlobalModData = function()
   local serverTransmoggedItemCount = 0
   local size = allItems:size() - 1;
   for i = 0, size do
-      local item = allItems:get(i);
-      if TransmogDE.isTransmoggable(item) then
-          local fullName = item:getFullName()
-          serverTransmoggedItemCount = serverTransmoggedItemCount + 1
-          if not itemToTransmogMap[fullName] then
-              table.insert(transmogToItemMap, fullName)
-              itemToTransmogMap[fullName] = 'TransmogDE.TransmogItem_' .. #transmogToItemMap
-          end
-          TmogPrint(fullName..' -> '..tostring(itemToTransmogMap[fullName]))
+    local item = allItems:get(i);
+    if TransmogDE.isTransmoggable(item) then
+      local fullName = item:getFullName()
+      serverTransmoggedItemCount = serverTransmoggedItemCount + 1
+      if not itemToTransmogMap[fullName] then
+        table.insert(transmogToItemMap, fullName)
+        itemToTransmogMap[fullName] = 'TransmogDE.TransmogItem_' .. #transmogToItemMap
       end
+      TmogPrint(fullName .. ' -> ' .. tostring(itemToTransmogMap[fullName]))
+    end
   end
 
   if #transmogToItemMap >= 5000 then
-      TmogPrint("ERROR: Reached limit of transmoggable items")
+    TmogPrint("ERROR: Reached limit of transmoggable items")
   end
 
   ModData.add("TransmogModData", transmogModData)
@@ -40,18 +40,19 @@ end
 TransmogDE.patchAllItemsFromModData = function(modData)
   for originalItemName, tmogItemName in pairs(modData.itemToTransmogMap) do
     local originalScriptItem = ScriptManager.instance:getItem(originalItemName)
-    local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
-
     local tmogScriptItem = ScriptManager.instance:getItem(tmogItemName)
-    local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
-    tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
+    if originalScriptItem ~= nil and tmogScriptItem ~= nil then
+      local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
 
-    if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
-      -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
-      originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
+      local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
+      tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
+
+      if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
+        -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
+        originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
+      end
     end
   end
-
   -- Must be triggered after items are patched
   TransmogDE.triggerUpdate()
 end
@@ -78,7 +79,8 @@ TransmogDE.isTransmoggable = function(scriptItem)
 
   local typeString = scriptItem:getTypeString()
   local isClothing = typeString == 'Clothing'
-  local isBackpack = typeString == "Container" and (scriptItem:InstanceItem(nil):canBeEquipped() or scriptItem:getBodyLocation())
+  local isBackpack = typeString == "Container" and
+      (scriptItem:InstanceItem(nil):canBeEquipped() or scriptItem:getBodyLocation())
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
   local isNotHidden = not scriptItem:isHidden()
