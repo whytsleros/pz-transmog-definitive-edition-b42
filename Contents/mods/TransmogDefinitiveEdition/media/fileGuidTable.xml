@@ -2,6 +2,11 @@
 <fileGuidTable>
 
   <files>
+    <path>media/clothing/clothingItems/Hide_Everything.xml</path>
+    <guid>daa828f9-e11a-455f-9723-1fdc16099c61</guid>
+  </files>
+
+  <files>
     <path>media/clothing/clothingItems/TransmogItem_0.xml</path>
     <guid>b396ad06-8578-49ed-8d77-8df80e402da7</guid>
   </files>

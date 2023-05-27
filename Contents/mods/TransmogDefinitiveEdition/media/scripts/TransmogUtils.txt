@@ -7,7 +7,7 @@ module TransmogDE {
         Type = Clothing,
         Cosmetic = TRUE,
         /* DisplayName = Tmog - Hide All Clothing, */
-        ClothingItem = Belt,
+        ClothingItem = Hide_Everything,
         BodyLocation = Hide_Everything,
         Icon = HideClothing,
         Weight = 0,

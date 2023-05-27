@@ -5,9 +5,8 @@ local function applyTransmogToPlayerItems(player)
   local tmogItemsToRemove = {}
   for i = 0, wornItems:size() - 1 do
     local wornItem = wornItems:getItemByIndex(i);
-    TmogPrint('wornItem:getScriptItem():getFullName():'..tostring(wornItem:getScriptItem():getFullName()))
-    TmogPrint('wornItem:'..tostring(wornItem))
     if wornItem and TransmogDE.isTransmogItem(wornItem) then
+      TmogPrint('to remove:'..tostring(wornItem))
       table.insert(tmogItemsToRemove, wornItem)
     end
   end
@@ -20,13 +19,14 @@ local function applyTransmogToPlayerItems(player)
   local wornItems = wornItems
   for i = 0, wornItems:size() - 1 do
     local item = wornItems:getItemByIndex(i);
-    TmogPrint(tostring(item))
     if item and TransmogDE.isTransmoggable(item) then
       TransmogDE.giveTransmogItemToPlayer(item)
     end
   end
   
   TransmogDE.giveHideClothingItemToPlayer()
+
+  -- player:resetModelNextFrame();
 
   if (isClient()) then
 		sendClothing(player);
@@ -40,6 +40,7 @@ local wornItemsSize = 0
 local function onClothingUpdated(player)
   local wornItems = player:getWornItems()
 
+  TmogPrint('onClothingUpdated')
   TmogPrint('wornItems:size():'..tostring(wornItems:size()))
   TmogPrint('wornItemsSize:'..tostring(wornItemsSize))
 

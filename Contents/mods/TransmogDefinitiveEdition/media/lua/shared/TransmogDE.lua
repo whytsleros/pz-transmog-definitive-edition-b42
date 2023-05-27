@@ -63,13 +63,14 @@ TransmogDE.triggerUpdate = function(player)
   triggerEvent("ApplyTransmogToPlayerItems", player)
 end
 
-TransmogDE.hasValidTransmoggableBodylocation = function(item)
-  local bodyLocation = item:getBodyLocation()
-
-  return bodyLocation ~= "ZedDmg"
-      and not string.find(bodyLocation, "MakeUp_")
-      and not string.find(bodyLocation, "Transmog_")
-      and not string.find(bodyLocation, "Hide_")
+local invalidBodyLocations = {
+  TransmogLocation = true,
+  Bandage = true,
+  Wound = true,
+  ZedDmg = true,
+}
+TransmogDE.isTransmoggableBodylocation = function(bodyLocation)
+  return not invalidBodyLocations[bodyLocation] and not string.find(bodyLocation, "MakeUp_")
 end
 
 TransmogDE.isTransmoggable = function(scriptItem)
@@ -79,15 +80,16 @@ TransmogDE.isTransmoggable = function(scriptItem)
 
   local typeString = scriptItem:getTypeString()
   local isClothing = typeString == 'Clothing'
+  local bodyLocation = scriptItem:getBodyLocation()
   local isBackpack = typeString == "Container" and
-      (scriptItem:InstanceItem(nil):canBeEquipped() or scriptItem:getBodyLocation())
+      (scriptItem:InstanceItem(nil):canBeEquipped() or bodyLocation)
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
   local isNotHidden = not scriptItem:isHidden()
   local isNotTransmog = scriptItem:getModuleName() ~= "TransmogDE"
   -- local isNotCosmetic = not scriptItem:isCosmetic()
   if (isClothing or isBackpack)
-      and TransmogDE.hasValidTransmoggableBodylocation(scriptItem)
+      and TransmogDE.isTransmoggableBodylocation(bodyLocation)
       -- and isNotCosmetic
       and isNotTransmog
       and isWorldRender
@@ -141,7 +143,6 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
 
   TransmogDE.setClothingColorModdata(ogItem, TransmogDE.getClothingColor(ogItem))
   TransmogDE.setClothingColor(tmogItem, TransmogDE.getClothingColor(ogItem))
-
   TransmogDE.setClothingTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
 
   -- tmogItem:synchWithVisual()

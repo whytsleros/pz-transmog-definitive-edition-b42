@@ -1,6 +1,6 @@
 local iconTexture = getTexture("media/ui/TransmogIcon.png")
 
-local isBackpack = function (clothing)
+local isBackpack = function(clothing)
   return instanceof(clothing, "InventoryContainer")
 end
 
@@ -68,8 +68,9 @@ local addEditTransmogItemOption = function(player, context, items)
       end);
     end
 
-    local textureChoices = tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices() or
-    tmogClothingItemAsset:getBaseTextures()
+    local textureChoices =
+        tmogClothingItemAsset:hasModel()
+        and tmogClothingItemAsset:getTextureChoices() or tmogClothingItemAsset:getBaseTextures()
     if textureChoices and (textureChoices:size() > 1) then
       menuContext:addOption("Change Texture", clothing, function()
         local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. clothing:getDisplayName(), 'None');

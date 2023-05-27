@@ -10,10 +10,10 @@ local function updateBodyLocations()
   local allLocSize = allLoc:size() - 1
 
   for i = 0, allLocSize do
-    local ID = allLoc:get(i):getId()
+    local bodyLocationId = allLoc:get(i):getId()
 
-    if tostring(ID) ~= "TransmogLocation" then
-      group:setHideModel("Hide_Everything", ID)
+    if TransmogDE.isTransmoggableBodylocation(tostring(bodyLocationId)) then
+      group:setHideModel("Hide_Everything", bodyLocationId)
     end
   end
 end
