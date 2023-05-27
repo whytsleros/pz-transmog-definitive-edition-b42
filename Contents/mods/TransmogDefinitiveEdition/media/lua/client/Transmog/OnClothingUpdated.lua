@@ -6,7 +6,7 @@ local function applyTransmogToPlayerItems(player)
   for i = 0, wornItems:size() - 1 do
     local wornItem = wornItems:getItemByIndex(i);
     if wornItem and TransmogDE.isTransmogItem(wornItem) then
-      TmogPrint('to remove:'..tostring(wornItem))
+      TmogPrint('to remove:'..tostring(wornItem:getName()))
       table.insert(tmogItemsToRemove, wornItem)
     end
   end
