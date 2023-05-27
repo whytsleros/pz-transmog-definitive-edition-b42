@@ -68,6 +68,7 @@ local invalidBodyLocations = {
   Bandage = true,
   Wound = true,
   ZedDmg = true,
+  Hide_Everything = true,
 }
 TransmogDE.isTransmoggableBodylocation = function(bodyLocation)
   return not invalidBodyLocations[bodyLocation] and not string.find(bodyLocation, "MakeUp_")
