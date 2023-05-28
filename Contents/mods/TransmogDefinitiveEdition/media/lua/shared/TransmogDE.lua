@@ -146,14 +146,15 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
   tmogItem:setName('Tmog: ' .. ogItem:getName())
 
   TransmogDE.setClothingColorModdata(ogItem, TransmogDE.getClothingColor(ogItem))
-  TransmogDE.setClothingColor(tmogItem, TransmogDE.getClothingColor(ogItem))
-  TransmogDE.setClothingTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
+  TransmogDE.setClothingTextureModdata(ogItem, TransmogDE.getClothingTexture(ogItem))
+  TransmogDE.setTmogColor(tmogItem, TransmogDE.getClothingColor(ogItem))
+  TransmogDE.setTmogTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
 
   -- tmogItem:synchWithVisual()
 
   player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
 
-  -- TmogPrintTable(ogItem:getModData())
+  -- TmogPrintTable(TransmogDE.getItemTransmogModData(ogItem))
 end
 
 -- Item Specific Code
@@ -183,16 +184,38 @@ TransmogDE.setClothingColorModdata = function(item, color)
   }
 end
 
-TransmogDE.setClothingColor = function(item, color)
+TransmogDE.setClothingTextureModdata = function(item, textureIdx)
+  if textureIdx == nil then
+    return
+  end
+
+  local itemModData = TransmogDE.getItemTransmogModData(item)
+  itemModData.texture = textureIdx
+end
+
+TransmogDE.setTmogColor = function(item, color)
   if color == nil then
     return
   end
 
   item:getVisual():setTint(color)
 
-  -- TmogPrint('setClothingColor: ' .. tostring(color))
-
   getPlayer():resetModelNextFrame();
+end
+
+TransmogDE.setTmogTexture = function(item, textureIndex)
+  if textureIndex < 0 or textureIndex == nil then
+    return
+  end
+ 
+  if item:getClothingItem():hasModel() then
+    item:getVisual():setTextureChoice(textureIndex)
+  else
+    item:getVisual():setBaseTexture(textureIndex)
+  end
+
+  item:synchWithVisual();
+  -- TmogPrint('setClothingTexture' .. tostring(textureIndex))
 end
 
 TransmogDE.getClothingColor = function(item)
@@ -202,24 +225,18 @@ TransmogDE.getClothingColor = function(item)
   return parsedColor or item:getVisual():getTint()
 end
 
--- TODO: Differntiate betwen these two
--- setBaseTexture
--- setTextureChoice
-TransmogDE.setClothingTexture = function(item, textureIndex)
-  if textureIndex < 0 or textureIndex == nil then
-    return
-  end
-  local itemModData = TransmogDE.getItemTransmogModData(item)
-  itemModData.texture = textureIndex
-  item:getVisual():setTextureChoice(textureIndex)
-  item:synchWithVisual();
-
-  -- TmogPrint('setClothingTexture' .. tostring(textureIndex))
-end
 
 TransmogDE.getClothingTexture = function(item)
-  local itemModData = item:getModData()
-  return itemModData.texture or item:getVisual():getTextureChoice()
+  local itemModData = TransmogDE.getItemTransmogModData(item)
+  
+  if itemModData.texture then
+    return itemModData.texture
+  end
+  
+  -- Very similiar to what is done inside: media\lua\client\OptionScreens\CharacterCreationMain.lua
+  local clothingItem = item:getVisual():getClothingItem()
+  local texture = clothingItem:hasModel() and item:getVisual():getTextureChoice() or item:getVisual():getBaseTexture()
+  return texture
 end
 
 TransmogDE.setItemTransmog = function(itemToTmog, scriptItem)

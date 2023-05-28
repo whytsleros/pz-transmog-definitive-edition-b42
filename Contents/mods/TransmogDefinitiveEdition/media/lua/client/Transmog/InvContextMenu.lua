@@ -55,7 +55,6 @@ local addEditTransmogItemOption = function(player, context, items)
     end
 
     local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
-
     if tmogClothingItemAsset:getAllowRandomTint() then
       menuContext:addOption("Change Color", clothing, function()
         local modal = ColorPickerModal:new(0, 0, 280, 180, "Change color of " .. clothing:getDisplayName(), 'None');
@@ -69,8 +68,8 @@ local addEditTransmogItemOption = function(player, context, items)
     end
 
     local textureChoices =
-        tmogClothingItemAsset:hasModel()
-        and tmogClothingItemAsset:getTextureChoices() or tmogClothingItemAsset:getBaseTextures() -- setBaseTexture
+        tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices()
+        or tmogClothingItemAsset:getBaseTextures()
     if textureChoices and (textureChoices:size() > 1) then
       menuContext:addOption("Change Texture", clothing, function()
         local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. clothing:getDisplayName(), 'None');
@@ -78,7 +77,7 @@ local addEditTransmogItemOption = function(player, context, items)
         modal:initialise();
         modal:addToUIManager();
         modal:setOnSelectionCallback(function(textureIdx)
-          TransmogDE.setClothingTexture(clothing, textureIdx)
+          TransmogDE.setClothingTextureModdata(clothing, textureIdx)
           TransmogDE.triggerUpdate()
         end)
       end);
