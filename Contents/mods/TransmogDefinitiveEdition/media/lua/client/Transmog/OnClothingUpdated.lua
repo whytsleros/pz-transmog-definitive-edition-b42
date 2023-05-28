@@ -1,3 +1,5 @@
+MxUtils = require('Transmog/MxUtils')
+
 local function applyTransmogToPlayerItems(player)
   local playerInv = player:getInventory()
   local wornItems = player:getWornItems()
@@ -6,11 +8,11 @@ local function applyTransmogToPlayerItems(player)
   for i = 0, wornItems:size() - 1 do
     local wornItem = wornItems:getItemByIndex(i);
     if wornItem and TransmogDE.isTransmogItem(wornItem) then
-      TmogPrint('to remove:'..tostring(wornItem:getName()))
+      TmogPrint('to remove:' .. tostring(wornItem:getName()))
       table.insert(tmogItemsToRemove, wornItem)
     end
   end
-  
+
   for _, wornItem in ipairs(tmogItemsToRemove) do
     wornItems:remove(wornItem);
     playerInv:Remove(wornItem);
@@ -23,38 +25,36 @@ local function applyTransmogToPlayerItems(player)
       TransmogDE.giveTransmogItemToPlayer(item)
     end
   end
-  
+
   TransmogDE.giveHideClothingItemToPlayer()
 
-  -- player:resetModelNextFrame();
+  player:resetModelNextFrame();
 
   if (isClient()) then
-		sendClothing(player);
-	end
+    sendClothing(player);
+  end
 
   TmogPrint('applyTransmogToPlayerItems! - Done')
 end
 
-local wornItemsSize = 0
+local debouncedApplyTransmogToPlayerItems = MxUtils.debounce(applyTransmogToPlayerItems, 100)
 
 local function onClothingUpdated(player)
-  local wornItems = player:getWornItems()
+  local hotbar = getPlayerHotbar(player:getPlayerNum());
+  if hotbar == nil then return end -- player is dead
 
-  TmogPrint('onClothingUpdated')
-  TmogPrint('wornItems:size():'..tostring(wornItems:size()))
-  TmogPrint('wornItemsSize:'..tostring(wornItemsSize))
-
-  -- \/ Stops the massive spam of "OnClothingUpdated" events
-  if wornItems:size() == wornItemsSize then
+  -- I need to use the same check as the ISHotbar otherwise it shits itself,
+  -- and it will randomly start spamming `OnClothingUpdated`, dunno why, but this seems to fix it
+  local itemsChanged = hotbar:compareWornItems()
+  if not itemsChanged then
     return
   end
-  wornItemsSize = wornItems:size()
 
-  applyTransmogToPlayerItems(player)
+  debouncedApplyTransmogToPlayerItems(player)
 end
 
 Events.OnClothingUpdated.Add(onClothingUpdated);
 
 LuaEventManager.AddEvent("ApplyTransmogToPlayerItems");
 
-Events.ApplyTransmogToPlayerItems.Add(applyTransmogToPlayerItems);
+Events.ApplyTransmogToPlayerItems.Add(debouncedApplyTransmogToPlayerItems);
