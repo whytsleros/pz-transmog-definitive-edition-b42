@@ -85,5 +85,10 @@ MxUtils.createIntervalTimer = function(intervalInMilliseconds, intervalElapsedEv
   return timer
 end
 
+-- MxUtils.tableForEach = function(table, callback)
+--   for index, value in ipairs(table) do
+--     callback(value, index, table)
+--   end
+-- end
 
 return MxUtils

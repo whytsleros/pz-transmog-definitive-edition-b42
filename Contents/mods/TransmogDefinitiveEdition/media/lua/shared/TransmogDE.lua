@@ -71,6 +71,7 @@ local invalidBodyLocations = {
   Wound = true,
   ZedDmg = true,
   Hide_Everything = true,
+  Fur = true, -- Support for the furry mod
 }
 TransmogDE.isTransmoggableBodylocation = function(bodyLocation)
   return not invalidBodyLocations[bodyLocation] and not string.find(bodyLocation, "MakeUp_")
