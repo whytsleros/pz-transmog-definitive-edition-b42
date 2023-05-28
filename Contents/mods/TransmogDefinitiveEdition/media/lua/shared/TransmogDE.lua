@@ -44,12 +44,14 @@ TransmogDE.patchAllItemsFromModData = function(modData)
     if originalScriptItem ~= nil and tmogScriptItem ~= nil then
       local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
 
-      local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
-      tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
+      if originalClothingItemAsset then
+        local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
+        tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
 
-      if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
-        -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
-        originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
+        if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
+          -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
+          originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
+        end
       end
     end
   end
