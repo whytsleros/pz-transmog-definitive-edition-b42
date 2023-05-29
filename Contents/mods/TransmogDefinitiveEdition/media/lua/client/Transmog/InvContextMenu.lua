@@ -67,6 +67,10 @@ local addEditTransmogItemOption = function(player, context, items)
       end);
     end
 
+    -- if it's an overwritten item, this causes bug if it's transmogged to self
+    -- Because the original ClothingItemAsset is the transmogItem, which is now invisible :(
+    -- And I need the original item to be invisible, otherwise it will squish the character hair
+    -- eg: Ela's tactical Cap
     local textureChoices =
         tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices()
         or tmogClothingItemAsset:getBaseTextures()
