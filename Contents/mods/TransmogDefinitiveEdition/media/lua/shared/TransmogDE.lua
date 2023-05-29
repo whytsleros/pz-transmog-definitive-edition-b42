@@ -62,7 +62,7 @@ TransmogDE.patchAllItemsFromModData = function(modData)
   -- Must be triggered after items are patched
   TransmogDE.triggerUpdate()
 
-  TmogPrintTable(TransmogDE.BackupClothingItemAsset)
+  -- TmogPrintTable(TransmogDE.BackupClothingItemAsset)
 end
 
 TransmogDE.triggerUpdate = function(player)
@@ -138,10 +138,9 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
   local player = getPlayer();
 
   local transmogModData = TransmogDE.getTransmogModData()
+  local itemTmogModData = TransmogDE.getItemTransmogModData(ogItem)
 
-  local transmogToName = TransmogDE.getItemTransmogModData(ogItem).transmogTo
-
-  local tmogItemName = transmogModData.itemToTransmogMap[transmogToName]
+  local tmogItemName = transmogModData.itemToTransmogMap[itemTmogModData.transmogTo]
 
   if not tmogItemName then
     return
@@ -161,7 +160,7 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
 
   player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
 
-  -- TmogPrintTable(TransmogDE.getItemTransmogModData(ogItem))
+  TmogPrintTable(TransmogDE.getItemTransmogModData(ogItem))
 end
 
 -- Item Specific Code
@@ -241,7 +240,6 @@ TransmogDE.getClothingColor = function(item)
       ImmutableColor.new(Color.new(itemModData.color.r, itemModData.color.g, itemModData.color.b, itemModData.color.a))
   return parsedColor or item:getVisual():getTint()
 end
-
 
 TransmogDE.getClothingTexture = function(item)
   local itemModData = TransmogDE.getItemTransmogModData(item)
