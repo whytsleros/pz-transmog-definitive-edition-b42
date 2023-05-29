@@ -54,7 +54,7 @@ local addEditTransmogItemOption = function(player, context, items)
       return context
     end
 
-    local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
+    local tmogClothingItemAsset = TransmogDE.getClothingItemAsset(tmogScriptItem)
     if tmogClothingItemAsset:getAllowRandomTint() then
       menuContext:addOption("Change Color", clothing, function()
         local modal = ColorPickerModal:new(0, 0, 280, 180, "Change color of " .. clothing:getDisplayName(), 'None');
@@ -67,15 +67,12 @@ local addEditTransmogItemOption = function(player, context, items)
       end);
     end
 
-    -- if it's an overwritten item, this causes bug if it's transmogged to self
-    -- Because the original ClothingItemAsset is the transmogItem, which is now invisible :(
-    -- And I need the original item to be invisible, otherwise it will squish the character hair
-    -- eg: Ela's tactical Cap
     local textureChoices =
         tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices()
         or tmogClothingItemAsset:getBaseTextures()
 
     TmogPrint('clothing', clothing)
+    TmogPrint('clothing.getClothingItem', clothing:getClothingItem())
     TmogPrint('transmogTo', transmogTo)
     TmogPrint('tmogClothingItemAsset', tmogClothingItemAsset)
     TmogPrint('hasModel()', tmogClothingItemAsset:hasModel())

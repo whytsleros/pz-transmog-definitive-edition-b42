@@ -1,6 +1,7 @@
 TransmogDE = TransmogDE or {}
 
 TransmogDE.ImmersiveModeMap = {}
+TransmogDE.BackupClothingItemAsset = {}
 
 TransmogDE.GenerateTransmogGlobalModData = function()
   TmogPrint('Server TransmogModData')
@@ -49,6 +50,9 @@ TransmogDE.patchAllItemsFromModData = function(modData)
         tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
 
         if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
+          -- Since we use the tmog item to check textureChoices and colorTint in Transmog\InvContextMenu.lua
+          -- using the backup will be handy to ensure we always select the original textureChoices and colorTint
+          TransmogDE.BackupClothingItemAsset[originalItemName] = originalClothingItemAsset
           -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
           originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
         end
@@ -57,6 +61,8 @@ TransmogDE.patchAllItemsFromModData = function(modData)
   end
   -- Must be triggered after items are patched
   TransmogDE.triggerUpdate()
+
+  TmogPrintTable(TransmogDE.BackupClothingItemAsset)
 end
 
 TransmogDE.triggerUpdate = function(player)
@@ -128,6 +134,7 @@ TransmogDE.giveHideClothingItemToPlayer = function()
 end
 
 TransmogDE.giveTransmogItemToPlayer = function(ogItem)
+  -- args.itemID = self.fuel:getID()
   local player = getPlayer();
 
   local transmogModData = TransmogDE.getTransmogModData()
@@ -158,6 +165,16 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
 end
 
 -- Item Specific Code
+
+TransmogDE.getClothingItemAsset = function(scriptItem)
+  if scriptItem.getScriptItem then
+    scriptItem = scriptItem:getScriptItem()
+  end
+  local fullName = scriptItem:getFullName()
+  local clothingItemAsset = TransmogDE.BackupClothingItemAsset[fullName] or scriptItem:getClothingItemAsset()
+  
+  return clothingItemAsset
+end
 
 TransmogDE.getItemTransmogModData = function(item)
   local itemModData = item:getModData()
@@ -207,7 +224,7 @@ TransmogDE.setTmogTexture = function(item, textureIndex)
   if textureIndex < 0 or textureIndex == nil then
     return
   end
- 
+
   if item:getClothingItem():hasModel() then
     item:getVisual():setTextureChoice(textureIndex)
   else
@@ -228,11 +245,11 @@ end
 
 TransmogDE.getClothingTexture = function(item)
   local itemModData = TransmogDE.getItemTransmogModData(item)
-  
+
   if itemModData.texture then
     return itemModData.texture
   end
-  
+
   -- Very similiar to what is done inside: media\lua\client\OptionScreens\CharacterCreationMain.lua
   local clothingItem = item:getVisual():getClothingItem()
   local texture = clothingItem:hasModel() and item:getVisual():getTextureChoice() or item:getVisual():getBaseTexture()
