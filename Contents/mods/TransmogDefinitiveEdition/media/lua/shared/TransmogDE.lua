@@ -178,7 +178,7 @@ end
 TransmogDE.getItemTransmogModData = function(item)
   local itemModData = item:getModData()
   itemModData['Transmog'] = itemModData['Transmog'] or {
-    color = TransmogDE.getClothingColor(item),
+    color = item:getVisual():getTint() or nil,
     texture = 0,
     transmogTo = item:getScriptItem():getFullName()
   }
