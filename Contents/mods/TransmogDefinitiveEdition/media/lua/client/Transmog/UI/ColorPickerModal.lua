@@ -1,43 +1,68 @@
-ColorPickerModal = ISTextBox:derive("ColorPickerModal");
+require "ISUI/ISCollapsableWindowJoypad"
 
-function ColorPickerModal:initialise()
-    ISTextBox.initialise(self);
+ColorPickerModal = ISCollapsableWindowJoypad:derive("ColorPickerModal")
+ColorPickerModal.windows = {}
 
-    local inset = 2
-    local height = inset + self.fontHgt * self.numLines + inset
-    self:removeChild(self.colorBtn);
-    self.colorBtn = ISButton:new(self.entry.x + self.entry.width + 5, self.entry.y, height, height, "", self, ColorPickerModal.onColorPicker);
-    self.colorBtn:setX(self.entry:getX());
-    self.colorBtn:setWidth(self.entry:getWidth());
-    self.colorBtn:initialise();
-    self.colorBtn.backgroundColor = {r = 1, g = 1, b = 1, a = 1};
-    self:addChild(self.colorBtn);
-    self.colorBtn:setVisible(true);
-    self.entry:setVisible(false);
+function ColorPickerModal:createChildren()
+	ISCollapsableWindowJoypad.createChildren(self)
 
-    self.yes:setTitle("Close")
-    self:removeChild(self.no);
+	local titleBarHeight = self:titleBarHeight()
+
+	local paddingUnit = 16                   -- eg: only left, or only right, or only top etc etc
+	local paddingUnitDouble = paddingUnit * 2 -- eg: left and right or top and bottom
+
+	self.colorPickerX = 16
+	self.colorPickerY = titleBarHeight + self.colorPickerX
+	self.colorPicker = ISColorPicker:new(self.colorPickerX, self.colorPickerY)
+	self.colorPicker:initialise()
+	self.colorPicker.pickedTarget = self;
+	self.colorPicker.resetFocusTo = self;
+	self.colorPicker.keepOnScreen = true
+	-- Disable removeSelf for this component, otherwise it auto closes on click
+	self.colorPicker.removeSelf = function() end
+	self.colorPicker.pickedFunc = self.onColorSelected
+
+	self:setWidth(paddingUnitDouble + self.colorPicker:getWidth())
+	self:setHeight(self:titleBarHeight() + self.colorPicker:getHeight() + paddingUnitDouble)
+
+	self:addChild(self.colorPicker)
 end
 
-function ColorPickerModal:setOnSelectionCallback(functionCallback)
-    self.onSelectionCallback = functionCallback
+function ColorPickerModal:onColorSelected(color)
+	local immutableColor = ImmutableColor.new(Color.new(color.r, color.g, color.b, 1))
+	TransmogDE.setClothingColorModdata(self.item, immutableColor)
+	TransmogDE.triggerUpdate()
 end
 
-function ColorPickerModal:onColorPicker(button)
-    self.colorPicker:setX(getMouseX() - 100);
-    self.colorPicker:setY(getMouseY() - 20);
-    self.colorPicker.pickedFunc = ColorPickerModal.OnSelection;
-    self.colorPicker:setVisible(true);
-    self.colorPicker:bringToTop();
+function ColorPickerModal:close()
+	self:removeFromUIManager()
+	if JoypadState.players[self.playerNum + 1] then
+		setJoypadFocus(self.playerNum, self.prevFocus)
+	end
 end
 
-function ColorPickerModal:OnSelection(color, mouseUp)
-    self.currentColor = ColorInfo.new(color.r, color.g, color.b,1);
-    self.colorBtn.backgroundColor = {r = color.r, g = color.g, b = color.b, a = 1};
-    self.entry.javaObject:setTextColor(self.currentColor);
-    self.colorPicker:setVisible(false);
-    if self.onSelectionCallback ~= nil then
-        local color = Color.new(color.r, color.g, color.b,1);
-        self.onSelectionCallback(ImmutableColor.new(color))
-    end
+function ColorPickerModal:new(item, character)
+	local width = 550
+	local height = 200
+	local x = getCore():getScreenWidth() / 2 - (width / 2);
+	local y = getCore():getScreenHeight() / 2 - (height / 2);
+	local playerNum = character:getPlayerNum()
+	local o = ISCollapsableWindowJoypad.new(self, x, y, width, height)
+	o.character = character
+	o.item = item
+	o.title = "Set color for: " .. item:getName();
+	o.desc = character:getDescriptor();
+	o.playerNum = playerNum
+	o:setResizable(false)
+	return o
 end
+
+function ColorPickerModal.OnPlayerDeath(playerObj)
+	local ui = ColorPickerModal.windows[playerObj:getPlayerNum() + 1]
+	if ui then
+		ui:removeFromUIManager()
+		ColorPickerModal.windows[playerObj:getPlayerNum() + 1] = nil
+	end
+end
+
+Events.OnPlayerDeath.Add(ColorPickerModal.OnPlayerDeath)

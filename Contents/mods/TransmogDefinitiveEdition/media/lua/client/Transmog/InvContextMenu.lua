@@ -57,13 +57,9 @@ local addEditTransmogItemOption = function(player, context, items)
     local tmogClothingItemAsset = TransmogDE.getClothingItemAsset(tmogScriptItem)
     if tmogClothingItemAsset:getAllowRandomTint() then
       menuContext:addOption("Change Color", clothing, function()
-        local modal = ColorPickerModal:new(0, 0, 280, 180, "Change color of " .. clothing:getDisplayName(), 'None');
+        local modal = ColorPickerModal:new(clothing, playerObj);
         modal:initialise();
         modal:addToUIManager();
-        modal:setOnSelectionCallback(function(color)
-          TransmogDE.setClothingColorModdata(clothing, color)
-          TransmogDE.triggerUpdate()
-        end)
       end);
     end
 
