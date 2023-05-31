@@ -76,14 +76,9 @@ local addEditTransmogItemOption = function(player, context, items)
     TmogPrint('getBaseTextures()', tmogClothingItemAsset:getBaseTextures())
     if textureChoices and (textureChoices:size() > 1) then
       menuContext:addOption("Change Texture", clothing, function()
-        local modal = TexturePickerModal:new(0, 0, 280, 180, "Change Texture of " .. clothing:getDisplayName(), 'None');
-        modal:setTextureChoices(textureChoices);
+        local modal = TexturePickerModal:new(clothing, playerObj, textureChoices);
         modal:initialise();
         modal:addToUIManager();
-        modal:setOnSelectionCallback(function(textureIdx)
-          TransmogDE.setClothingTextureModdata(clothing, textureIdx)
-          TransmogDE.triggerUpdate()
-        end)
       end);
     end
   end

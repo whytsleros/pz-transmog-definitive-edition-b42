@@ -1,7 +1,6 @@
 require "ISUI/ISCollapsableWindowJoypad"
 
 ColorPickerModal = ISCollapsableWindowJoypad:derive("ColorPickerModal")
-ColorPickerModal.windows = {}
 
 function ColorPickerModal:createChildren()
 	ISCollapsableWindowJoypad.createChildren(self)
@@ -50,19 +49,9 @@ function ColorPickerModal:new(item, character)
 	local o = ISCollapsableWindowJoypad.new(self, x, y, width, height)
 	o.character = character
 	o.item = item
-	o.title = "Set color for: " .. item:getName();
+	o.title = "Set color of: " .. item:getName();
 	o.desc = character:getDescriptor();
 	o.playerNum = playerNum
 	o:setResizable(false)
 	return o
 end
-
-function ColorPickerModal.OnPlayerDeath(playerObj)
-	local ui = ColorPickerModal.windows[playerObj:getPlayerNum() + 1]
-	if ui then
-		ui:removeFromUIManager()
-		ColorPickerModal.windows[playerObj:getPlayerNum() + 1] = nil
-	end
-end
-
-Events.OnPlayerDeath.Add(ColorPickerModal.OnPlayerDeath)
