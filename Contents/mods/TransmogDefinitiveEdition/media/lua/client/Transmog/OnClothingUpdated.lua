@@ -33,7 +33,8 @@ local function wearTransmogItems(player)
 			-- check if it still has a worn parent
 			local tmogParentId = item:getModData()['TransmogParent']
 			local parentItem = tmogParentId and playerInv:getItemById(tmogParentId)
-			if not tmogParentId or not parentItem or not parentItem:isWorn() then
+			-- use isEquipped, isWorn is only for clothing, does not include backpacks
+			if not tmogParentId or not parentItem or not parentItem:isEquipped() then
 				-- parent either does not exist anymore, or it's unequipped, or it was never set
 				-- in in these cases, mark item to remove
 				table.insert(toRemove, item)

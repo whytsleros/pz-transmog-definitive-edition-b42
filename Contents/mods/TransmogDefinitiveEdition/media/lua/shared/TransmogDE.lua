@@ -333,6 +333,8 @@ TransmogDE.setClothingHidden = function(item)
   local moddata = TransmogDE.getItemTransmogModData(item)
 
   moddata.transmogTo = nil
+
+	TransmogDE.forceUpdateClothing(item)
 end
 
 -- Immersive mode code
