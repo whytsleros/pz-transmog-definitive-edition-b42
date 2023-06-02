@@ -133,36 +133,6 @@ TransmogDE.giveHideClothingItemToPlayer = function()
   player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
 end
 
-TransmogDE.giveTransmogItemToPlayer = function(ogItem)
-  -- args.itemID = self.fuel:getID()
-  local player = getPlayer();
-
-  local transmogModData = TransmogDE.getTransmogModData()
-  local itemTmogModData = TransmogDE.getItemTransmogModData(ogItem)
-
-  local tmogItemName = transmogModData.itemToTransmogMap[itemTmogModData.transmogTo]
-
-  if not tmogItemName then
-    return
-  end
-
-  local tmogItem = player:getInventory():AddItem(tmogItemName);
-
-  -- For debug purpose
-  tmogItem:setName('Tmog: ' .. ogItem:getName())
-
-  TransmogDE.setClothingColorModdata(ogItem, TransmogDE.getClothingColor(ogItem))
-  TransmogDE.setClothingTextureModdata(ogItem, TransmogDE.getClothingTexture(ogItem))
-  TransmogDE.setTmogColor(tmogItem, TransmogDE.getClothingColor(ogItem))
-  TransmogDE.setTmogTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
-
-  -- tmogItem:synchWithVisual()
-
-  player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
-
-  TmogPrintTable(TransmogDE.getItemTransmogModData(ogItem))
-end
-
 TransmogDE.createTransmogItem = function (ogItem, player)
   local transmogModData = TransmogDE.getTransmogModData()
   local itemTmogModData = TransmogDE.getItemTransmogModData(ogItem)
@@ -335,9 +305,11 @@ TransmogDE.resetClothingChild = function(item)
   local container = item:getContainer()
   local childItem = container:getItemById(moddata.childId)
   
-  if childItem then
-    -- find the item by ID, ensure it exists, then remove it
-    childItem:Unwear();
+  local player = instanceof(container:getParent(), "IsoGameCharacter") and container:getParent()
+
+  -- find the item by ID, ensure it exists, then remove it from container and player
+  if childItem and player then
+    player:getWornItems():remove(childItem)
     container:Remove(childItem);
   end
 
