@@ -22,7 +22,7 @@ TransmogDE.GenerateTransmogGlobalModData = function()
         table.insert(transmogToItemMap, fullName)
         itemToTransmogMap[fullName] = 'TransmogDE.TransmogItem_' .. #transmogToItemMap
       end
-      TmogPrint(fullName .. ' -> ' .. tostring(itemToTransmogMap[fullName]))
+      -- TmogPrint(fullName .. ' -> ' .. tostring(itemToTransmogMap[fullName]))
     end
   end
 
@@ -163,6 +163,38 @@ TransmogDE.giveTransmogItemToPlayer = function(ogItem)
   TmogPrintTable(TransmogDE.getItemTransmogModData(ogItem))
 end
 
+TransmogDE.createTransmogItem = function (ogItem, player)
+  local transmogModData = TransmogDE.getTransmogModData()
+  local itemTmogModData = TransmogDE.getItemTransmogModData(ogItem)
+
+  local tmogItemName = transmogModData.itemToTransmogMap[itemTmogModData.transmogTo]
+
+  if not tmogItemName then
+    return
+  end
+
+  local tmogItem = player:getInventory():AddItem(tmogItemName);
+  -- set tmogItem as child of ogItem
+  itemTmogModData.childId = tmogItem:getID()
+  -- set ogItem as parent of tmogItem
+  tmogItem:getModData()['TransmogParent'] = ogItem:getID()
+
+  -- For debug purpose
+  tmogItem:setName('Tmog: ' .. ogItem:getName())
+
+  TransmogDE.setClothingColorModdata(ogItem, TransmogDE.getClothingColor(ogItem))
+  TransmogDE.setClothingTextureModdata(ogItem, TransmogDE.getClothingTexture(ogItem))
+  TransmogDE.setTmogColor(tmogItem, TransmogDE.getClothingColor(ogItem))
+  TransmogDE.setTmogTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
+
+  -- don't wear the new item yet
+  -- player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
+
+  TmogPrint('createTransmogItem', ogItem:getName())
+
+  return tmogItem
+end
+
 -- Item Specific Code
 
 TransmogDE.getClothingItemAsset = function(scriptItem)
@@ -192,10 +224,22 @@ TransmogDE.getItemTransmogModData = function(item)
       a = color:getAlphaFloat(),
     },
     texture = 0,
-    transmogTo = item:getScriptItem():getFullName()
+    transmogTo = item:getScriptItem():getFullName(),
+    childId = nil
   }
 
   return itemModData['Transmog']
+end
+
+TransmogDE.getTransmogChild = function(invItem)
+  local itemTmogModData = TransmogDE.getItemTransmogModData(invItem)
+  if not itemTmogModData.childId then
+    return
+  end
+
+  local container = invItem:getContainer()
+  -- find the item by ID, ensure it exists, then return it
+  return container:getItemById(itemTmogModData.childId)
 end
 
 TransmogDE.setClothingColorModdata = function(item, color)
@@ -280,6 +324,27 @@ TransmogDE.setItemToDefault = function(item)
   local moddata = TransmogDE.getItemTransmogModData(item)
 
   moddata.transmogTo = item:getScriptItem():getFullName()
+
+  TransmogDE.resetClothingChild(item)
+end
+
+-- Usefull for forcing the item to be removed and re-added after changing color, texture, and tmog
+TransmogDE.resetClothingChild = function(item)
+  local moddata = TransmogDE.getItemTransmogModData(item)
+
+  local container = item:getContainer()
+  local childItem = container:getItemById(moddata.childId)
+  
+  if childItem then
+    -- find the item by ID, ensure it exists, then remove it
+    childItem:Unwear();
+    container:Remove(childItem);
+  end
+
+  moddata.childId = nil
+
+  -- Force update to ensure the model is visible
+  TransmogDE.triggerUpdate()
 end
 
 TransmogDE.setClothingHidden = function(item)
