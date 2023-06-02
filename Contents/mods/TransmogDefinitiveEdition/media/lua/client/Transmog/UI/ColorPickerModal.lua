@@ -30,7 +30,7 @@ end
 function ColorPickerModal:onColorSelected(color)
 	local immutableColor = ImmutableColor.new(Color.new(color.r, color.g, color.b, 1))
 	TransmogDE.setClothingColorModdata(self.item, immutableColor)
-	TransmogDE.resetClothingChild(self.item)
+	TransmogDE.forceUpdateClothing(self.item)
 end
 
 function ColorPickerModal:close()

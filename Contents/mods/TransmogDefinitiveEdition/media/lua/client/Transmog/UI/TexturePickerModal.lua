@@ -23,7 +23,7 @@ end
 
 function TexturePickerModal:onTextureSelected()
 	TransmogDE.setClothingTextureModdata(self.item, self.textureSelect.selected - 1)
-	TransmogDE.resetClothingChild(self.item)
+	TransmogDE.forceUpdateClothing(self.item)
 end
 
 function TexturePickerModal:close()

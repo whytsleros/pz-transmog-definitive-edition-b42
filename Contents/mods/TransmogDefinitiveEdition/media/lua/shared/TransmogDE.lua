@@ -133,7 +133,7 @@ TransmogDE.giveHideClothingItemToPlayer = function()
   player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
 end
 
-TransmogDE.createTransmogItem = function (ogItem, player)
+TransmogDE.createTransmogItem = function(ogItem, player)
   local transmogModData = TransmogDE.getTransmogModData()
   local itemTmogModData = TransmogDE.getItemTransmogModData(ogItem)
 
@@ -173,7 +173,7 @@ TransmogDE.getClothingItemAsset = function(scriptItem)
   end
   local fullName = scriptItem:getFullName()
   local clothingItemAsset = TransmogDE.BackupClothingItemAsset[fullName] or scriptItem:getClothingItemAsset()
-  
+
   return clothingItemAsset
 end
 
@@ -295,28 +295,38 @@ TransmogDE.setItemToDefault = function(item)
 
   moddata.transmogTo = item:getScriptItem():getFullName()
 
-  TransmogDE.resetClothingChild(item)
+  TransmogDE.forceUpdateClothing(item)
 end
 
 -- Usefull for forcing the item to be removed and re-added after changing color, texture, and tmog
-TransmogDE.resetClothingChild = function(item)
+TransmogDE.forceUpdateClothing = function(item)
   local moddata = TransmogDE.getItemTransmogModData(item)
-
   local container = item:getContainer()
   local childItem = container:getItemById(moddata.childId)
-  
   local player = instanceof(container:getParent(), "IsoGameCharacter") and container:getParent()
 
   -- find the item by ID, ensure it exists, then remove it from container and player
-  if childItem and player then
-    player:getWornItems():remove(childItem)
-    container:Remove(childItem);
+  if not childItem or not player then
+    print('ERROR: TransmogDE.forceUpdateClothing childItem or player missing!')
+    return
   end
 
-  moddata.childId = nil
+  -- Remove the old tmog item
+  player:getWornItems():remove(childItem)
+  container:Remove(childItem);
 
-  -- Force update to ensure the model is visible
-  TransmogDE.triggerUpdate()
+  -- Create and wear new tmog item
+  local tmogItem = TransmogDE.createTransmogItem(item, player)
+  if not tmogItem then
+    print('ERROR: TransmogDE.forceUpdateClothing tmogItem missing!')
+    return
+  end
+
+  player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
+
+  player:resetModelNextFrame();
+
+	sendClothing(player);
 end
 
 TransmogDE.setClothingHidden = function(item)
