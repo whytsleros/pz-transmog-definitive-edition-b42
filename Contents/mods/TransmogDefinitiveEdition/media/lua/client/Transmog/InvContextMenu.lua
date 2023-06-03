@@ -19,29 +19,27 @@ local addEditTransmogItemOption = function(player, context, items)
   end
 
   if tostring(#items) == "1" and clothing then
-		if isBackpack(clothing) then
-			return context
-		end
-
     local option = context:addOption("Transmog Menu");
     option.iconTexture = iconTexture
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
 
-    menuContext:addOption("Transmogrify", clothing, function()
-			TransmogListViewer.OnOpenPanel(clothing)
-			TransmogDE.triggerUpdate()
-		end);
+    if not isBackpack(clothing) then
+      menuContext:addOption("Transmogrify", clothing, function()
+        TransmogListViewer.OnOpenPanel(clothing)
+        TransmogDE.triggerUpdate()
+      end);
 
-    menuContext:addOption("Reset to Default", clothing, function()
+			menuContext:addOption("Hide Item", clothing, function()
+        TransmogDE.setClothingHidden(clothing)
+        TransmogDE.triggerUpdate()
+      end);
+    end
+
+		menuContext:addOption("Reset to Default", clothing, function()
       TransmogDE.setItemToDefault(clothing)
       TransmogDE.triggerUpdate()
     end);
-
-    menuContext:addOption("Hide Item", clothing, function()
-			TransmogDE.setClothingHidden(clothing)
-			TransmogDE.triggerUpdate()
-		end);
 
     local transmogTo = TransmogDE.getItemTransmogModData(clothing).transmogTo
     if not transmogTo then

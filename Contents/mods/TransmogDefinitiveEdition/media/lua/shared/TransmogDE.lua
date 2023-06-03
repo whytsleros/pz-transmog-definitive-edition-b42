@@ -302,6 +302,10 @@ end
 TransmogDE.forceUpdateClothing = function(item)
   local moddata = TransmogDE.getItemTransmogModData(item)
   local container = item:getContainer()
+	if not container then
+		print('ERROR: TransmogDE.forceUpdateClothing, container is nil')
+		return
+	end
   local childItem = container:getItemById(moddata.childId)
   local player = instanceof(container:getParent(), "IsoGameCharacter") and container:getParent()
 
