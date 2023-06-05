@@ -127,12 +127,6 @@ TransmogDE.getTransmogModData = function()
   }
 end
 
-TransmogDE.giveHideClothingItemToPlayer = function()
-  local player = getPlayer();
-  local spawnedItem = player:getInventory():AddItem('TransmogDE.Hide_Everything');
-  player:setWornItem(spawnedItem:getBodyLocation(), spawnedItem)
-end
-
 TransmogDE.createTransmogItem = function(ogItem, player)
   local transmogModData = TransmogDE.getTransmogModData()
   local itemTmogModData = TransmogDE.getItemTransmogModData(ogItem)
@@ -154,8 +148,10 @@ TransmogDE.createTransmogItem = function(ogItem, player)
 
   TransmogDE.setClothingColorModdata(ogItem, TransmogDE.getClothingColor(ogItem))
   TransmogDE.setClothingTextureModdata(ogItem, TransmogDE.getClothingTexture(ogItem))
-  TransmogDE.setTmogColor(tmogItem, TransmogDE.getClothingColor(ogItem))
-  TransmogDE.setTmogTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
+  TransmogDE.setClothingColor(ogItem, TransmogDE.getClothingColor(ogItem))
+  TransmogDE.setClothingTexture(ogItem, TransmogDE.getClothingTexture(ogItem))
+  TransmogDE.setClothingColor(tmogItem, TransmogDE.getClothingColor(ogItem))
+  TransmogDE.setClothingTexture(tmogItem, TransmogDE.getClothingTexture(ogItem))
 
   -- don't wear the new item yet
   -- player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
@@ -235,7 +231,7 @@ TransmogDE.setClothingTextureModdata = function(item, textureIdx)
   itemModData.texture = textureIdx
 end
 
-TransmogDE.setTmogColor = function(item, color)
+TransmogDE.setClothingColor = function(item, color)
   if color == nil then
     return
   end
@@ -245,7 +241,7 @@ TransmogDE.setTmogColor = function(item, color)
   getPlayer():resetModelNextFrame();
 end
 
-TransmogDE.setTmogTexture = function(item, textureIndex)
+TransmogDE.setClothingTexture = function(item, textureIndex)
   if textureIndex < 0 or textureIndex == nil then
     return
   end
