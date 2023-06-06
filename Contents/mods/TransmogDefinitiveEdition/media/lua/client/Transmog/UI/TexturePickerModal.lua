@@ -7,22 +7,44 @@ function TexturePickerModal:createChildren()
 
 	local titleBarHeight = self:titleBarHeight()
 
-	self.textureSelectX = 16
-	self.textureSelectY = titleBarHeight + self.textureSelectX
-	self.textureSelect = ISComboBox:new(self.textureSelectX, self.textureSelectY, 228, 32, self, self.onTextureSelected)
+	local textureChoicesSize = self.textureChoices:size()
+	local numColumns = 4
+	local numRows = math.ceil(textureChoicesSize / numColumns)
 
-	for i = 0, self.textureChoices:size() - 1 do
-		local text = getText("UI_ClothingTextureType", i + 1)
-		self.textureSelect:addOption(text)
+	local paddingXY = 32
+	local btnX = 16
+	local btnY = titleBarHeight + 16
+	local btnH = 100
+
+	-- TODO: Use self.recipes = ISScrollingListBox
+	-- Or use ISScrollingListBox inside media\lua\client\ISUI\AdminPanel\ISItemsListTable.lua
+
+	for row = 0, numRows - 1 do
+		local rowElements = {}
+		for col = 0, numColumns - 1 do
+			local index = row * numColumns + col
+			if index < textureChoicesSize then
+				table.insert(rowElements, self.textureChoices:get(index))
+				local textureChoice = getTexture('media/textures/' .. self.textureChoices:get(index) .. '.png')
+				local button = ISButton:new(btnX + (col * btnH), btnY + (row * btnH), btnH, btnH, "", self, TexturePickerModal.onTextureSelected)
+				button.internal = index
+				button:setImage(textureChoice)
+				button:forceImageSize(btnH, btnH)
+				self:addChild(button)
+			else
+				break
+			end
+		end
+		print(table.concat(rowElements, "\t"))
 	end
 
-	self.textureSelect:initialise();
 
-	self:addChild(self.textureSelect);
+	self:setWidth((numColumns * btnH) + paddingXY)
+	self:setHeight((numRows * btnH) + titleBarHeight + paddingXY)
 end
 
-function TexturePickerModal:onTextureSelected()
-	TransmogDE.setClothingTextureModdata(self.item, self.textureSelect.selected - 1)
+function TexturePickerModal:onTextureSelected(button)
+	TransmogDE.setClothingTextureModdata(self.item, button.internal)
 	TransmogDE.forceUpdateClothing(self.item)
 end
 
@@ -35,7 +57,7 @@ end
 
 function TexturePickerModal:new(item, character, textureChoices)
 	local width = 260
-	local height = 80
+	local height = 180
 	local x = getCore():getScreenWidth() / 2 - (width / 2);
 	local y = getCore():getScreenHeight() / 2 - (height / 2);
 	local playerNum = character:getPlayerNum()
