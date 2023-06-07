@@ -9,15 +9,26 @@ function TexturePickerModal:createChildren()
 
 	local textureChoicesSize = self.textureChoices:size()
 	local numColumns = 4
+	local minNumRows = 4
 	local numRows = math.ceil(textureChoicesSize / numColumns)
 
 	local paddingXY = 32
-	local btnX = 16
-	local btnY = titleBarHeight + 16
+	local btnX = 0
+	local btnY = titleBarHeight
 	local btnH = 100
 
-	-- TODO: Use self.recipes = ISScrollingListBox
-	-- Or use ISScrollingListBox inside media\lua\client\ISUI\AdminPanel\ISItemsListTable.lua
+	local scrollPanelHeight = (minNumRows * btnH) + titleBarHeight
+	local scrollPanelWidth = (numColumns * btnH) + 13
+	self.mainPanel = ISPanel:new(btnX, titleBarHeight, scrollPanelWidth, scrollPanelHeight)
+	self.mainPanel:initialise()
+	self.mainPanel:instantiate()
+	self.mainPanel.backgroundColor = { r = 1, g = 0, b = 0, a = 0.5 }
+	-- self.mainPanel:noBackground()
+	self.mainPanel.borderColor = { r = 0, g = 0, b = 0, a = 0 };
+	self.mainPanel.moveWithMouse = true;
+	self.mainPanel:addScrollBars();
+	self:addChild(self.mainPanel)
+	self.mainPanel:setScrollChildren(true)
 
 	for row = 0, numRows - 1 do
 		local rowElements = {}
@@ -26,11 +37,12 @@ function TexturePickerModal:createChildren()
 			if index < textureChoicesSize then
 				table.insert(rowElements, self.textureChoices:get(index))
 				local textureChoice = getTexture('media/textures/' .. self.textureChoices:get(index) .. '.png')
-				local button = ISButton:new(btnX + (col * btnH), btnY + (row * btnH), btnH, btnH, "", self, TexturePickerModal.onTextureSelected)
+				local button = ISButton:new(1 + btnX + (col * btnH), (row * btnH), btnH, btnH, "", self,
+					TexturePickerModal.onTextureSelected)
 				button.internal = index
 				button:setImage(textureChoice)
 				button:forceImageSize(btnH, btnH)
-				self:addChild(button)
+				self.mainPanel:addChild(button)
 			else
 				break
 			end
@@ -38,9 +50,17 @@ function TexturePickerModal:createChildren()
 		print(table.concat(rowElements, "\t"))
 	end
 
+	self.mainPanel.onMouseWheel = function(_self, del)
+		if _self:getScrollHeight() > 0 then
+			_self:setYScroll(_self:getYScroll() - (del * 40))
+			return true
+		end
+		return false
+	end
 
-	self:setWidth((numColumns * btnH) + paddingXY)
-	self:setHeight((numRows * btnH) + titleBarHeight + paddingXY)
+	self.mainPanel:setScrollHeight(numRows * btnH)
+	self:setWidth(scrollPanelWidth)
+	self:setHeight(scrollPanelHeight + 16)
 end
 
 function TexturePickerModal:onTextureSelected(button)
