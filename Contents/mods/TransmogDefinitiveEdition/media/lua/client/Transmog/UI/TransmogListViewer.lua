@@ -84,7 +84,6 @@ function ISItemsListTable:createChildren()
 end
 
 function ISItemsListTable:sendItemToTransmog(scriptItem)
-  -- print('sendItemToTransmog'..tostring(scriptItem))
   local text = 'Transmogged to' .. getItemNameFromFullType(scriptItem:getFullName())
   HaloTextHelper.addText(getPlayer(), text, HaloTextHelper.getColorGreen())
   TransmogDE.setItemTransmog(self.viewer.itemToTmog, scriptItem)

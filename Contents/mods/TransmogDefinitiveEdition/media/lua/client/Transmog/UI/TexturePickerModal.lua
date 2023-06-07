@@ -12,23 +12,15 @@ function TexturePickerModal:createChildren()
 	local minNumRows = 4
 	local numRows = math.ceil(textureChoicesSize / numColumns)
 
-	local paddingXY = 32
 	local btnX = 0
-	local btnY = titleBarHeight
 	local btnH = 100
 
 	local scrollPanelHeight = (minNumRows * btnH) + titleBarHeight
 	local scrollPanelWidth = (numColumns * btnH) + 13
-	self.mainPanel = ISPanel:new(btnX, titleBarHeight, scrollPanelWidth, scrollPanelHeight)
-	self.mainPanel:initialise()
-	self.mainPanel:instantiate()
-	self.mainPanel.backgroundColor = { r = 1, g = 0, b = 0, a = 0.5 }
-	-- self.mainPanel:noBackground()
-	self.mainPanel.borderColor = { r = 0, g = 0, b = 0, a = 0 };
-	self.mainPanel.moveWithMouse = true;
-	self.mainPanel:addScrollBars();
-	self:addChild(self.mainPanel)
-	self.mainPanel:setScrollChildren(true)
+
+	self.scrollView = MxScrollView:new(btnX, titleBarHeight, scrollPanelWidth, scrollPanelHeight)
+	self.scrollView:initialise()
+	self:addChild(self.scrollView)
 
 	for row = 0, numRows - 1 do
 		local rowElements = {}
@@ -42,23 +34,15 @@ function TexturePickerModal:createChildren()
 				button.internal = index
 				button:setImage(textureChoice)
 				button:forceImageSize(btnH, btnH)
-				self.mainPanel:addChild(button)
+				self.scrollView:addScrollChild(button)
 			else
 				break
 			end
 		end
-		print(table.concat(rowElements, "\t"))
+		-- print(table.concat(rowElements, "\t"))
 	end
 
-	self.mainPanel.onMouseWheel = function(_self, del)
-		if _self:getScrollHeight() > 0 then
-			_self:setYScroll(_self:getYScroll() - (del * 40))
-			return true
-		end
-		return false
-	end
-
-	self.mainPanel:setScrollHeight(numRows * btnH)
+	self.scrollView:setScrollHeight(numRows * btnH)
 	self:setWidth(scrollPanelWidth)
 	self:setHeight(scrollPanelHeight + 16)
 end
