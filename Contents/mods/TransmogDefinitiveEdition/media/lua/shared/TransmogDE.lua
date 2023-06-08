@@ -91,8 +91,7 @@ TransmogDE.isTransmoggable = function(scriptItem)
   local typeString = scriptItem:getTypeString()
   local isClothing = typeString == 'Clothing'
   local bodyLocation = scriptItem:getBodyLocation()
-  local isBackpack = false -- typeString == "Container" and
-      --(scriptItem:InstanceItem(nil):canBeEquipped() or bodyLocation)
+  local isBackpack = typeString == "Container" and (scriptItem:InstanceItem(nil):canBeEquipped() or bodyLocation)
   local isClothingItemAsset = scriptItem:getClothingItemAsset() ~= nil
   local isWorldRender = scriptItem:isWorldRender()
   local isNotHidden = not scriptItem:isHidden()

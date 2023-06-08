@@ -22,6 +22,7 @@ local function updateBodyLocations()
 	for i = 1, allItems:size() do
 		local item = allItems:get(i - 1)
 		-- If can be canBeEquipped but not getBodyLocation, then it's a backpack!
+		-- So, we force the backpacks to have a BodyLocation, so that it can be hidden by pz using the group:setHideModel! 
 		if item:getType() == Type.Container and item:InstanceItem(nil):canBeEquipped() ~= "" and item:getBodyLocation() == "" then
 			containerLocations[item:InstanceItem(nil):canBeEquipped()] = true
 			item:DoParam("BodyLocation = Back")

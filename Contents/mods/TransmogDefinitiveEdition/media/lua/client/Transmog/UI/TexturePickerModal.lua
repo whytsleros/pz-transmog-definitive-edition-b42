@@ -13,7 +13,7 @@ function TexturePickerModal:createChildren()
 	local numRows = math.ceil(textureChoicesSize / numColumns)
 
 	local btnX = 0
-	local btnH = 100
+	local btnH = 125
 
 	local scrollPanelHeight = (minNumRows * btnH) + titleBarHeight
 	local scrollPanelWidth = (numColumns * btnH) + 13
@@ -33,7 +33,8 @@ function TexturePickerModal:createChildren()
 					TexturePickerModal.onTextureSelected)
 				button.internal = index
 				button:setImage(textureChoice)
-				button:forceImageSize(btnH, btnH)
+				button:forceImageSize(btnH - 2, btnH - 2)
+				button:setBorderRGBA(1, 1, 1, 0.6)
 				self.scrollView:addScrollChild(button)
 			else
 				break
