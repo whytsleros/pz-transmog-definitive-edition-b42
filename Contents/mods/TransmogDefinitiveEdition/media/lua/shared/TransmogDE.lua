@@ -40,25 +40,32 @@ end
 
 TransmogDE.patchAllItemsFromModData = function(modData)
   for originalItemName, tmogItemName in pairs(modData.itemToTransmogMap) do
-    local originalScriptItem = ScriptManager.instance:getItem(originalItemName)
-    local tmogScriptItem = ScriptManager.instance:getItem(tmogItemName)
-    if originalScriptItem ~= nil and tmogScriptItem ~= nil then
-      local originalClothingItemAsset = originalScriptItem:getClothingItemAsset()
+    local ogItem = ScriptManager.instance:getItem(originalItemName)
+    local tmogItem = ScriptManager.instance:getItem(tmogItemName)
+    if ogItem ~= nil and tmogItem ~= nil then
+      local originalClothingItemAsset = ogItem:getClothingItemAsset()
 
       if originalClothingItemAsset then
-        local tmogClothingItemAsset = tmogScriptItem:getClothingItemAsset()
-        tmogScriptItem:setClothingItemAsset(originalClothingItemAsset)
+        local tmogClothingItemAsset = tmogItem:getClothingItemAsset()
+        tmogItem:setClothingItemAsset(originalClothingItemAsset)
 
         if originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask() then
           -- Since we use the tmog item to check textureChoices and colorTint in Transmog\InvContextMenu.lua
           -- using the backup will be handy to ensure we always select the original textureChoices and colorTint
           TransmogDE.BackupClothingItemAsset[originalItemName] = originalClothingItemAsset
           -- Hide hats to avoid having the hair being compressed if wearning an helmet or something similiar
-          originalScriptItem:setClothingItemAsset(tmogClothingItemAsset)
+          ogItem:setClothingItemAsset(tmogClothingItemAsset)
+        end
+
+        -- If can be canBeEquipped but not getBodyLocation, then it's a backpack!
+        -- So, we force the backpacks to have a BodyLocation, so that it can be hidden by pz using the group:setHideModel!
+        if ogItem:getType() == Type.Container and ogItem:InstanceItem(nil):canBeEquipped() ~= "" and ogItem:getBodyLocation() == "" then
+          ogItem:DoParam("BodyLocation = " .. ogItem:InstanceItem(nil):canBeEquipped())
         end
       end
     end
   end
+
   -- Must be triggered after items are patched
   TransmogDE.triggerUpdate()
 
@@ -297,10 +304,10 @@ end
 TransmogDE.forceUpdateClothing = function(item)
   local moddata = TransmogDE.getItemTransmogModData(item)
   local container = item:getContainer()
-	if not container then
-		print('ERROR: TransmogDE.forceUpdateClothing, container is nil')
-		return
-	end
+  if not container then
+    print('ERROR: TransmogDE.forceUpdateClothing, container is nil')
+    return
+  end
   local childItem = container:getItemById(moddata.childId)
   local player = instanceof(container:getParent(), "IsoGameCharacter") and container:getParent()
 
@@ -325,7 +332,7 @@ TransmogDE.forceUpdateClothing = function(item)
 
   player:resetModelNextFrame();
 
-	sendClothing(player);
+  sendClothing(player);
 end
 
 TransmogDE.setClothingHidden = function(item)
@@ -333,7 +340,7 @@ TransmogDE.setClothingHidden = function(item)
 
   moddata.transmogTo = nil
 
-	TransmogDE.forceUpdateClothing(item)
+  TransmogDE.forceUpdateClothing(item)
 end
 
 -- Immersive mode code
