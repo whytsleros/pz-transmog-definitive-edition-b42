@@ -18,7 +18,7 @@ function TexturePickerModal:createChildren()
 	local scrollPanelHeight = (minNumRows * btnH) + titleBarHeight
 	local scrollPanelWidth = (numColumns * btnH) + 13
 
-	self.scrollView = MxScrollView:new(btnX, titleBarHeight, scrollPanelWidth, scrollPanelHeight)
+	self.scrollView = TmogScrollView:new(btnX, titleBarHeight, scrollPanelWidth, scrollPanelHeight)
 	self.scrollView:initialise()
 	self:addChild(self.scrollView)
 
