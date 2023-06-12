@@ -2,7 +2,7 @@ TransmogDE = TransmogDE or {}
 
 TransmogDE.ImmersiveModeMap = {}
 TransmogDE.BackupClothingItemAsset = {}
-TransmogDE.TmogItemToOgItemMap = {}
+TransmogDE.TmogItemToOgItemBodylocation = {}
 
 TransmogDE.GenerateTransmogGlobalModData = function()
   TmogPrint('Server TransmogModData')
@@ -44,7 +44,6 @@ TransmogDE.patchAllItemsFromModData = function(modData)
     local ogItem = ScriptManager.instance:getItem(originalItemName)
     local tmogItem = ScriptManager.instance:getItem(tmogItemName)
     if ogItem ~= nil and tmogItem ~= nil then
-      TransmogDE.TmogItemToOgItemMap[tmogItemName] = originalItemName
       local originalClothingItemAsset = ogItem:getClothingItemAsset()
 
       if originalClothingItemAsset then
@@ -65,6 +64,9 @@ TransmogDE.patchAllItemsFromModData = function(modData)
           ogItem:DoParam("BodyLocation = " .. ogItem:InstanceItem(nil):canBeEquipped())
         end
       end
+
+      -- store this map for the wear tmog fix
+      TransmogDE.TmogItemToOgItemBodylocation[tmogItemName] = ogItem:getBodyLocation()
     end
   end
 
@@ -304,33 +306,37 @@ end
 
 -- Converted from java\characters\WornItems\WornItems.java using chatgtp -> public void setItem(String var1, InventoryItem var2)
 -- This is needed to avoid item clipping!
-TransmogDE.setWornItemTmog = function (player, tmogItem)
+TransmogDE.setWornItemTmog = function(player, tmogItem)
   local wornItems = player:getWornItems()
   local group = getClassFieldVal(wornItems, getClassField(wornItems, 0));
   local items = getClassFieldVal(wornItems, getClassField(wornItems, 1));
 
-  local ogItemName = TransmogDE.TmogItemToOgItemMap[tmogItem:getScriptItem():getFullName()]
-  local ogItem = ScriptManager.instance:getItem(ogItemName)
-  if not ogItem then
+  local ogItemBodylocation = TransmogDE.TmogItemToOgItemBodylocation[tmogItem:getScriptItem():getFullName()]
+  if not ogItemBodylocation then
     return
   end
 
-  -- Use the ogItem bodyLoc, so that they are in the correct order
-  -- Otherwise, you will get clipping
-  local bodyLocation = ogItem:getBodyLocation()
-
   wornItems:remove(tmogItem)
 
+  -- Use the ogItem bodyLoc, so that they are in the correct order, otherwise, we'll get clipping
+  -- This ensures that for example, backpacks are on TOP of trousers
+
   local insertAt = items:size()
-  for var6 = 0, items:size() - 1 do
-    local var5 = items:get(var6)
-    if group:indexOf(var5:getLocation()) > group:indexOf(bodyLocation) then
-      insertAt = var6
-      break
+  for i = 0, items:size() - 1 do
+    local wornItem = items:get(i)
+    local wornItemItem = wornItem:getItem()
+    if TransmogDE.isTransmogItem(wornItemItem) and not wornItemItem:hasTag("Hide_Everything") then
+      local wornOgItemLocation = TransmogDE.TmogItemToOgItemBodylocation[wornItemItem:getScriptItem():getFullName()]
+      -- TmogPrint('wornOgitemLocation', wornOgItemLocation)
+      -- TmogPrint('ogItemBodylocation', ogItemBodylocation)
+      if group:indexOf(wornOgItemLocation) > group:indexOf(ogItemBodylocation) then
+        insertAt = i
+        break
+      end
     end
   end
 
-  local newWornItem = WornItem.new(bodyLocation, tmogItem)
+  local newWornItem = WornItem.new("TransmogLocation", tmogItem)
   items:add(insertAt, newWornItem)
 end
 
