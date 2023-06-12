@@ -2,6 +2,7 @@ TransmogDE = TransmogDE or {}
 
 TransmogDE.ImmersiveModeMap = {}
 TransmogDE.BackupClothingItemAsset = {}
+TransmogDE.TmogItemToOgItemMap = {}
 
 TransmogDE.GenerateTransmogGlobalModData = function()
   TmogPrint('Server TransmogModData')
@@ -43,6 +44,7 @@ TransmogDE.patchAllItemsFromModData = function(modData)
     local ogItem = ScriptManager.instance:getItem(originalItemName)
     local tmogItem = ScriptManager.instance:getItem(tmogItemName)
     if ogItem ~= nil and tmogItem ~= nil then
+      TransmogDE.TmogItemToOgItemMap[tmogItemName] = originalItemName
       local originalClothingItemAsset = ogItem:getClothingItemAsset()
 
       if originalClothingItemAsset then
@@ -300,6 +302,38 @@ TransmogDE.setItemToDefault = function(item)
   TransmogDE.forceUpdateClothing(item)
 end
 
+-- Converted from java\characters\WornItems\WornItems.java using chatgtp -> public void setItem(String var1, InventoryItem var2)
+-- This is needed to avoid item clipping!
+TransmogDE.setWornItemTmog = function (player, tmogItem)
+  local wornItems = player:getWornItems()
+  local group = getClassFieldVal(wornItems, getClassField(wornItems, 0));
+  local items = getClassFieldVal(wornItems, getClassField(wornItems, 1));
+
+  local ogItemName = TransmogDE.TmogItemToOgItemMap[tmogItem:getScriptItem():getFullName()]
+  local ogItem = ScriptManager.instance:getItem(ogItemName)
+  if not ogItem then
+    return
+  end
+
+  -- Use the ogItem bodyLoc, so that they are in the correct order
+  -- Otherwise, you will get clipping
+  local bodyLocation = ogItem:getBodyLocation()
+
+  wornItems:remove(tmogItem)
+
+  local insertAt = items:size()
+  for var6 = 0, items:size() - 1 do
+    local var5 = items:get(var6)
+    if group:indexOf(var5:getLocation()) > group:indexOf(bodyLocation) then
+      insertAt = var6
+      break
+    end
+  end
+
+  local newWornItem = WornItem.new(bodyLocation, tmogItem)
+  items:add(insertAt, newWornItem)
+end
+
 -- Usefull for forcing the item to be removed and re-added after changing color, texture, and tmog
 TransmogDE.forceUpdateClothing = function(item)
   local moddata = TransmogDE.getItemTransmogModData(item)
@@ -328,7 +362,7 @@ TransmogDE.forceUpdateClothing = function(item)
     return
   end
 
-  player:setWornItem(tmogItem:getBodyLocation(), tmogItem)
+  TransmogDE.setWornItemTmog(player, tmogItem)
 
   player:resetModelNextFrame();
 
