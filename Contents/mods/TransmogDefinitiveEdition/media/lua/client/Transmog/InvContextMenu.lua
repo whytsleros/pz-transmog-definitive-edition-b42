@@ -1,9 +1,5 @@
 local iconTexture = getTexture("media/ui/TransmogIcon.png")
 
-local isBackpack = function(clothing)
-  return instanceof(clothing, "InventoryContainer")
-end
-
 local addEditTransmogItemOption = function(player, context, items)
   local playerObj = getSpecificPlayer(player)
   local testItem = nil
@@ -24,17 +20,15 @@ local addEditTransmogItemOption = function(player, context, items)
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
 
-    if not isBackpack(clothing) then
-      menuContext:addOption("Transmogrify", clothing, function()
-        TransmogListViewer.OnOpenPanel(clothing)
-        TransmogDE.triggerUpdate()
-      end);
+    menuContext:addOption("Transmogrify", clothing, function()
+      TransmogListViewer.OnOpenPanel(clothing)
+      TransmogDE.triggerUpdate()
+    end);
 
-			menuContext:addOption("Hide Item", clothing, function()
-        TransmogDE.setClothingHidden(clothing)
-        TransmogDE.triggerUpdate()
-      end);
-    end
+    menuContext:addOption("Hide Item", clothing, function()
+      TransmogDE.setClothingHidden(clothing)
+      TransmogDE.triggerUpdate()
+    end);
 
 		menuContext:addOption("Reset to Default", clothing, function()
       TransmogDE.setItemToDefault(clothing)
@@ -79,28 +73,6 @@ local addEditTransmogItemOption = function(player, context, items)
       end);
     end
   end
-
-  -- -- DBG
-  -- local hairStyles = getHairStylesInstance():getAllMaleStyles();
-  -- if playerObj:isFemale() then
-  --   hairStyles = getHairStylesInstance():getAllFemaleStyles();
-  -- end
-
-  -- for i = 1, hairStyles:size() do
-  --   local hairStyle = hairStyles:get(i - 1)
-  --   TmogPrint(tostring(hairStyle))
-  --   local option = context:addOption(
-  --     getText("ContextMenu_CutHairFor", getText("IGUI_Hair_" .. hairStyle:getName())),
-  --     playerObj,
-  --     function()
-  --       playerObj:getHumanVisual():setHairModel(hairStyle:getName());
-  --       playerObj:resetModel();
-  --       playerObj:resetHairGrowingTime();
-  --     end,
-  --     hairStyle:getName(),
-  --     300
-  --   );
-  -- end
 
   return context
 end
