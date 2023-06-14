@@ -6,7 +6,7 @@ function TransmogListViewer:new(x, y, width, height, itemToTmog)
   local o = {}
   x = getCore():getScreenWidth() / 2 - (width / 2);
   y = getCore():getScreenHeight() / 2 - (height / 2);
-  o = ISItemsListViewer:new(x, y, width, height);
+  o = ISPanel:new(x, y, width, height);
   setmetatable(o, self)
   self.__index = self
   o.borderColor = { r = 0.4, g = 0.4, b = 0.4, a = 1 };
@@ -41,9 +41,15 @@ function TransmogListViewer:initList()
     local allItems = backupGetAllItems()
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
-      --The above code activates as soon as the item list viewer is activated.
       if TransmogDE.isTransmoggable(item) and TransmogDE.immersiveModeItemCheck(item) then
-        filteredItems:add(item)
+        local isSameBodyLocation = item:getBodyLocation() == self.itemToTmog:getBodyLocation()
+        if not SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation then
+          filteredItems:add(item)
+        else
+          if isSameBodyLocation then
+            filteredItems:add(item)
+          end
+        end
       end
     end
     return filteredItems
