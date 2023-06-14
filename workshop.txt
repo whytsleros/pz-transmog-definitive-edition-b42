@@ -26,7 +26,7 @@ description=I tested this with various clothing mods, including Authentic Z, Bri
 description=This mod should be compatible with most clothing mods, but if any mod is not working then please report it in the [url=https://steamcommunity.com/workshop/filedetails/discussion/2979375840/3827542174239583726/] Troubleshooting Discussion [/url]
 description=
 description=[h1] READ ME: Know issues and limitations[/h1]
-description=[b]-[/b] To ensure your hair is visible when you hide your hat, I had to write code to edit all headgear, so if you see the wrong hat icons, or you don't see the hat visible on a zombie, this is why. I can't fix the issue, sadly.
+description=[b]-[/b] To ensure your hair is visible when you hide your hat, I had to write code to edit all head gear, so if you see the wrong hat icons, or you don't see the hat visible on a zombie, this is why. You can disable this fix via the sandbox option "Disable Hat and Masks Hard Fix"
 description=[b]-[/b] Item clipping, half visible models. That's a limitation of the game engine, and it can be fixed by unequipping an re-equipping the clipping item. This usually applies to backpacks.
 description=[b]-[/b] This mod works best on a new save and server. No guarantee that it work on existing saves, but it should be fine.
 description=[b]-[/b] Opening the transmog menu will make the game lag a bit, this happens because the game is trying to load all the possible items, this is not something I can fix.
