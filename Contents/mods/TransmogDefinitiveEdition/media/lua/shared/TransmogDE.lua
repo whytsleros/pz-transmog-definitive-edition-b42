@@ -47,10 +47,10 @@ TransmogDE.patchAllItemsFromModData = function(modData)
       local originalClothingItemAsset = ogItem:getClothingItemAsset()
 
       if originalClothingItemAsset then
+        local tmogClothingItemAsset = tmogItem:getClothingItemAsset()
         tmogItem:setClothingItemAsset(originalClothingItemAsset)
 
         if not SandboxVars.TransmogDE.DisableHeadGearFix and (originalClothingItemAsset:isHat() or originalClothingItemAsset:isMask()) then
-          local tmogClothingItemAsset = tmogItem:getClothingItemAsset()
           -- Since we use the tmog item to check textureChoices and colorTint in Transmog\InvContextMenu.lua
           -- using the backup will be handy to ensure we always select the original textureChoices and colorTint
           TransmogDE.BackupClothingItemAsset[originalItemName] = originalClothingItemAsset
@@ -72,8 +72,6 @@ TransmogDE.patchAllItemsFromModData = function(modData)
 
   -- Must be triggered after items are patched
   TransmogDE.triggerUpdate()
-
-  -- TmogPrintTable(TransmogDE.BackupClothingItemAsset)
 end
 
 TransmogDE.triggerUpdate = function(player)
