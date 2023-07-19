@@ -80,16 +80,25 @@ TransmogDE.triggerUpdate = function(player)
   triggerEvent("ApplyTransmogToPlayerItems", player)
 end
 
-local invalidBodyLocations = {
+TransmogDE.invalidBodyLocations = {
   TransmogLocation = true,
   Bandage = true,
   Wound = true,
   ZedDmg = true,
   Hide_Everything = true,
   Fur = true, -- Support for "the furry mod"
+  Face_Tattoo = true, -- Support for "elies tattoo"
+  Back_Tattoo = true, -- Support for "elies tattoo"
+  RightLeg_Tattoo = true, -- Support for "elies tattoo"
+  LeftLeg_Tattoo = true, -- Support for "elies tattoo"
+  LowerBody_Tattoo = true, -- Support for "elies tattoo"
+  UpperBody_Tattoo = true, -- Support for "elies tattoo"
+  RightArm_Tattoo = true, -- Support for "elies tattoo"
+  LeftArm_Tattoo = true, -- Support for "elies tattoo"
 }
+
 TransmogDE.isTransmoggableBodylocation = function(bodyLocation)
-  return not invalidBodyLocations[bodyLocation] and not string.find(bodyLocation, "MakeUp_")
+  return not TransmogDE.invalidBodyLocations[bodyLocation] and not string.find(bodyLocation, "MakeUp_")
 end
 
 TransmogDE.isTransmoggable = function(scriptItem)
