@@ -97,6 +97,10 @@ TransmogDE.invalidBodyLocations = {
   LeftArm_Tattoo = true, -- Support for "elies tattoo"
 }
 
+TransmogDE.addBodyLocationToIgnore = function (bodyLocation)
+  TransmogDE.invalidBodyLocations[bodyLocation] = true
+end
+
 TransmogDE.isTransmoggableBodylocation = function(bodyLocation)
   return not TransmogDE.invalidBodyLocations[bodyLocation] and not string.find(bodyLocation, "MakeUp_")
 end
