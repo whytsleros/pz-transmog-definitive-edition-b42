@@ -1,3 +1,48 @@
-[h1]project-name[/h1]
+[h1] A mod that allows you to hot-swap your appearance with any armour or clothing of your choice. Visible to other players in MP [/h1]
 
-Mod under development...
+[h1] The definitive Edition of the transmog mod [/h1]
+After months, I finally made a transmog mod that works in [b]single-player[/b] and [b]multiplayer[/b] without requiring complex setups and external dependencies. The real successor of my Fashionoid mod.
+
+This version works out of the box and is compatible with most clothing mods! And it supports up to [b] 5000 custom items of modded and vanilla clothing! [/b]
+
+[h1]Demo[/h1]
+[img]https://i.imgur.com/DFNtZuf.gif[/img]
+
+[h1] Including extra features like: [/h1]
+[h1]Change color[/h1]
+[img]https://i.imgur.com/n7tetbm.gif[/img]
+[h1]Texture switcher[/h1]
+[img]https://steamuserimages-a.akamaihd.net/ugc/2056503000594803007/3E2D1BC82FB18336D5C076ED7EB2A1DC2485CCED/[/img]
+[h1]Multiplayer Sync![/h1]
+[img]https://i.imgur.com/XqmcgLR.gif[/img]
+[h1]Immersive Mode Option[/h1]
+[b]When you enable the Immersive Mode from the sandbox settings, you can transmog only to the items you have found, and if you die, don't worry! You will keep your list of found transmogs :D[/b]
+
+[h1]Mods compatibility[/h1]
+I tested this with various clothing mods, including Authentic Z, Brita Armor pack, Spongies Clothing, and even Anthro Survivors.
+This mod should be compatible with most clothing mods, but if any mod is not working then please report it in the [url=https://steamcommunity.com/workshop/filedetails/discussion/2979375840/3827542174239583726/] Troubleshooting Discussion [/url]
+
+[h1]Mods compatibility: How to make mods compatible[/h1]
+If you made a mod that adds BodyLocations, and you want to make it so that this mod does not hide them automatically, you can use this code in your mod as an example.
+[code]if getActivatedMods():contains("TransmogDE") then
+   require("TransmogDE");
+else return end
+TransmogDE.addBodyLocationToIgnore("Fur") -- Support for "the furry mod"
+TransmogDE.addBodyLocationToIgnore("Face_Tattoo") -- Support for "elies tattoo" face tattoos
+TransmogDE.addBodyLocationToIgnore("CustomBodyLocatioNameHere") -- Support for your "CustomBodyLocatioNameHere"
+[/code]
+
+
+[h1] READ ME: Know issues and limitations[/h1]
+[b]-[/b] To ensure your hair is visible when you hide your hat, I had to write code to edit all head gear, so if you see the wrong hat icons, or you don't see the hat visible on a zombie, this is why. You can disable this fix via the sandbox option "Disable Hat and Masks Hard Fix"
+[b]-[/b] Item clipping, half visible models. That's a limitation of the game engine, and it can be fixed by unequipping an re-equipping the clipping item. This usually applies to backpacks.
+[b]-[/b] This mod works best on a new save and server. No guarantee that it work on existing saves, but it should be fine.
+[b]-[/b] Opening the transmog menu will make the game lag a bit, this happens because the game is trying to load all the possible items, this is not something I can fix.
+[b]-[/b] Blood stains do not appear on clothings yet, and I'm still working on a fix.
+
+
+[h1]Found a bug?[/h1]
+Please report it here: https://github.com/mxswat/pz-transmog-definitive-edition/issues
+
+Workshop ID: 2979375840
+Mod ID: TransmogDE

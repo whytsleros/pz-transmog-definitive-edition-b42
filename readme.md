@@ -1,0 +1,11 @@
+TODO: 
+- Test color switch
+- Test texture switch switch
+- Test with weapons equipped
+- Test ModData persistency in SP
+- Test backpacks tmog
+- Test MP Sync
+- Test ModData persistency in MP
+  - Color
+  - Texture
+  - Tmog
