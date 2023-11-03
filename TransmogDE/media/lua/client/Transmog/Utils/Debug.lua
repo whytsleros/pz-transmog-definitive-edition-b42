@@ -1,4 +1,6 @@
-function TmogPrint(...)
+local debug = {}
+
+function debug.print(...)
   if not isDebugEnabled() then
     return
   end
@@ -10,7 +12,7 @@ function TmogPrint(...)
   print('TransmogDE:' .. printResult)
 end
 
-function TmogPrintTable(node)
+function debug.printTable(node)
   local cache, stack, output = {}, {}, {}
   local depth = 1
   local output_str = "{\n"
@@ -87,3 +89,5 @@ function TmogPrintTable(node)
 
   print(output_str)
 end
+
+return debug

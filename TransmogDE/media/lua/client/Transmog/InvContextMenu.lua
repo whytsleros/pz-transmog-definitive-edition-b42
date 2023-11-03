@@ -1,5 +1,7 @@
-local isTransmoggable = require 'Transmog/Utils/IsTransmogable'
-local getItemTransmogModData = require 'Transmog/Utils/getItemTransmogModData'
+local isTransmoggable = require 'Transmog/utils/IsTransmogable'
+local itemTransmogModData = require 'Transmog/utils/itemTransmogModData'
+local refreshPlayerTransmog = require 'Transmog/utils/refreshPlayerTransmog'
+local debug = require "Transmog/utils/debug"
 
 local iconTexture = getTexture("media/ui/TransmogIcon.png")
 
@@ -29,24 +31,31 @@ local addEditTransmogItemOption = function(playerIdx, context, items)
   context:addSubMenu(option, menuContext);
 
   menuContext:addOption("Transmog to Base.Jacket_Black", clothing, function()
-    local moddata = getItemTransmogModData(clothing)
+    local moddata = itemTransmogModData.get(clothing)
     moddata.transmogTo = 'Base.Jacket_Black'
+    refreshPlayerTransmog(playerObj)
   end);
 
-  -- menuContext:addOption("Transmogrify", clothing, function()
-  --   TransmogListViewer.OnOpenPanel(clothing)
-  --   -- TransmogDE.triggerUpdate()
-  -- end);
+  local function onTransmogrify(scriptItem)
+    local moddata = itemTransmogModData.get(clothing)
+    moddata.transmogTo = scriptItem:getFullName()
+    refreshPlayerTransmog(playerObj)
+  end
+  
+  menuContext:addOption("Transmogrify", clothing, function()
+    TransmogListViewer.OnOpenPanel(clothing, onTransmogrify)
+  end);
 
-  -- menuContext:addOption("Hide Item", clothing, function()
-  --   -- TransmogDE.setClothingHidden(clothing)
-  --   -- TransmogDE.triggerUpdate()
-  -- end);
+  menuContext:addOption("Hide Item", clothing, function()
+    local moddata = itemTransmogModData.get(clothing)
+    moddata.transmogTo = ''
+    refreshPlayerTransmog(playerObj)
+  end);
 
-  -- menuContext:addOption("Reset to Default", clothing, function()
-  --   -- TransmogDE.setItemToDefault(clothing)
-  --   -- TransmogDE.triggerUpdate()
-  -- end);
+  menuContext:addOption("Reset to Default", clothing, function()
+    itemTransmogModData.reset(clothing)
+    refreshPlayerTransmog(playerObj)
+  end);
 
   -- local transmogTo = TransmogDE.getItemTransmogModData(clothing).transmogTo
   -- if not transmogTo then

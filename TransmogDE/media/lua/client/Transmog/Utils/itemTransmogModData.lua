@@ -16,6 +16,14 @@ end
 
 --- @param item InventoryItem
 --- @return TransmogModData
+function itemTransmogModData.reset(item)
+  item:getModData()['transmog'] = itemTransmogModData.getDefault(item)
+
+  return item:getModData()['transmog']
+end
+
+--- @param item InventoryItem
+--- @return TransmogModData
 function itemTransmogModData.getDefault(item)
   local itemVisual = item:getVisual()
   local clothingItem = itemVisual:getClothingItem()

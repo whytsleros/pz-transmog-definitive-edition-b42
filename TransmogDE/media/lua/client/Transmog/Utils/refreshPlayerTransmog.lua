@@ -1,12 +1,10 @@
-require "Transmog/Utils/Debug"
-local itemTransmogModData = require 'Transmog/Utils/itemTransmogModData'
+local debug = require "Transmog/utils/debug"
+local itemTransmogModData = require 'Transmog/utils/itemTransmogModData'
 
 ---@param character IsoPlayer|IsoGameCharacter
 local function refreshPlayerTransmog(character)
-  TmogPrint('refreshPlayerTransmog')
+  debug.print('refreshPlayerTransmog')
   local charModData = character:getModData()
-
-  local inVehicle = character:getVehicle()
 
   ---@type WornItems|ArrayList
   local wornItems = character:getWornItems()
@@ -40,7 +38,8 @@ local function refreshPlayerTransmog(character)
   sendClothing(character)
 end
 
+local function _refreshPlayerTransmog(index, character) refreshPlayerTransmog(character) end
 Events.OnClothingUpdated.Add(refreshPlayerTransmog)
-Events.OnCreatePlayer.Add(function(_, character) refreshPlayerTransmog(character) end)
+Events.OnCreatePlayer.Add(_refreshPlayerTransmog)
 
 return refreshPlayerTransmog

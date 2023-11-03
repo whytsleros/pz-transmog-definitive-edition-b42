@@ -1,8 +1,9 @@
 require "ISUI/AdminPanel/ISItemsListViewer"
+local isTransmoggable = require 'Transmog/utils/IsTransmogable'
 
 TransmogListViewer = ISItemsListViewer:derive("TransmogListViewer");
 
-function TransmogListViewer:new(x, y, width, height, itemToTmog)
+function TransmogListViewer:new(x, y, width, height, itemToTmog, onItemSelected)
   local o = {}
   x = getCore():getScreenWidth() / 2 - (width / 2);
   y = getCore():getScreenHeight() / 2 - (height / 2);
@@ -16,16 +17,19 @@ function TransmogListViewer:new(x, y, width, height, itemToTmog)
   o.moveWithMouse = true;
   -- These two must be set before init, so it's passed to the ISItemsListTable
   o.itemToTmog = itemToTmog;
+  o.onItemSelected = onItemSelected;
   o.isTransmogListViewer = true
   TransmogListViewer.instance = o;
   return o;
 end
 
-function TransmogListViewer.OnOpenPanel(itemToTmog)
+---@param itemToTmog InventoryItem
+---@param onItemSelected fun(scriptItem:Item):any
+function TransmogListViewer.OnOpenPanel(itemToTmog, onItemSelected)
   if TransmogListViewer.instance then
     TransmogListViewer.instance:close()
   end
-  local modal = TransmogListViewer:new(50, 200, 850, 650, itemToTmog)
+  local modal = TransmogListViewer:new(50, 200, 850, 650, itemToTmog, onItemSelected)
   modal:initialise();
   modal:addToUIManager();
   modal:removeChild(modal.playerSelect);
@@ -41,7 +45,8 @@ function TransmogListViewer:initList()
     local allItems = backupGetAllItems()
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
-      if TransmogDE.isTransmoggable(item) and TransmogDE.immersiveModeItemCheck(item) then
+      -- if isTransmoggable(item) and TransmogDE.immersiveModeItemCheck(item) then
+      if isTransmoggable(item) then
         local isSameBodyLocation = item:getBodyLocation() == self.itemToTmog:getBodyLocation()
         if not SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation then
           filteredItems:add(item)
@@ -83,15 +88,11 @@ function ISItemsListTable:createChildren()
     self:removeChild(self.buttonAddMultiple);
     self:removeChild(self.filters);
 
-    self.datas:setOnMouseDoubleClick(self, self.sendItemToTransmog);
+    self.datas:setOnMouseDoubleClick(self, function (self, scriptItem)
+      TransmogListViewer.instance.onItemSelected(scriptItem)
+    end);
   end
 
   return result
 end
 
-function ISItemsListTable:sendItemToTransmog(scriptItem)
-  local text = 'Transmogged to' .. getItemNameFromFullType(scriptItem:getFullName())
-  HaloTextHelper.addText(getPlayer(), text, HaloTextHelper.getColorGreen())
-  TransmogDE.setItemTransmog(self.viewer.itemToTmog, scriptItem)
-  TransmogDE.forceUpdateClothing(self.viewer.itemToTmog)
-end
