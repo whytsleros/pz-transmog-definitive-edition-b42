@@ -10,9 +10,10 @@ local itemTransmogModData = {}
 --- @param item InventoryItem
 --- @return TransmogModData
 function itemTransmogModData.get(item)
-  local modData = item:getModData()['transmog'] or itemTransmogModData.getDefault(item)
+  -- Remeber to re-assign the reference otherwise values will NOT update!
+  item:getModData()['transmog'] = item:getModData()['transmog'] or itemTransmogModData.getDefault(item)
 
-  return modData
+  return item:getModData()['transmog']
 end
 
 --- @param item InventoryItem

@@ -75,7 +75,7 @@ local addEditTransmogItemOption = function(playerIdx, context, items)
       moddata.color = color
       refreshPlayerTransmog(playerObj)
     end
-    menuContext:addOption("Change Color", clothing, function()
+    menuContext:addOption("Change Colors", clothing, function()
       local modal = ColorPickerModal:new(clothing, playerObj, onColorSelected);
       modal:initialise();
       modal:addToUIManager();
