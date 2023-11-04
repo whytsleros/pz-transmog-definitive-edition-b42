@@ -27,22 +27,23 @@ local addEditTransmogItemOption = function(playerIdx, context, items)
 
   local option = context:addOption("Transmog Menu");
   option.iconTexture = iconTexture
+
   local menuContext = context:getNew(context);
   context:addSubMenu(option, menuContext);
 
-  menuContext:addOption("Transmog to Base.Jacket_Black", clothing, function()
-    local moddata = itemTransmogModData.get(clothing)
-    moddata.transmogTo = 'Base.Jacket_Black'
-    refreshPlayerTransmog(playerObj)
-  end);
-
-  local function onTransmogrify(scriptItem)
-    local moddata = itemTransmogModData.get(clothing)
-    moddata.transmogTo = scriptItem:getFullName()
-    refreshPlayerTransmog(playerObj)
+  if isDebugEnabled() then
+    menuContext:addOption("Print Tmog Data", clothing, function()
+      debug.printTable(itemTransmogModData.get(clothing))
+    end);
   end
-  
+
   menuContext:addOption("Transmogrify", clothing, function()
+    local function onTransmogrify(scriptItem)
+      local moddata = itemTransmogModData.get(clothing)
+      moddata.transmogTo = scriptItem:getFullName()
+      refreshPlayerTransmog(playerObj)
+    end
+
     TransmogListViewer.OnOpenPanel(clothing, onTransmogrify)
   end);
 
@@ -57,36 +58,40 @@ local addEditTransmogItemOption = function(playerIdx, context, items)
     refreshPlayerTransmog(playerObj)
   end);
 
-  -- local transmogTo = TransmogDE.getItemTransmogModData(clothing).transmogTo
-  -- if not transmogTo then
-  --   return
-  -- end
+  local moddata = itemTransmogModData.get(clothing)
 
-  -- local tmogScriptItem = ScriptManager.instance:getItem(transmogTo)
-  -- if not tmogScriptItem then
-  --   return context
-  -- end
+  local tmogItem = InventoryItemFactory.CreateItem(moddata.transmogTo)
 
-  -- local tmogClothingItemAsset = TransmogDE.getClothingItemAsset(tmogScriptItem)
-  -- if tmogClothingItemAsset:getAllowRandomTint() then
-  --   menuContext:addOption("Change Color", clothing, function()
-  --     local modal = ColorPickerModal:new(clothing, playerObj);
-  --     modal:initialise();
-  --     modal:addToUIManager();
-  --   end);
-  -- end
+  local tmogClothingItem = tmogItem:getClothingItem()
 
-  -- local textureChoices =
-  --     tmogClothingItemAsset:hasModel() and tmogClothingItemAsset:getTextureChoices()
-  --     or tmogClothingItemAsset:getBaseTextures()
+  if tmogClothingItem == nil then
+    return
+  end
 
-  -- if textureChoices and (textureChoices:size() > 1) then
-  --   menuContext:addOption("Change Texture", clothing, function()
-  --     local modal = TexturePickerModal:new(clothing, playerObj, textureChoices);
-  --     modal:initialise();
-  --     modal:addToUIManager();
-  --   end);
-  -- end
+  if tmogClothingItem:getAllowRandomTint() then
+    ---@param color ModDataColor
+    local function onColorSelected(color)
+      local moddata = itemTransmogModData.get(clothing)
+      moddata.color = color
+      refreshPlayerTransmog(playerObj)
+    end
+    menuContext:addOption("Change Color", clothing, function()
+      local modal = ColorPickerModal:new(clothing, playerObj, onColorSelected);
+      modal:initialise();
+      modal:addToUIManager();
+    end);
+  end
+
+  local textureChoices = tmogClothingItem:hasModel()
+      and tmogClothingItem:getTextureChoices() or tmogClothingItem:getBaseTextures()
+
+  if textureChoices and (textureChoices:size() > 1) then
+    menuContext:addOption("Change Texture", clothing, function()
+      local modal = TexturePickerModal:new(clothing, playerObj, textureChoices);
+      modal:initialise();
+      modal:addToUIManager();
+    end);
+  end
 end
 
 

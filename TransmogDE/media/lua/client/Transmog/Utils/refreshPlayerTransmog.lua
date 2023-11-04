@@ -1,5 +1,6 @@
 local debug = require "Transmog/utils/debug"
 local itemTransmogModData = require 'Transmog/utils/itemTransmogModData'
+local ModDataColor = require "Transmog/utils/modDataColor"
 
 ---@param character IsoPlayer|IsoGameCharacter
 local function refreshPlayerTransmog(character)
@@ -24,7 +25,12 @@ local function refreshPlayerTransmog(character)
 
       wornItemItemVisual:setInventoryItem(wornItemItem)
 
+      -- Set transmog
       wornItemItemVisual:setItemType(moddata.transmogTo)
+      -- Set color
+      wornItemItemVisual:setTint(ModDataColor.modDataColorToImmutableColor(moddata.color))
+      -- Set Texture Choice
+      wornItemItemVisual:setTextureChoice(moddata.texture)
 
       itemVisuals:add(wornItemItemVisual)
     end

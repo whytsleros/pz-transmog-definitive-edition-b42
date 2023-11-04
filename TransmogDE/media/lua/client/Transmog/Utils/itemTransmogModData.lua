@@ -1,17 +1,18 @@
+local ModDataColor = require "Transmog/utils/modDataColor"
+
 --- @class TransmogModData
 --- @field transmogTo string
---- @field color string
+--- @field color ModDataColor
 --- @field texture number
-TransmogModData = {}
 
 local itemTransmogModData = {}
 
 --- @param item InventoryItem
 --- @return TransmogModData
 function itemTransmogModData.get(item)
-  item:getModData()['transmog'] = item:getModData()['transmog'] or itemTransmogModData.getDefault(item)
+  local modData = item:getModData()['transmog'] or itemTransmogModData.getDefault(item)
 
-  return item:getModData()['transmog']
+  return modData
 end
 
 --- @param item InventoryItem
@@ -31,7 +32,7 @@ function itemTransmogModData.getDefault(item)
 
   return {
     ['transmogTo'] = item:getFullType(),
-    ['color'] = itemVisual:getTint(),
+    ['color'] = ModDataColor.colorToModDataColor(itemVisual:getTint()),
     ['texture'] = texture,
   }
 end
