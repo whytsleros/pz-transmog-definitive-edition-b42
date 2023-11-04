@@ -70,7 +70,7 @@ function TransmogInvContextMenu.addChangeTexture(player, context, clothing, clot
   end);
 end
 
----@Param clothing InventoryItem
+---@param clothing InventoryItem
 local function getTmogClothingItem(clothing)
   local moddata = itemTransmogModData.get(clothing)
 
