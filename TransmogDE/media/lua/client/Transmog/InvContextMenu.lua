@@ -59,12 +59,17 @@ end
 ---@type addOptionClothingItem
 function TransmogInvContextMenu.addChangeTexture(player, context, clothing, clothingItem)
   local textureChoices = clothingItem:hasModel() and clothingItem:getTextureChoices() or clothingItem:getBaseTextures()
-  if not textureChoices or (textureChoices:size() < 1) then
+  if not textureChoices or (textureChoices:size() <= 1) then
     return
   end
 
+  local function onTextureSelected(textureIndex)
+    local moddata = itemTransmogModData.get(clothing)
+    moddata.texture = textureIndex
+    refreshPlayerTransmog(player)
+  end
   context:addOption("Change Texture", clothing, function()
-    local modal = TexturePickerModal:new(clothing, player, textureChoices);
+    local modal = TexturePickerModal:new(clothing, player, textureChoices, onTextureSelected);
     modal:initialise();
     modal:addToUIManager();
   end);

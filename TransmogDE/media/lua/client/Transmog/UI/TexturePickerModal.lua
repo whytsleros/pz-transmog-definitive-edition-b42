@@ -30,7 +30,7 @@ function TexturePickerModal:createChildren()
 				table.insert(rowElements, self.textureChoices:get(index))
 				local textureChoice = getTexture('media/textures/' .. self.textureChoices:get(index) .. '.png')
 				local button = ISButton:new(1 + btnX + (col * btnH), (row * btnH), btnH, btnH, "", self,
-					TexturePickerModal.onTextureSelected)
+					TexturePickerModal.onTextureClicked)
 				button.internal = index
 				button:setImage(textureChoice)
 				button:forceImageSize(btnH - 2, btnH - 2)
@@ -48,9 +48,8 @@ function TexturePickerModal:createChildren()
 	self:setHeight(scrollPanelHeight + 16)
 end
 
-function TexturePickerModal:onTextureSelected(button)
-	TransmogDE.setClothingTextureModdata(self.item, button.internal)
-	TransmogDE.forceUpdateClothing(self.item)
+function TexturePickerModal:onTextureClicked(button)
+  self.onTextureSelected(button.internal)
 end
 
 function TexturePickerModal:close()
@@ -60,7 +59,11 @@ function TexturePickerModal:close()
 	end
 end
 
-function TexturePickerModal:new(item, character, textureChoices)
+---@param item InventoryItem
+---@param character IsoPlayer
+---@param textureChoices ArrayList
+---@param onTextureSelected fun(textureIndex: number):any
+function TexturePickerModal:new(item, character, textureChoices, onTextureSelected)
 	local width = 260
 	local height = 180
 	local x = getCore():getScreenWidth() / 2 - (width / 2);
@@ -73,6 +76,7 @@ function TexturePickerModal:new(item, character, textureChoices)
 	o.title = "Set texture of: " .. item:getName();
 	o.desc = character:getDescriptor();
 	o.playerNum = playerNum
+	o.onTextureSelected = onTextureSelected
 	o:setResizable(false)
 	return o
 end

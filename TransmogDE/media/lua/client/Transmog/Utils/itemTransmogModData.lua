@@ -6,22 +6,23 @@ local ModDataColor = require "Transmog/utils/modDataColor"
 --- @field texture number
 
 local itemTransmogModData = {}
+local modDataKey = 'transmogDE'
 
 --- @param item InventoryItem
 --- @return TransmogModData
 function itemTransmogModData.get(item)
   -- Remeber to re-assign the reference otherwise values will NOT update!
-  item:getModData()['transmog'] = item:getModData()['transmog'] or itemTransmogModData.getDefault(item)
+  item:getModData()[modDataKey] = item:getModData()[modDataKey] or itemTransmogModData.getDefault(item)
 
-  return item:getModData()['transmog']
+  return item:getModData()[modDataKey]
 end
 
 --- @param item InventoryItem
 --- @return TransmogModData
 function itemTransmogModData.reset(item)
-  item:getModData()['transmog'] = itemTransmogModData.getDefault(item)
+  item:getModData()[modDataKey] = itemTransmogModData.getDefault(item)
 
-  return item:getModData()['transmog']
+  return item:getModData()[modDataKey]
 end
 
 --- @param item InventoryItem
