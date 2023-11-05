@@ -5,8 +5,10 @@ TODO:
 - Test ModData persistency in SP - DONE
 - Test backpacks tmog - DONE
 - Test Tailoring requirements - DONE
-- Test MP Sync
-- Test ModData persistency in MP
-  - Color
-  - Texture
-  - Tmog
+- Test MP Sync - DONE
+- Test ModData persistency in MP  - DONE
+  - Color  - DONE
+  - Texture  - DONE
+  - Tmog - DONE
+- Re-Implement Immersive mode
+- Re-Implement Tooltip
