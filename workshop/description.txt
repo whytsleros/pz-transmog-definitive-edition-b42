@@ -3,14 +3,14 @@
 - Do you want to hide your backpack?
 - Does the colour of your jacket not match with your current drip?
 
-If your answer is yes, then, my friend, this is the perfect mod for you! [b]Transmog: Definitive Edition - Fashionoid 2[/b]
+If your answer is yes, then my friend, this is the perfect mod for you! [b]Transmog: Definitive Edition - Fashionoid 2[/b]
 
 [h1] A mod that allows you to hot-swap the appearance of any clothing, armour or backpack. Visible and fully synched to other players in MP [/h1]
 
 [h1] The definitive Edition of the transmog mod - (Revision 5 updated on 2023/11/05) [/h1]
 After months, I finally made a transmog mod that works in [b]single-player[/b] and [b]multiplayer[/b] without requiring complex setups and external dependencies—the real successor of my Fashionoid mod.
 
-This version works out of the box and is compatible with [b]all clothing mods![/b]. And it supports an infinite amount of [b]modded and vanilla clothing! [/b]
+This version works out of the box and is compatible with [b]all clothing mods![/b] And it supports an infinite amount of [b]modded and vanilla clothing! [/b]
 
 [h1]Demo[/h1]
 [img]https://i.imgur.com/DFNtZuf.gif[/img]
@@ -35,8 +35,8 @@ This version works out of the box and is compatible with [b]all clothing mods![/
 I tested this with various clothing mods, including Authentic Z, Brita Armor pack, Spongies Clothing, Anthro Survivors and more!
 This mod should be compatible with all clothing mods, but if any mod is not working, then please report it in the [url=https://steamcommunity.com/workshop/filedetails/discussion/2979375840/3827542174239583726/] Troubleshooting Discussion [/url]
 
-[h1]READ ME: Know issues and limitations[/h1]
-[b]-[/b] This mod works best on a new save and server. No guarantee that it work on existing saves, but it should be fine.
+[h1]READ ME: Known issues and limitations[/h1]
+[b]-[/b] This mod works best on a new save and server. No guarantee that it will work on existing saves, but it should be fine.
 [b]-[/b] Opening the transmog menu will make the game lag a bit on lower-end PCs. This happens because the game is trying to load all the possible items.
 [b]-[/b] Unsurprisingly, some items might clip if you do weird transmogs. This is a limitation of the game engine.
 [b]-[/b] Revision 5 fixes the missing hats/helmet bugs!
