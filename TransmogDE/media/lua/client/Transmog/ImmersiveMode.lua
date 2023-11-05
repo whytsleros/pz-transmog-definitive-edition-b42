@@ -37,4 +37,4 @@ function ISInventoryPane:refreshContainer()
 end
 
 return ImmersiveMode
--- TODO: Very inefficient, run this only on the selected container
+-- TODO: This could be improved
