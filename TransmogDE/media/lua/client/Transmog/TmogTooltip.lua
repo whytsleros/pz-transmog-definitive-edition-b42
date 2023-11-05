@@ -3,9 +3,15 @@ local itemTransmogModData = require 'Transmog/utils/itemTransmogModData'
 
 local colors = {
   r = 1,
-  g = 1,
-  b = 0.8
+  g = 0.6,
+  b = 0
 }
+
+-- Inside java\inventory\InventoryItem.java there is `DoTooltip`, and 5 is the constant for the padding X and Y
+-- Code ref:
+-- int var3 = var1.getLineSpacing();
+-- int var4 = 5;
+local paddingConst = 5
 
 local old_render = ISToolTipInv.render
 function ISToolTipInv:render()
@@ -18,13 +24,13 @@ function ISToolTipInv:render()
 
   local textRows = {
     'Transmogged to: ',
-    '>' .. name
+    ' - ' .. name
   }
   local font = UIFont[getCore():getOptionTooltipFont()];
   -- set height
   local lineSpacing = self.tooltip:getLineSpacing()
-  local height = self.tooltip:getHeight()
-  local newHeight = height + #textRows * lineSpacing
+  local height = self.tooltip:getHeight() - paddingConst
+  local newHeight = (height + #textRows * lineSpacing) + paddingConst
 
   local old_setHeight = ISToolTipInv.setHeight
 
@@ -38,7 +44,7 @@ function ISToolTipInv:render()
 
   self.drawRectBorder = function(self, ...)
     for _, text in ipairs(textRows) do
-      self.tooltip:DrawText(font, text, 5, height, colors.r, colors.g, colors.b, 1)
+      self.tooltip:DrawText(font, text, paddingConst, height, colors.r, colors.g, colors.b, 1)
       height = height + lineSpacing
     end
     old_drawRectBorder(self, ...)
