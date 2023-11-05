@@ -1,14 +1,2 @@
 TODO: 
-- Test color switch - DONE
-- Test texture switch switch - DONE
-- Test with weapons equipped - DONE
-- Test ModData persistency in SP - DONE
-- Test backpacks tmog - DONE
-- Test Tailoring requirements - DONE
-- Test MP Sync - DONE
-- Test ModData persistency in MP  - DONE
-  - Color  - DONE
-  - Texture  - DONE
-  - Tmog - DONE
-- Re-Implement Immersive mode
 - Re-Implement Tooltip
