@@ -26,8 +26,10 @@ This version works out of the box and is compatible with [b]all clothing mods![/
 
 [h1]Sandbox Option - Immersive Mode [/h1]
 [b]When you enable the Immersive Mode from the sandbox settings, you can transmog only to the items you have found, and if you die, don't worry! You will keep your list of found transmogs :D. It defaults to 'Disabled'[/b]
+
 [h1]Sandbox Option - Limit Transmog To The Same Body Location[/h1]
 [b]Eg: you can only transmog hats to hats and trousers to trousers, but not trousers to hats or different body locations. It defaults to 'Disabled'[/b]
+
 [h1]Sandbox Option - Tailoring Level Requirement[/h1]
 [b]You can now set a minimum tailoring level required for Transmog options to become available. It defaults to 0[/b]
 

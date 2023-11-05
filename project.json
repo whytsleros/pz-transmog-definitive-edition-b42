@@ -1,18 +1,26 @@
 {
     "$schema": "https://raw.githubusercontent.com/Konijima/project-zomboid-studio/master/pzstudio.schema.json",
-    "title": "TransmogDE",
-    "authors": [],
+    "title": "Transmog: Definitive Edition - Fashionoid 2",
+    "authors": ["Massimo 'Mx'"],
     "workshop": {
         "id": 2979375840,
         "visibility": "public",
         "tags": [
-            "Build 41"
+            "Build 41",
+            "Clothing/Armor",
+            "Interface",
+            "Items",
+            "Misc",
+            "Models",
+            "Multiplayer",
+            "Silly/Fun",
+            "Textures"
         ],
         "excludes": []
     },
     "mods": {
         "TransmogDE": {
-            "name": "TransmogDE",
+            "name": "Transmog: Definitive Edition - Fashionoid 2",
             "description": "A mod that allows you to hot-swap your appearance with any armour or clothing of your choice. Visible to other players in MP"
         }
     }
