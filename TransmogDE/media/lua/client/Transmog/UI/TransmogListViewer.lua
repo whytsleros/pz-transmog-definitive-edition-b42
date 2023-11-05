@@ -1,5 +1,6 @@
 require "ISUI/AdminPanel/ISItemsListViewer"
 local isTransmoggable = require 'Transmog/utils/IsTransmogable'
+local ImmersiveMode = require 'Transmog/ImmersiveMode'
 
 TransmogListViewer = ISItemsListViewer:derive("TransmogListViewer");
 
@@ -45,8 +46,7 @@ function TransmogListViewer:initList()
     local allItems = backupGetAllItems()
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
-      -- if isTransmoggable(item) and TransmogDE.immersiveModeItemCheck(item) then
-      if isTransmoggable(item) then
+      if isTransmoggable(item) and ImmersiveMode.isItemInImmersiveModeCache(item) then
         local isSameBodyLocation = item:getBodyLocation() == self.itemToTmog:getBodyLocation()
         if not SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation then
           filteredItems:add(item)
@@ -72,7 +72,8 @@ function TransmogListViewer:prerender()
     self.backgroundColor.b);
   self:drawRectBorder(0, 0, self.width, self.height, self.borderColor.a, self.borderColor.r, self.borderColor.g,
     self.borderColor.b);
-  local text = "Transmog List - Standard Mode"
+  local isImersiveMode = SandboxVars.TransmogDE.ImmersiveModeToggle
+  local text = "Transmog List - "..(isImersiveMode and 'Immersive Mode' or 'Standard Mode')
   self:drawText(text, self.width / 2 - (getTextManager():MeasureStringX(UIFont.Medium, text) / 2), z, 1, 1, 1, 1,
     UIFont.Medium);
 end
