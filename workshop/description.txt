@@ -17,6 +17,8 @@ This version works out of the box and is compatible with most clothing mods! And
 [img]https://i.imgur.com/XqmcgLR.gif[/img]
 [h1]Immersive Mode Option[/h1]
 [b]When you enable the Immersive Mode from the sandbox settings, you can transmog only to the items you have found, and if you die, don't worry! You will keep your list of found transmogs :D[/b]
+[h1]Tailoring Level Requirement[/h1]
+[b]You can now set a minimum tailoring level required for Transmog options to become available. It defaults to 0[/b]
 
 [h1]Mods compatibility[/h1]
 I tested this with various clothing mods, including Authentic Z, Brita Armor pack, Spongies Clothing, and even Anthro Survivors.

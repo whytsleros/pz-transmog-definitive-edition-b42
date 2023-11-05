@@ -1,9 +1,10 @@
 TODO: 
-- Test color switch
-- Test texture switch switch
-- Test with weapons equipped
-- Test ModData persistency in SP
-- Test backpacks tmog
+- Test color switch - DONE
+- Test texture switch switch - DONE
+- Test with weapons equipped - DONE
+- Test ModData persistency in SP - DONE
+- Test backpacks tmog - DONE
+- Test Tailoring requirements - DONE
 - Test MP Sync
 - Test ModData persistency in MP
   - Color

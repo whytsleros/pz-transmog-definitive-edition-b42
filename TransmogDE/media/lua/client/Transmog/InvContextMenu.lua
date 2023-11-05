@@ -99,8 +99,8 @@ end
 ---@param items table
 local function addEditTransmogItemOption(playerIndex, context, items)
   local playerObj = getSpecificPlayer(playerIndex)
-  local testItem = nil
 
+  local testItem = nil
   ---@type InventoryItem
   local clothing = nil
   for _, v in ipairs(items) do
@@ -119,6 +119,15 @@ local function addEditTransmogItemOption(playerIndex, context, items)
 
   local option = context:addOption("Transmog Menu");
   option.iconTexture = iconTexture
+  local cantTransmog = playerObj:getPerkLevel(Perks.Tailoring) < SandboxVars.TransmogDE.TailoringLevelRequirement
+  if cantTransmog then
+    option.notAvailable = cantTransmog;
+    local tooltip = ISInventoryPaneContextMenu.addToolTip();
+    tooltip.description = getText("Tooltip_CantTransmogLowTailoring", SandboxVars.TransmogDE.TailoringLevelRequirement);
+    option.toolTip = tooltip;
+
+    return
+  end
 
   local menuContext = context:getNew(context);
   context:addSubMenu(option, menuContext);
