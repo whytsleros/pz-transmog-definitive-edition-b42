@@ -25,16 +25,31 @@ function itemTransmogModData.reset(item)
   return item:getModData()[modDataKey]
 end
 
+--- @param itemVisual ItemVisual|nil
+local function getTextureValue(itemVisual)
+  if not itemVisual then
+    return 0
+  end
+  local clothingItem = itemVisual:getClothingItem()
+  if not clothingItem then
+    return 0
+  end
+  if clothingItem:hasModel() then
+    return itemVisual:getTextureChoice()
+  end
+
+  return itemVisual:getBaseTexture()
+end
+
 --- @param item InventoryItem
 --- @return TransmogModData
 function itemTransmogModData.getDefault(item)
   local itemVisual = item:getVisual()
-  local clothingItem = itemVisual:getClothingItem()
-  local texture = clothingItem and clothingItem:hasModel() and itemVisual:getTextureChoice() or itemVisual:getBaseTexture()
+  local texture = getTextureValue(itemVisual)
 
   return {
     ['transmogTo'] = item:getFullType(),
-    ['color'] = ModDataColor.colorToModDataColor(itemVisual:getTint()),
+    ['color'] = ModDataColor.colorToModDataColor(itemVisual and itemVisual:getTint()),
     ['texture'] = texture,
   }
 end
