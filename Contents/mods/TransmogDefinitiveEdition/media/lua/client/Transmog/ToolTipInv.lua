@@ -8,6 +8,10 @@ function ISToolTipInv:render()
   end
 
   local itemModData = TransmogDE.getItemTransmogModData(self.item)
+  if itemModData.transmogTo == self.item:getScriptItem():getFullName() then
+    return old_render(self)
+  end
+
   local name = itemModData.transmogTo and getItemNameFromFullType(itemModData.transmogTo) or "Hidden"
   local tmogTooltipText = {
     "Transmog to: " .. name,
@@ -15,22 +19,26 @@ function ISToolTipInv:render()
 
   local font = UIFont[getCore():getOptionTooltipFont()];
   local lineSpacing = self.tooltip:getLineSpacing()
-  local height = self.tooltip:getHeight()
-  local newHeight = height + (#tmogTooltipText * lineSpacing) + (lineSpacing / 2)
+  local y = self.tooltip:getHeight()
+  local height = (#tmogTooltipText * lineSpacing) + (lineSpacing / 2)
 
   local old_setHeight = ISToolTipInv.setHeight
 
+  local isFirstTimeSetHeight = true
   self.setHeight = function(self, h, ...)
-    h = newHeight
-    self.keepOnScreen = false
+    if isFirstTimeSetHeight then
+      isFirstTimeSetHeight = false
+      y = h
+      h = h + height
+    end
     return old_setHeight(self, h, ...)
   end
 
   local old_drawRectBorder = ISToolTipInv.drawRectBorder
   self.drawRectBorder = function(self, ...)
     for _, text in ipairs(tmogTooltipText) do
-      self.tooltip:DrawText(font, text, 5, height, 1, 0.6, 0, 1)
-      height = height + lineSpacing
+      self.tooltip:DrawText(font, text, 5, y, 1, 0.6, 0, 1)
+      y = y + lineSpacing
     end
     old_drawRectBorder(self, ...)
   end
