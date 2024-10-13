@@ -1,4 +1,10 @@
 local iconTexture = getTexture("media/ui/TransmogIcon.png")
+local textMenu = getText("IGUI_TransmogDE_Context_Menu")
+local textTransmogrify = getText("IGUI_TransmogDE_Context_Transmogrify")
+local textHide = getText("IGUI_TransmogDE_Context_Hide")
+local textDefault = getText("IGUI_TransmogDE_Context_Default")
+local textColor = getText("IGUI_TransmogDE_Context_Color")
+local textTexture = getText("IGUI_TransmogDE_Context_Texture")
 
 local addEditTransmogItemOption = function(player, context, items)
   local playerObj = getSpecificPlayer(player)
@@ -15,22 +21,22 @@ local addEditTransmogItemOption = function(player, context, items)
   end
 
   if tostring(#items) == "1" and clothing then
-    local option = context:addOption("Transmog Menu");
+    local option = context:addOption(textMenu);
     option.iconTexture = iconTexture
     local menuContext = context:getNew(context);
     context:addSubMenu(option, menuContext);
 
-    menuContext:addOption("Transmogrify", clothing, function()
+    menuContext:addOption(textTransmogrify, clothing, function()
       TransmogListViewer.OnOpenPanel(clothing)
       TransmogDE.triggerUpdate()
     end);
 
-    menuContext:addOption("Hide Item", clothing, function()
+    menuContext:addOption(textHide, clothing, function()
       TransmogDE.setClothingHidden(clothing)
       TransmogDE.triggerUpdate()
     end);
 
-		menuContext:addOption("Reset to Default", clothing, function()
+		menuContext:addOption(textDefault, clothing, function()
       TransmogDE.setItemToDefault(clothing)
       TransmogDE.triggerUpdate()
     end);
@@ -47,7 +53,7 @@ local addEditTransmogItemOption = function(player, context, items)
 
     local tmogClothingItemAsset = TransmogDE.getClothingItemAsset(tmogScriptItem)
     if tmogClothingItemAsset:getAllowRandomTint() then
-      menuContext:addOption("Change Color", clothing, function()
+      menuContext:addOption(textColor, clothing, function()
         local modal = ColorPickerModal:new(clothing, playerObj);
         modal:initialise();
         modal:addToUIManager();
@@ -66,7 +72,7 @@ local addEditTransmogItemOption = function(player, context, items)
     -- TmogPrint('getTextureChoices()', tmogClothingItemAsset:getTextureChoices())
     -- TmogPrint('getBaseTextures()', tmogClothingItemAsset:getBaseTextures())
     if textureChoices and (textureChoices:size() > 1) then
-      menuContext:addOption("Change Texture", clothing, function()
+      menuContext:addOption(textTexture, clothing, function()
         local modal = TexturePickerModal:new(clothing, playerObj, textureChoices);
         modal:initialise();
         modal:addToUIManager();
