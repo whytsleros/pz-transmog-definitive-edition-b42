@@ -1,0 +1,11 @@
+IGUI_EN = {
+    IGUI_TransmogDE_Tooltip_TransmogTo = "Transmog to: %1",
+    IGUI_TransmogDE_Tooltip_TransmogHidden = "Transmog to: <Hidden>",
+    IGUI_TransmogDE_Context_Menu = "Transmog Menu",
+    IGUI_TransmogDE_Context_Transmogrify = "Transmogrify",
+    IGUI_TransmogDE_Context_Hide = "Hide Item",
+    IGUI_TransmogDE_Context_Default = "Reset to Default",
+    IGUI_TransmogDE_Context_Color = "Change Color",
+    IGUI_TransmogDE_Context_Texture = "Change Texture",
+    IGUI_TransmogDE_Text_TransmoggedTo = "Transmogged to %1",
+}
