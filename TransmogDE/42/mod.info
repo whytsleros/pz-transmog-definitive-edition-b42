@@ -1,7 +1,9 @@
-name=Transmog Definitive Edition B42
+name=Transmog Definitive Edition
 id=TransmogDE
-poster=poster.png
 description=A mod that allows you to change your appearance
-minBuildVersion=42
+icon=icon.png
+poster=poster.png
+versionMin=42
 tags=Build 42,Clothing,Appearance
-visibility=public
+modversion=1.0
+require=DamnLib

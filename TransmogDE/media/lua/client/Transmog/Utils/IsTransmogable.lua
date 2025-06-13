@@ -17,9 +17,9 @@ local function isTransmoggable(scriptItem)
   -- Verificar si es una mochila/contenedor de manera más robusta
   if typeString == "Container" then
     isBackpack = bodyLocation and bodyLocation ~= ""
-    if not isBackpack and scriptItem:InstanceItem then
+    if not isBackpack and scriptItem.InstanceItem and type(scriptItem.InstanceItem) == "function" then
       local instance = scriptItem:InstanceItem(nil)
-      isBackpack = instance and instance:canBeEquipped()
+      isBackpack = instance and instance.canBeEquipped and instance:canBeEquipped()
     end
   end
 
