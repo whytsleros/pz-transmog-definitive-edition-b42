@@ -77,19 +77,26 @@ end
 
 ---@param clothing InventoryItem
 local function getTmogClothingItem(clothing)
+  if not clothing then return nil end
+  
   local moddata = itemTransmogModData.get(clothing)
+  if not moddata or not moddata.transmogTo or moddata.transmogTo == "" then
+    return nil
+  end
 
-  local tmogItem = InventoryItemFactory.CreateItem(moddata.transmogTo)
+  local tmogItem = nil
+  pcall(function()
+    tmogItem = InventoryItemFactory.CreateItem(moddata.transmogTo)
+  end)
 
   if not tmogItem then
-    return
+    return nil
   end
 
-  local tmogClothingItem = tmogItem:getClothingItem()
-
-  if not tmogClothingItem then
-    return
-  end
+  local tmogClothingItem = nil
+  pcall(function()
+    tmogClothingItem = tmogItem:getClothingItem()
+  end)
 
   return tmogClothingItem
 end

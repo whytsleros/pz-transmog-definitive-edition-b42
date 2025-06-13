@@ -25,13 +25,21 @@ end
 
 local old_ISInventoryPane_refreshContainer = ISInventoryPane.refreshContainer
 function ISInventoryPane:refreshContainer()
-  local result = old_ISInventoryPane_refreshContainer(self)
+  -- Guardamos el resultado original
+  local result = nil
+  pcall(function()
+    result = old_ISInventoryPane_refreshContainer(self)
+  end)
 
-  if not SandboxVars.TransmogDE.ImmersiveModeToggle then
+  -- Si no está activado el modo inmersivo, salimos
+  if not SandboxVars or not SandboxVars.TransmogDE or not SandboxVars.TransmogDE.ImmersiveModeToggle then
     return result
   end
 
-  ImmersiveMode.onRefreshContainer(self)
+  -- Procesamos los ítems con protección contra errores
+  pcall(function()
+    ImmersiveMode.onRefreshContainer(self)
+  end)
 
   return result
 end

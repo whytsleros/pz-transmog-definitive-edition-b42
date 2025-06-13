@@ -44,23 +44,44 @@ function TransmogListViewer:initList()
   getAllItems = function()
     local filteredItems = ArrayList:new()
     local allItems = backupGetAllItems()
+    
+    -- Salir si no tenemos items para transmog
+    if not self.itemToTmog then
+      getAllItems = backupGetAllItems
+      return allItems
+    end
+    
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
-      if isTransmoggable(item) and ImmersiveMode.isItemInImmersiveModeCache(item) then
-        local isSameBodyLocation = item:getBodyLocation() == self.itemToTmog:getBodyLocation()
+      -- Verificamos que el ítem es transmogrificable y está en cache en modo inmersivo
+      if item and isTransmoggable(item) and ImmersiveMode.isItemInImmersiveModeCache(item) then
+        -- Obtenemos ubicación corporal con verificación
+        local itemBodyLocation = ""
+        pcall(function() 
+          itemBodyLocation = item:getBodyLocation() or "" 
+        end)
+        
+        local targetBodyLocation = ""
+        pcall(function() 
+          targetBodyLocation = self.itemToTmog:getBodyLocation() or "" 
+        end)
+        
+        local isSameBodyLocation = itemBodyLocation == targetBodyLocation
+        
         if not SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation then
           filteredItems:add(item)
-        else
-          if isSameBodyLocation then
-            filteredItems:add(item)
-          end
+        elseif isSameBodyLocation then
+          filteredItems:add(item)
         end
       end
     end
+    
     return filteredItems
   end
 
-  ISItemsListViewer.initList(self);
+  pcall(function()
+    ISItemsListViewer.initList(self)
+  end)
 
   -- put the original function back in it's place
   getAllItems = backupGetAllItems;
