@@ -1,7 +1,8 @@
 name=Transmog Definitive Edition
 id=TransmogDE
-description=A mod that allows you to change your appearance
+description=A mod that allows you to change your appearance with any armor or clothing. Works in single-player and multiplayer.
 icon=icon.png
 poster=poster.png
-tags=Build 42,Clothing,Appearance
-modversion=1.0
+versionMin=42.0
+tags=Build 42,Clothing/Armor,Interface,Items
+modversion=2.0

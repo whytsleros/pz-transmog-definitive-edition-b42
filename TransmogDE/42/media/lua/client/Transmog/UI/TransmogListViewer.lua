@@ -2,6 +2,9 @@ require "ISUI/AdminPanel/ISItemsListViewer"
 local isTransmoggable = require 'Transmog/utils/IsTransmogable'
 local ImmersiveMode = require 'Transmog/ImmersiveMode'
 
+-- Import B42 compatibility module
+local TransmogB42 = require "TransmogB42Compatibility"
+
 TransmogListViewer = ISItemsListViewer:derive("TransmogListViewer");
 
 function TransmogListViewer:new(x, y, width, height, itemToTmog, onItemSelected)
@@ -21,6 +24,8 @@ function TransmogListViewer:new(x, y, width, height, itemToTmog, onItemSelected)
   o.onItemSelected = onItemSelected;
   o.isTransmogListViewer = true
   TransmogListViewer.instance = o;
+  
+  TransmogB42.debugPrint("TransmogListViewer created")
   return o;
 end
 
@@ -33,19 +38,44 @@ function TransmogListViewer.OnOpenPanel(itemToTmog, onItemSelected)
   local modal = TransmogListViewer:new(50, 200, 850, 650, itemToTmog, onItemSelected)
   modal:initialise();
   modal:addToUIManager();
-  modal:removeChild(modal.playerSelect);
+  
+  -- B42 compatible player select removal
+  if modal.playerSelect then
+    modal:removeChild(modal.playerSelect);
+  end
+  
   modal.instance:setKeyboardFocus()
+  TransmogB42.debugPrint("TransmogListViewer panel opened")
 end
 
 function TransmogListViewer:initList()
-  -- Hack to use as litte code as possible and keep backcompatibility
+  -- Hack to use as little code as possible and keep backward compatibility
   -- getAllItems is used inside the original function (ISItemsListViewer.initList)
   local backupGetAllItems = getAllItems;
+  
   getAllItems = function()
-    local filteredItems = ArrayList:new()
+    local filteredItems = nil
+    
+    -- B42 compatible ArrayList creation
+    if TransmogB42.IS_BUILD_42 then
+      if ArrayList and ArrayList.new then
+        filteredItems = ArrayList:new()
+      elseif ArrayList then
+        filteredItems = ArrayList()
+      end
+    else
+      filteredItems = ArrayList:new()
+    end
+    
+    if not filteredItems then
+      TransmogB42.debugPrint("Warning: Could not create ArrayList")
+      getAllItems = backupGetAllItems
+      return backupGetAllItems()
+    end
+    
     local allItems = backupGetAllItems()
     
-    -- Salir si no tenemos items para transmog
+    -- Exit if we don't have items for transmog
     if not self.itemToTmog then
       getAllItems = backupGetAllItems
       return allItems
@@ -53,22 +83,37 @@ function TransmogListViewer:initList()
     
     for i = 0, allItems:size() - 1 do
       local item = allItems:get(i);
-      -- Verificamos que el ítem es transmogrificable y está en cache en modo inmersivo
+      
+      -- Verify that the item is transmoggable and is in cache in immersive mode
       if item and isTransmoggable(item) and ImmersiveMode.isItemInImmersiveModeCache(item) then
-        -- Obtenemos ubicación corporal con verificación
+        -- Get body location with verification
         local itemBodyLocation = ""
-        pcall(function() 
-          itemBodyLocation = item:getBodyLocation() or "" 
+        local success1 = pcall(function() 
+          if item.getBodyLocation then
+            itemBodyLocation = item:getBodyLocation() or "" 
+          end
         end)
         
         local targetBodyLocation = ""
-        pcall(function() 
-          targetBodyLocation = self.itemToTmog:getBodyLocation() or "" 
+        local success2 = pcall(function() 
+          if self.itemToTmog.getBodyLocation then
+            targetBodyLocation = self.itemToTmog:getBodyLocation() or "" 
+          end
         end)
+        
+        if not success1 or not success2 then
+          TransmogB42.debugPrint("Warning: Could not get body location for item comparison")
+        end
         
         local isSameBodyLocation = itemBodyLocation == targetBodyLocation
         
-        if not SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation then
+        -- B42 compatible sandbox variable check
+        local limitToSameLocation = false
+        if SandboxVars and SandboxVars.TransmogDE and SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation then
+          limitToSameLocation = SandboxVars.TransmogDE.LimitTransmogToSameBodyLocation
+        end
+        
+        if not limitToSameLocation then
           filteredItems:add(item)
         elseif isSameBodyLocation then
           filteredItems:add(item)
@@ -76,14 +121,19 @@ function TransmogListViewer:initList()
       end
     end
     
+    TransmogB42.debugPrint("Filtered " .. filteredItems:size() .. " transmoggable items")
     return filteredItems
   end
 
-  pcall(function()
+  local success = pcall(function()
     ISItemsListViewer.initList(self)
   end)
+  
+  if not success then
+    TransmogB42.debugPrint("Warning: Failed to initialize ISItemsListViewer")
+  end
 
-  -- put the original function back in it's place
+  -- put the original function back in its place
   getAllItems = backupGetAllItems;
 end
 
@@ -93,26 +143,46 @@ function TransmogListViewer:prerender()
     self.backgroundColor.b);
   self:drawRectBorder(0, 0, self.width, self.height, self.borderColor.a, self.borderColor.r, self.borderColor.g,
     self.borderColor.b);
-  local isImersiveMode = SandboxVars.TransmogDE.ImmersiveModeToggle
-  local text = "Transmog List - "..(isImersiveMode and 'Immersive Mode' or 'Standard Mode')
-  self:drawText(text, self.width / 2 - (getTextManager():MeasureStringX(UIFont.Medium, text) / 2), z, 1, 1, 1, 1,
-    UIFont.Medium);
+  
+  -- B42 compatible sandbox variable check
+  local isImmersiveMode = false
+  if SandboxVars and SandboxVars.TransmogDE and SandboxVars.TransmogDE.ImmersiveModeToggle then
+    isImmersiveMode = SandboxVars.TransmogDE.ImmersiveModeToggle
+  end
+  
+  local text = "Transmog List - "..(isImmersiveMode and 'Immersive Mode' or 'Standard Mode')
+  
+  -- B42 compatible text rendering
+  if getTextManager and UIFont and UIFont.Medium then
+    self:drawText(text, self.width / 2 - (getTextManager():MeasureStringX(UIFont.Medium, text) / 2), z, 1, 1, 1, 1,
+      UIFont.Medium);
+  else
+    -- Fallback text rendering
+    self:drawText(text, self.width / 2 - 100, z, 1, 1, 1, 1);
+  end
 end
 
+-- B42 compatible ISItemsListTable modification
 local old_ISItemsListTable_createChildren = ISItemsListTable.createChildren
 function ISItemsListTable:createChildren()
   local result = old_ISItemsListTable_createChildren(self)
 
-  if self.viewer.isTransmogListViewer then
-    self:removeChild(self.buttonAdd1);
-    self:removeChild(self.buttonAdd2);
-    self:removeChild(self.buttonAdd5);
-    self:removeChild(self.buttonAddMultiple);
-    self:removeChild(self.filters);
+  if self.viewer and self.viewer.isTransmogListViewer then
+    -- B42 compatible button removal
+    if self.buttonAdd1 then self:removeChild(self.buttonAdd1); end
+    if self.buttonAdd2 then self:removeChild(self.buttonAdd2); end
+    if self.buttonAdd5 then self:removeChild(self.buttonAdd5); end
+    if self.buttonAddMultiple then self:removeChild(self.buttonAddMultiple); end
+    if self.filters then self:removeChild(self.filters); end
 
-    self.datas:setOnMouseDoubleClick(self, function (self, scriptItem)
-      TransmogListViewer.instance.onItemSelected(scriptItem)
-    end);
+    if self.datas and self.datas.setOnMouseDoubleClick then
+      self.datas:setOnMouseDoubleClick(self, function (self, scriptItem)
+        if TransmogListViewer.instance and TransmogListViewer.instance.onItemSelected then
+          TransmogListViewer.instance.onItemSelected(scriptItem)
+          TransmogB42.debugPrint("Item selected: " .. tostring(scriptItem and scriptItem:getName() or "unknown"))
+        end
+      end);
+    end
   end
 
   return result

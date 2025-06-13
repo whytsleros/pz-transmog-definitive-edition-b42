@@ -2,7 +2,20 @@ local isTransmoggable = require 'Transmog/utils/IsTransmogable'
 local itemTransmogModData = require 'Transmog/utils/itemTransmogModData'
 local refreshPlayerTransmog = require 'Transmog/utils/refreshPlayerTransmog'
 local debug = require "Transmog/utils/debug"
-local iconTexture = getTexture("media/ui/TransmogIcon.png")
+
+-- Import B42 compatibility module
+local TransmogB42 = require "TransmogB42Compatibility"
+
+-- B42 compatible texture loading
+local iconTexture = nil
+if TransmogB42.IS_BUILD_42 then
+  -- B42 might have different texture loading
+  if getTexture then
+    iconTexture = getTexture("media/ui/TransmogIcon.png")
+  end
+else
+  iconTexture = getTexture("media/ui/TransmogIcon.png")
+end
 
 local TransmogInvContextMenu = {}
 
@@ -15,6 +28,7 @@ function TransmogInvContextMenu.addTransmogrify(player, context, clothing)
     local moddata = itemTransmogModData.get(clothing)
     moddata.transmogTo = scriptItem:getFullName()
     refreshPlayerTransmog(player)
+    TransmogB42.debugPrint("Applied transmog: " .. tostring(scriptItem:getFullName()))
   end
 
   context:addOption("Transmogrify", clothing, function()
@@ -28,6 +42,7 @@ function TransmogInvContextMenu.addHideItem(player, context, clothing)
     local moddata = itemTransmogModData.get(clothing)
     moddata.transmogTo = ''
     refreshPlayerTransmog(player)
+    TransmogB42.debugPrint("Hidden item: " .. tostring(clothing:getName()))
   end);
 end
 
@@ -36,19 +51,35 @@ function TransmogInvContextMenu.addResetItem(player, context, clothing)
   context:addOption("Reset to Default", clothing, function()
     itemTransmogModData.reset(clothing)
     refreshPlayerTransmog(player)
+    TransmogB42.debugPrint("Reset item: " .. tostring(clothing:getName()))
   end);
 end
 
 ---@type addOptionClothingItem
 function TransmogInvContextMenu.addChangeColor(player, context, clothing, clothingItem)
-  if not clothingItem:getAllowRandomTint() then return end
+  -- B42 compatible color check
+  local allowTint = false
+  if TransmogB42.IS_BUILD_42 then
+    -- B42 might have different tint checking
+    if clothingItem.getAllowRandomTint then
+      allowTint = clothingItem:getAllowRandomTint()
+    elseif clothingItem.canBeRecolored then
+      allowTint = clothingItem:canBeRecolored()
+    end
+  else
+    allowTint = clothingItem:getAllowRandomTint()
+  end
+  
+  if not allowTint then return end
 
   ---@param color ModDataColor
   local function onColorSelected(color)
     local moddata = itemTransmogModData.get(clothing)
     moddata.color = color
     refreshPlayerTransmog(player)
+    TransmogB42.debugPrint("Changed color for: " .. tostring(clothing:getName()))
   end
+  
   context:addOption("Change Colors", clothing, function()
     local modal = ColorPickerModal:new(clothing, player, onColorSelected);
     modal:initialise();
@@ -58,7 +89,20 @@ end
 
 ---@type addOptionClothingItem
 function TransmogInvContextMenu.addChangeTexture(player, context, clothing, clothingItem)
-  local textureChoices = clothingItem:hasModel() and clothingItem:getTextureChoices() or clothingItem:getBaseTextures()
+  local textureChoices = nil
+  
+  -- B42 compatible texture choices
+  if TransmogB42.IS_BUILD_42 then
+    -- B42 might have different ways to get texture choices
+    if clothingItem.getTextureChoices then
+      textureChoices = clothingItem:getTextureChoices()
+    elseif clothingItem.getAvailableTextures then
+      textureChoices = clothingItem:getAvailableTextures()
+    end
+  else
+    textureChoices = clothingItem:hasModel() and clothingItem:getTextureChoices() or clothingItem:getBaseTextures()
+  end
+  
   if not textureChoices or (textureChoices:size() <= 1) then
     return
   end
@@ -67,7 +111,9 @@ function TransmogInvContextMenu.addChangeTexture(player, context, clothing, clot
     local moddata = itemTransmogModData.get(clothing)
     moddata.texture = textureIndex
     refreshPlayerTransmog(player)
+    TransmogB42.debugPrint("Changed texture for: " .. tostring(clothing:getName()) .. " to index: " .. tostring(textureIndex))
   end
+  
   context:addOption("Change Texture", clothing, function()
     local modal = TexturePickerModal:new(clothing, player, textureChoices, onTextureSelected);
     modal:initialise();
@@ -85,11 +131,21 @@ local function getTmogClothingItem(clothing)
   end
 
   local tmogItem = nil
-  pcall(function()
-    tmogItem = InventoryItemFactory.CreateItem(moddata.transmogTo)
+  local success = pcall(function()
+    if TransmogB42.IS_BUILD_42 then
+      -- B42 might have different item creation methods
+      if InventoryItemFactory and InventoryItemFactory.CreateItem then
+        tmogItem = InventoryItemFactory.CreateItem(moddata.transmogTo)
+      elseif ItemManager and ItemManager.createItem then
+        tmogItem = ItemManager.createItem(moddata.transmogTo)
+      end
+    else
+      tmogItem = InventoryItemFactory.CreateItem(moddata.transmogTo)
+    end
   end)
 
-  if not tmogItem then
+  if not success or not tmogItem then
+    TransmogB42.debugPrint("Failed to create transmog item: " .. tostring(moddata.transmogTo))
     return nil
   end
 
@@ -125,12 +181,26 @@ local function addEditTransmogItemOption(playerIndex, context, items)
   end
 
   local option = context:addOption("Transmog Menu");
-  option.iconTexture = iconTexture
-  local cantTransmog = playerObj:getPerkLevel(Perks.Tailoring) < SandboxVars.TransmogDE.TailoringLevelRequirement
+  if iconTexture then
+    option.iconTexture = iconTexture
+  end
+  
+  -- B42 compatible perk checking
+  local cantTransmog = false
+  if TransmogB42.IS_BUILD_42 then
+    -- B42 might have different perk system
+    if playerObj.getPerkLevel and Perks and Perks.Tailoring then
+      cantTransmog = playerObj:getPerkLevel(Perks.Tailoring) < (SandboxVars.TransmogDE and SandboxVars.TransmogDE.TailoringLevelRequirement or 0)
+    end
+  else
+    cantTransmog = playerObj:getPerkLevel(Perks.Tailoring) < SandboxVars.TransmogDE.TailoringLevelRequirement
+  end
+  
   if cantTransmog then
     option.notAvailable = cantTransmog;
     local tooltip = ISInventoryPaneContextMenu.addToolTip();
-    tooltip.description = getText("Tooltip_CantTransmogLowTailoring", SandboxVars.TransmogDE.TailoringLevelRequirement);
+    local requiredLevel = (SandboxVars.TransmogDE and SandboxVars.TransmogDE.TailoringLevelRequirement) or 0
+    tooltip.description = getText("Tooltip_CantTransmogLowTailoring", requiredLevel);
     option.toolTip = tooltip;
 
     return
@@ -153,12 +223,30 @@ local function addEditTransmogItemOption(playerIndex, context, items)
     TransmogInvContextMenu.addChangeTexture(playerObj, menuContext, clothing, tmogClothingItem)
   end
 
-  if isDebugEnabled() then
+  -- B42 compatible debug check
+  local debugEnabled = false
+  if isDebugEnabled then
+    debugEnabled = isDebugEnabled()
+  elseif getDebug then
+    debugEnabled = getDebug()
+  end
+  
+  if debugEnabled then
     menuContext:addOption("DBG: Print Tmog Data", clothing, function()
       debug.printTable(itemTransmogModData.get(clothing))
     end);
   end
 end
 
+-- B42 compatible event registration
+local function registerContextMenuEvent()
+  if Events and Events.OnFillInventoryObjectContextMenu then
+    Events.OnFillInventoryObjectContextMenu.Add(addEditTransmogItemOption)
+    TransmogB42.debugPrint("Registered context menu event")
+  else
+    TransmogB42.debugPrint("Warning: OnFillInventoryObjectContextMenu event not available")
+  end
+end
 
-Events.OnFillInventoryObjectContextMenu.Add(addEditTransmogItemOption);
+-- Initialize the context menu
+registerContextMenuEvent()
