@@ -1,5 +1,16 @@
 # Transmog Definitive Edition - Build 42 Migration Changelog
 
+## ⚠️ CRITICAL FIX: Lua Module Loading Error Resolved
+
+**Issue Found**: `java.lang.RuntimeException: Object tried to call nil in isTransmoggable`
+- **Root Cause**: Incorrect `require "TransmogB42Compatibility"` statements failing to load the compatibility module
+- **Fix Applied**: Replaced problematic require statements with inline initialization checks
+- **Files Fixed**:
+  - `IsTransmogable.lua` - Added global TransmogB42 initialization fallback
+  - `refreshPlayerTransmog.lua` - Added compatibility module initialization
+  - `InvContextMenu.lua` - Added compatibility module initialization
+- **New File Created**: `TransmogB42Init.lua` - Global initialization module for shared compatibility functions
+
 ## Files Modified for Build 42 Compatibility
 
 ### 1. mod.info
@@ -27,6 +38,7 @@
   - Enhanced error handling and null checks
   - Updated event registration with B42 compatibility checks
   - Added debug logging throughout the function
+  - **Fix**: Added compatibility module initialization to resolve require error
 
 ### 4. IsTransmogable.lua
 - **Location**: `TransmogDE/42/media/lua/client/Transmog/Utils/IsTransmogable.lua`
@@ -36,6 +48,7 @@
   - Improved container/backpack detection logic
   - Added B42-specific visual property checks
   - Enhanced debugging and error handling
+  - **Fix**: Added global TransmogB42 initialization fallback to resolve require error
 
 ### 5. InvContextMenu.lua
 - **Location**: `TransmogDE/42/media/lua/client/Transmog/InvContextMenu.lua`
@@ -46,6 +59,7 @@
   - Improved perk system compatibility
   - Added robust error handling and null checks
   - Enhanced event registration with fallback methods
+  - **Fix**: Added compatibility module initialization to resolve require error
 
 ### 6. TransmogListViewer.lua
 - **Location**: `TransmogDE/42/media/lua/client/Transmog/UI/TransmogListViewer.lua`
@@ -65,6 +79,13 @@
   - Provides body location ignore functionality
   - Handles B42-specific event registration
   - Includes comprehensive error checking
+
+### 8. TransmogB42Init.lua (NEW)
+- **Location**: `TransmogDE/42/media/lua/shared/TransmogB42Init.lua`
+- **Changes**:
+  - Global initialization module for shared compatibility functions
+  - Ensures TransmogB42Compatibility is loaded before any other module
+  - Provides fallback functions for critical compatibility checks
 
 ## Key B42 Compatibility Features Implemented
 

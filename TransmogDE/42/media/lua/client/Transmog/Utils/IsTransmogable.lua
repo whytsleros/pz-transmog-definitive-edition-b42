@@ -1,5 +1,11 @@
--- Import B42 compatibility module
-local TransmogB42 = require "TransmogB42Compatibility"
+-- Import B42 compatibility module - ensure it's available globally
+if not TransmogB42 then
+    TransmogB42 = {}
+    TransmogB42.IS_BUILD_42 = true  -- Default to true for B42
+    TransmogB42.debugPrint = function(msg)
+        print("[TransmogDE] " .. tostring(msg))
+    end
+end
 
 --- @param scriptItem Item
 --- @return boolean
