@@ -1,3 +1,0 @@
-Tooltip_EN = {
-  Tooltip_CantTransmogLowTailoring = "Sorry, your tailoring Level is too low<br>You need tailoring Level %1",
-}
