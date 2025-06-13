@@ -1,9 +1,7 @@
 name=Transmog Definitive Edition B42
+id=TransmogDE
 poster=poster.png
-icon=icon.png
-id=TransmogDefinitiveEditionB42
-description=A mod that allows you to hot-swap your appearance - Build 42 Compatible
-require=
+description=A mod that allows you to change your appearance
 minBuildVersion=42
-tags=Build 42;Appearance;Clothing
+tags=Build 42,Clothing,Appearance
 visibility=public

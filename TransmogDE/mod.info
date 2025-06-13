@@ -1,5 +1,7 @@
-name=Transmog Definitive Edition
+name=Transmog Definitive Edition B42
 id=TransmogDE
-description=Fork for Transmog
 poster=poster.png
-version=1.0
+description=A mod that allows you to change your appearance
+minBuildVersion=42
+tags=Build 42,Clothing,Appearance
+visibility=public
